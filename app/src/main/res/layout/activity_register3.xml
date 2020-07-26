@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Activity.Register3Activity"
-    android:padding="@dimen/_20dp">
+    android:paddingHorizontal="20.5dp">
 
     <ImageView
         android:id="@+id/btn_back"
         android:layout_width="8dp"
         android:layout_height="16dp"
+        android:layout_marginTop="28.8dp"
         android:src="@color/lineColor"></ImageView>
 
     //헤더

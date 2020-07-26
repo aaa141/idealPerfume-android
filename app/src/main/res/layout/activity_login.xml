@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:textColor="#707070"
         android:textStyle="bold"
-        android:layout_marginTop="59.8dp"
+        android:layout_marginTop="28.8dp"
         android:layout_marginLeft="20.5dp"
         android:layout_marginRight="346.6dp"
-        android:layout_marginBottom="35.4dp"
+        android:layout_marginBottom="30.4dp"
         android:fontFamily="@font/font"
         app:srcCompat="?attr/actionModeCloseDrawable"/>
 
@@ -24,7 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="285dp"
-        android:layout_marginBottom="32dp"
         android:letterSpacing="-0.02"
         android:textColor="#000000"
         android:textSize="26sp"
@@ -37,7 +36,7 @@
         android:id="@+id/et_id"
         android:layout_width="329dp"
         android:layout_height="45dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="34dp"
         android:layout_marginBottom="12dp"
         android:background="@drawable/edit_round"
         android:hint="아이디를 입력해주세요."
@@ -59,7 +58,7 @@
         android:id="@+id/et_password"
         android:layout_width="329dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/edit_round"
         android:hint="비밀번호를 입력해주세요."
         android:inputType="textPassword"
@@ -114,7 +113,7 @@
         android:id="@+id/btn_login"
         android:layout_width="328dp"
         android:layout_height="50dp"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="71dp"
         android:textSize="14sp"
         android:textColor="#bfbfbf"
         android:letterSpacing="-0.02"
@@ -134,7 +133,7 @@
         android:textColor="#c4c4c4"
         android:letterSpacing="-0.02"
         android:text="다른 방식으로 로그인하기"
-        android:layout_marginTop="99dp"
+        android:layout_marginTop="92dp"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/font"
         android:includeFontPadding="false"
@@ -170,14 +169,14 @@
     </LinearLayout>
 
     <View
-        android:background="#ebebeb"
         android:layout_width="336dp"
-        android:layout_height="0.7dp"
+        android:layout_height="1dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="97.5dp"/>
+        android:layout_marginTop="97.5dp"
+        android:background="#ebebeb" />
 
     <LinearLayout
-        android:layout_marginTop="21.5dp"
+        android:layout_marginTop="19.5dp"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
         android:orientation="horizontal"
@@ -206,9 +205,7 @@
             android:fontFamily="@font/font"
             android:includeFontPadding="false"
             android:lineSpacingExtra="0dp"/>
-
     </LinearLayout>
-
 
 
 </LinearLayout>

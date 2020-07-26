@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#707070"
+        android:textStyle="bold"
+        android:layout_marginTop="59.8dp"
+        android:layout_marginLeft="20.5dp"
+        android:layout_marginRight="346.6dp"
+        android:layout_marginBottom="35.4dp"
+        android:fontFamily="@font/font"
+        app:srcCompat="?attr/actionModeCloseDrawable"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="285dp"
+        android:layout_marginBottom="32dp"
+        android:letterSpacing="-0.02"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:text="로그인"
+        android:fontFamily="@font/font"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="0dp"/>
+
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="329dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/edit_round"
+        android:hint="아이디를 입력해주세요."
+        android:inputType="textNoSuggestions"
+        android:paddingLeft="23dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="13dp"
+        android:textSize="13sp"
+        android:textColor="#b5b5b5"
+        android:letterSpacing="-0.02"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/font"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="0dp"/>
+    <!--    android:layout_marginLeft="23dp"
+            android:layout_marginRight="23dp"-->
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="329dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/edit_round"
+        android:hint="비밀번호를 입력해주세요."
+        android:inputType="textPassword"
+        android:paddingLeft="23dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="13dp"
+        android:textSize="13sp"
+        android:textColor="#b5b5b5"
+        android:letterSpacing="-0.02"
+        android:lineSpacingExtra="3sp"
+        android:layout_gravity="center_horizontal" />
+    <!--    android:layout_marginLeft="23dp"
+            android:layout_marginRight="23dp"-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+        <!--    android:layout_marginLeft="28dp"
+                android:layout_marginRight="29dp"-->
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#c4c4c4"
+            android:letterSpacing="-0.02"
+            android:checked="false"
+            android:text="자동로그인"
+            android:buttonTint="#c4c4c4"
+            android:fontFamily="@font/font"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="0dp"/>
+
+        <TextView
+            android:id="@+id/tv_findpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:textSize="13sp"
+            android:textColor="#8e8e8e"
+            android:letterSpacing="-0.02"
+            android:layout_marginLeft="112dp"
+            android:text="비밀번호를 잊으셨나요?"
+            android:fontFamily="@font/font"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="0dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="328dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="69dp"
+        android:textSize="14sp"
+        android:textColor="#bfbfbf"
+        android:letterSpacing="-0.02"
+        android:text="로그인"
+        android:background="@drawable/btn_border"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/font"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="0dp"/>
+    <!--    android:layout_marginLeft="23dp"
+            android:layout_marginRight="23dp"-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="#c4c4c4"
+        android:letterSpacing="-0.02"
+        android:text="다른 방식으로 로그인하기"
+        android:layout_marginTop="99dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/font"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="0dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp">
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/facebook"
+            android:clickable="true"/>
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/google_plus"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"
+            android:clickable="true"/>
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/facebook"
+            android:clickable="true"/>
+
+    </LinearLayout>
+
+    <View
+        android:background="#ebebeb"
+        android:layout_width="336dp"
+        android:layout_height="0.7dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="97.5dp"/>
+
+    <LinearLayout
+        android:layout_marginTop="21.5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#c4c4c4"
+            android:letterSpacing="-0.02"
+            android:text="처음 오셨나요?"
+            android:fontFamily="@font/font"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="0dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#8e8e8e"
+            android:letterSpacing="-0.02"
+            android:text="가입하기"
+            android:layout_marginLeft="9dp"
+            android:clickable="true"
+            android:fontFamily="@font/font"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="0dp"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

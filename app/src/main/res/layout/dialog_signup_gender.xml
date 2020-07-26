@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bottom"
+    android:orientation="vertical"
+    android:padding="@dimen/_20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+        <TextView
+            android:id="@+id/tv_signup_gender_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:layout_weight="1"
+            android:text="abc"
+            >
+        </TextView>
+        <ImageView
+            android:layout_width="8dp"
+            android:layout_height="16dp"
+            android:src="@color/lineColor"
+            android:layout_gravity="center"
+            ></ImageView>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@color/gray"></View>
+
+    <androidx.recyclerview.widget.RecyclerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/list_signup_gender_job"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:behavior_peekHeight="120dp"
+        android:paddingHorizontal="@dimen/_16dp"
+        />
+
+</LinearLayout>

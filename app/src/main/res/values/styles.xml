@@ -39,7 +39,7 @@
         <item name="android:fontFamily">@font/font</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:layout_marginBottom">33dp</item>
-        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginLeft">24dp</item>
     </style>
 
     //string
@@ -61,7 +61,7 @@
     <style name="BackButton">
         <item name="android:layout_marginTop">28.8dp</item>
         <item name="android:layout_marginBottom">30.4dp</item>
-        <item name="android:layout_marginLeft">0.5dp</item>
+        <item name="android:layout_marginLeft">20.5dp</item>
         <item name="android:src">@drawable/ic_launcher_background</item>
         <item name="android:layout_width">7.91dp</item>
         <item name="android:layout_height">15.82dp</item>
@@ -70,7 +70,7 @@
     //subtitle
     <style name="subtitle">
         <item name="android:layout_marginBottom">12dp</item>
-        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginLeft">28dp</item>
         <item name="android:textSize">13sp</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:layout_width">wrap_content</item>
@@ -84,8 +84,8 @@
 
     //edit text
     <style name="editText">
-        <item name="android:layout_marginLeft">3dp</item>
-        <item name="android:layout_marginRight">3dp</item>
+        <item name="android:layout_marginLeft">23dp</item>
+        <item name="android:layout_marginRight">23dp</item>
         <item name="android:textSize">13sp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">45dp</item>
@@ -98,8 +98,8 @@
 
     //Button
     <style name="Button">
-        <item name="android:layout_marginLeft">4dp</item>
-        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:layout_marginRight">24dp</item>
         <item name="android:textSize">14sp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
@@ -109,7 +109,7 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-
+    //line
     <style name="line">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>

@@ -188,7 +188,6 @@ public class Register2Activity extends AppCompatActivity {
         final NumberPicker picker_year = (NumberPicker) view.findViewById(R.id.picker_year);
         TextView btn_signup_year = (TextView) view.findViewById(R.id.btn_signup_year);
 
-
         btn_signup_year.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

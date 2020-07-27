@@ -29,7 +29,6 @@ public class BSBasicAdapter extends RecyclerView.Adapter<BSBasicAdapter.ViewHold
                         if (mListener != null) {
                             mListener.onItemClick(v, pos) ;
                         }
-
                     }
                 }
             });

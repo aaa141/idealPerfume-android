@@ -66,6 +66,7 @@
             <TextView
                 android:id="@+id/tv_year"
                 style="@style/comboBox"
+                android:layout_marginHorizontal="0dp"
                 android:hint="출생년도를 선택해주세요."/>
 
             <TextView
@@ -83,6 +84,7 @@
             <TextView
                 android:id="@+id/tv_job"
                 style="@style/comboBox"
+                android:layout_marginHorizontal="0dp"
                 android:hint="직업을 선택해주세요." />
 
             <TextView
@@ -101,6 +103,7 @@
             <TextView
                 android:id="@+id/tv_gender"
                 style="@style/comboBox"
+                android:layout_marginHorizontal="0dp"
                 android:hint="성별을 선택해주세요." />
 
             <RelativeLayout
@@ -122,6 +125,7 @@
                 <EditText
                     android:id="@+id/et_nickname"
                     style="@style/editText"
+                    android:layout_marginHorizontal="0dp"
                     android:layout_below="@id/textView2"
                     android:layout_alignParentLeft="true"
                     android:layout_marginRight="10dp"
@@ -133,6 +137,7 @@
 
                 <Button
                     android:id="@+id/btn_doublecheck"
+                    android:layout_marginLeft="10dp"
                     android:layout_width="91dp"
                     android:layout_height="42dp"
                     android:layout_below="@id/textView2"
@@ -141,12 +146,12 @@
                     android:text="중복확인"
                     android:textSize="14sp" />
             </RelativeLayout>
-
         </LinearLayout>
 
         <Button
             android:id="@+id/button3"
             style="@style/Button"
+            android:layout_marginHorizontal="0dp"
             android:layout_alignParentLeft="false"
             android:layout_alignParentRight="false"
             android:layout_alignParentBottom="true"

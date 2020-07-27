@@ -22,7 +22,6 @@
         android:layout_height="150dp"
         android:layout_margin="10dp"
         android:theme="@style/Picker"
-        >
-    </NumberPicker>
+        />
 
 </LinearLayout>

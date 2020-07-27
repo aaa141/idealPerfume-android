@@ -5,14 +5,15 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.idealperfume.Adapter.SignupGenderAdapter;
+import com.example.idealperfume.Adapter.BSBasicAdapter;
 import com.example.idealperfume.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -36,6 +37,8 @@ public class Register2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register2);
 
+        Button btn_next = (Button) findViewById(R.id.button3);
+
         tv_gender=(TextView)findViewById(R.id.tv_gender);
         tv_year=(TextView)findViewById(R.id.tv_year);
         tv_job=(TextView)findViewById(R.id.tv_job);
@@ -47,14 +50,14 @@ public class Register2Activity extends AppCompatActivity {
         tv_gender.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createGenderDialog(gender, "성별을 선택해주세요.");
+                createBasicDialog(gender, "성별을 선택해주세요.");
             }
         });
 
         tv_job.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createGenderDialog(job,"직업을 선택해주세요.");
+                createBasicDialog(job,"직업을 선택해주세요.");
             }
         });
 
@@ -66,22 +69,32 @@ public class Register2Activity extends AppCompatActivity {
             }
         });
 
+
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Register3Activity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
-    private void createGenderDialog(final ArrayList<String> list, String title){
-        SignupGenderAdapter adapter=new SignupGenderAdapter(list);
-        View view=getLayoutInflater().inflate(R.layout.dialog_signup_gender, null);
+    private void createBasicDialog(final ArrayList<String> list, String title){
+        BSBasicAdapter adapter=new BSBasicAdapter(list);
+        View view=getLayoutInflater().inflate(R.layout.dialog_bs_basic, null);
+
         //"xx"를 선택하세요.
-        TextView titles = (TextView) view.findViewById(R.id.tv_signup_gender_title);
+        TextView titles = (TextView) view.findViewById(R.id.tv_bs_basic_title);
         titles.setText(title);
 
-        RecyclerView recyclerView=(RecyclerView)view.findViewById(R.id.list_signup_gender_job);
+        RecyclerView recyclerView=(RecyclerView)view.findViewById(R.id.rcv_bs_basic);
         recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL));
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
-        adapter.setOnItemClickListener(new SignupGenderAdapter.OnItemClickListener() {
+        adapter.setOnItemClickListener(new BSBasicAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
 

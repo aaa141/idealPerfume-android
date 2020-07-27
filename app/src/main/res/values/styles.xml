@@ -33,15 +33,21 @@
 
     //Header
     <style name="Header">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">26dp</item>
         <item name="android:fontFamily">@font/font</item>
-        <item name="android:paddingVertical">30dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_marginBottom">33dp</item>
+        <item name="android:layout_marginLeft">4dp</item>
     </style>
 
     //string
     <style name="main_string">
         <item name="android:fontFamily">@font/font</item>
     </style>
+
+
     <style name="Picker">
         <item name="android:textSize">25dp</item></style>
 
@@ -51,4 +57,64 @@
         <item name="android:fontFamily">@font/font</item>
     </style>
 
+    //백 버튼
+    <style name="BackButton">
+        <item name="android:layout_marginTop">28.8dp</item>
+        <item name="android:layout_marginBottom">30.4dp</item>
+        <item name="android:layout_marginLeft">0.5dp</item>
+        <item name="android:src">@drawable/ic_launcher_background</item>
+        <item name="android:layout_width">7.91dp</item>
+        <item name="android:layout_height">15.82dp</item>
+    </style>
+
+    //subtitle
+    <style name="subtitle">
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    //combo box
+    <style name="comboBox" parent="editText">
+        <item name="android:drawableRight">@drawable/ic_launcher_background</item>
+    </style>
+
+    //edit text
+    <style name="editText">
+        <item name="android:layout_marginLeft">3dp</item>
+        <item name="android:layout_marginRight">3dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">@drawable/edit_round</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">23dp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    //Button
+    <style name="Button">
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/btn_round</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+    <style name="line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:background">@color/gray</item>
+    </style>
 </resources>

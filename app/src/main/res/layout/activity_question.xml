@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".Activity.QuestionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp">
+
+        <ImageView style="@style/BackButton" />
+
+        <TextView
+            style="@style/Header"
+            android:text="@string/question" />
+
+        <TextView
+            style="@style/subtitle"
+            android:text="문의유형" />
+
+        <TextView
+            android:id="@+id/tv_show_list"
+            style="@style/comboBox"
+            android:hint="선택안함" />
+
+        <TextView
+            style="@style/subtitle"
+            android:layout_marginTop="20dp"
+            android:text="문의내용" />
+
+        <EditText
+            android:id="@+id/ed_question"
+            style="@style/editText"
+            android:layout_height="233dp"
+            android:paddingVertical="23dp"
+            android:hint="내용을 입력해주세요."
+            android:gravity="top"/>
+
+        <TextView
+            style="@style/subtitle"
+            android:layout_marginTop="20dp"
+            android:text="답변 받을 이메일" />
+
+        <EditText
+            android:id="@+id/ed_email"
+            style="@style/editText"
+            android:hint="example@xxx.com"
+            android:inputType="textEmailAddress" />
+
+        <Button
+            android:id="@+id/btn_nxt"
+            android:layout_marginVertical="44dp"
+            style="@style/Button"
+            android:text="전송하기"/>
+    </LinearLayout>
+</ScrollView>

@@ -5,132 +5,132 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.Register3Activity"
-    android:paddingHorizontal="20.5dp">
+    android:paddingHorizontal="20.5dp"
+    tools:context=".Activity.Register3Activity">
 
-    <ImageView
-        android:id="@+id/btn_back"
-        android:layout_width="8dp"
-        android:layout_height="16dp"
-        android:layout_marginTop="28.8dp"
-        android:src="@color/lineColor"></ImageView>
+    <ImageView style="@style/BackButton"></ImageView>
 
     //헤더
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:includeFontPadding="false"
-        android:layout_weight="2"
-        android:text="회원가입"
-        style="@style/Header">
-    </TextView>
-    <ImageView
-        android:layout_width="8dp"
-        android:layout_height="16dp"
-        android:src="@color/lineColor"
-        android:layout_gravity="center"
-        ></ImageView>
-</LinearLayout>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/Header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:includeFontPadding="false"
+            android:text="회원가입"></TextView>
+
+        <ImageView
+            android:layout_width="8dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center"
+            android:src="@color/lineColor"></ImageView>
+    </LinearLayout>
 
     //이용약관
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/signup_guide_top"
         android:padding="20dp">
+
         <TextView
+            style="@style/main_string"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:includeFontPadding="false"
             android:layout_weight="2"
-            android:text="이상향 이용약관 동의"
+            android:includeFontPadding="false"
             android:paddingHorizontal="4dp"
-            style="@style/main_string"
-            >
-        </TextView>
+            android:text="이상향 이용약관 동의"></TextView>
+
         <ImageView
             android:layout_width="8dp"
             android:layout_height="16dp"
-            android:src="@color/lineColor"
             android:layout_gravity="center"
-            ></ImageView>
+            android:src="@color/lineColor"></ImageView>
     </LinearLayout>
 
     //개인정보 수집이용 동의
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/signup_guide_center"
         android:padding="20dp">
+
         <TextView
+            style="@style/main_string"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:includeFontPadding="false"
             android:layout_weight="2"
-            android:text="개인정보 수집이용 동의"
+            android:includeFontPadding="false"
             android:paddingHorizontal="4dp"
-            style="@style/main_string">
-        </TextView>
+            android:text="개인정보 수집이용 동의"></TextView>
+
         <ImageView
             android:layout_width="8dp"
             android:layout_height="16dp"
-            android:src="@color/lineColor"
             android:layout_gravity="center"
-            ></ImageView>
+            android:src="@color/lineColor"></ImageView>
     </LinearLayout>
 
     //개인정보 수집이용 동의
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/signup_guide_bottom"
         android:padding="20dp">
+
         <TextView
+            style="@style/main_string"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:includeFontPadding="false"
             android:layout_weight="2"
-            android:text="만 14세 이상 확인"
+            android:includeFontPadding="false"
             android:paddingHorizontal="4dp"
-            style="@style/main_string">
-        </TextView>
+            android:text="만 14세 이상 확인"></TextView>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        android:layout_weight="2">
 
         <CheckBox
             android:id="@+id/cb_signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="#000000"
-            >
-        </CheckBox>
+            android:buttonTint="#000000"></CheckBox>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="전체 동의합니다."
-            android:textSize="13dp"
             android:textColor="@color/black"
-            ></TextView>
-
+            android:textSize="13dp"></TextView>
     </LinearLayout>
 
-    //버튼
-    <Button
-        android:background="@drawable/btn_round"
-        android:id="@+id/btn_final_signup"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="4dp"
-        android:paddingVertical="16dp"
-        android:text="가입완료"></Button>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+        //버튼
+
+        <Button
+            android:id="@+id/btn_final_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_round"
+            android:paddingHorizontal="4dp"
+            android:text="가입완료"></Button>
+    </LinearLayout>
 
 </LinearLayout>

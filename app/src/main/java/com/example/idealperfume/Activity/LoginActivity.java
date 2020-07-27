@@ -2,6 +2,7 @@ package com.example.idealperfume.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.idealperfume.R;
@@ -24,8 +26,8 @@ public class LoginActivity extends AppCompatActivity {
         final EditText et_id = findViewById(R.id.et_id);
         final EditText et_password = findViewById(R.id.et_password);
         final Button btn_login = findViewById(R.id.btn_login);
-
         final Drawable btn_border = getResources().getDrawable(R.drawable.btn_border);
+        final TextView tv_next = findViewById(R.id.tv_next);
 
         et_id.addTextChangedListener(new TextWatcher() {
             @Override
@@ -87,6 +89,14 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "로그인", Toast.LENGTH_SHORT).show();
             }
         }) ;
+
+        tv_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Register1Activity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

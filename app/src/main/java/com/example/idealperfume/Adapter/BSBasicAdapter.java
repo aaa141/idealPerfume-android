@@ -11,14 +11,14 @@ import com.example.idealperfume.R;
 
 import java.util.ArrayList;
 
-public class SignupGenderAdapter extends RecyclerView.Adapter<SignupGenderAdapter.ViewHolder> {
+public class BSBasicAdapter extends RecyclerView.Adapter<BSBasicAdapter.ViewHolder> {
     private ArrayList<String> list;
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView textView;
         public ViewHolder(View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.tv_list_object_signup_gender);
+            textView = (TextView) itemView.findViewById(R.id.tv_bs_basic_object);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -46,13 +46,13 @@ public class SignupGenderAdapter extends RecyclerView.Adapter<SignupGenderAdapte
         this.mListener = listener ;
     }
 
-    public SignupGenderAdapter(ArrayList<String> list) {
+    public BSBasicAdapter(ArrayList<String> list) {
         this.list = list;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View root = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_signup_gender, parent, false);
+        View root = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_bs_basic, parent, false);
         return new ViewHolder(root);
     }
 

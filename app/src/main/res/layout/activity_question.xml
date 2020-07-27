@@ -26,7 +26,7 @@
         <TextView
             android:id="@+id/tv_show_list"
             style="@style/comboBox"
-            android:hint="선택안함" />
+            android:hint="문의 유형을 선택해주세요." />
 
         <TextView
             style="@style/subtitle"

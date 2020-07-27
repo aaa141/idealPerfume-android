@@ -125,11 +125,8 @@
         //버튼
 
         <Button
+            style="@style/Button"
             android:id="@+id/btn_final_signup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_round"
-            android:paddingHorizontal="4dp"
             android:text="가입완료"></Button>
     </LinearLayout>
 

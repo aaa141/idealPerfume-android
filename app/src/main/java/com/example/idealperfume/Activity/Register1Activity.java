@@ -24,5 +24,7 @@ public class Register1Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 }

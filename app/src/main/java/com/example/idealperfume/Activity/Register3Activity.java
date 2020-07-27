@@ -27,10 +27,10 @@ public class Register3Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (((CheckBox)v).isChecked()) {
-                    btn_final_signup.setBackgroundResource(R.drawable.button_round);
+                    btn_final_signup.setBackgroundResource(R.drawable.btn_onclick);
                     btn_final_signup.setTextColor(getResources().getColor(R.color.white));
                 } else {
-                    btn_final_signup.setBackgroundResource(R.drawable.btn_round);
+                    btn_final_signup.setBackgroundResource(R.drawable.btn_border);
                     btn_final_signup.setTextColor(getResources().getColor(R.color.black));
                 }
             }

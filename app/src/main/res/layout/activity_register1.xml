@@ -139,18 +139,13 @@
                     android:textSize="13sp" />
 
                 <Button
+                    style="@style/Button"
                     android:id="@+id/btn_authentication"
                     android:layout_width="91dp"
                     android:layout_height="42dp"
                     android:layout_below="@id/textView2"
                     android:layout_alignParentRight="true"
-                    android:background="@drawable/button_round"
-                    android:fontFamily="@font/font"
-                    android:includeFontPadding="false"
-                    android:lineSpacingExtra="0dp"
-                    android:text="인증하기"
-                    android:textColor="#ffffff"
-                    android:textSize="13sp" />
+                    android:text="인증하기"/>
             </RelativeLayout>
 
             <TextView
@@ -178,21 +173,15 @@
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            style="@style/Button"
             android:layout_alignParentLeft="false"
             android:layout_alignParentRight="false"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="184dp"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/button_round"
-            android:fontFamily="@font/font"
-            android:includeFontPadding="false"
-            android:lineSpacingExtra="0dp"
             android:text="다음단계"
-            android:textColor="#ffffff"
-            android:textSize="14sp" />
+            />
 
     </RelativeLayout>
 

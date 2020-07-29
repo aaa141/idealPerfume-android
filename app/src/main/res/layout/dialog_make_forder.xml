@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="336dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:background="@drawable/dialog_border">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="3sp"
+        android:text="폴더를 만들어볼까요?"
+        android:textColor="#3c3c3c"
+        android:textSize="16sp"
+        android:layout_marginTop="47dp" />
+
+    <EditText
+        android:id="@+id/et_fordername"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/edit_round"
+        android:fontFamily="@font/font"
+        android:hint="제목 없는 폴더"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="3sp"
+        android:paddingLeft="18dp"
+        android:textSize="13sp"
+        android:layout_marginTop="26dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:backgroundTint="#ebebeb"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="56dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/font"
+            android:textSize="14sp"
+            android:textColor="#ffffff"
+            android:lineSpacingExtra="3sp"
+            android:text="취소"
+            android:background="@drawable/dialogbtn_border_left"
+            android:gravity="center"
+            android:layout_marginRight="0.5dp"
+            android:clickable="true" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/font"
+            android:textSize="14sp"
+            android:textColor="#ffffff"
+            android:lineSpacingExtra="3sp"
+            android:text="만들기"
+            android:background="@drawable/dialogbtn_border_right"
+            android:gravity="center"
+            android:layout_marginLeft="0.5dp"
+            android:clickable="true"/>
+    </LinearLayout>
+
+</LinearLayout>

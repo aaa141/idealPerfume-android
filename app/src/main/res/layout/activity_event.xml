@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.EventActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/main_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="21.5dp"
+        android:layout_marginLeft="20.5dp"
+        android:layout_marginRight="19dp">
+
+        <ImageView
+            style="@style/BackButton"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="0dp"/>
+
+        <TextView
+            style="@style/menutext"
+            android:text="@string/event"/>
+    </RelativeLayout>
+
+    <view
+        style="@style/line"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"/>
+
+    <TextView
+        style="@style/Header"
+        android:text="@string/eventhead"
+        android:layout_marginTop="35.5dp"/>
+    
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rv_event"-->
+<!--        android:layout_width="328dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:scrollbarFadeDuration="0"-->
+<!--        android:scrollbarSize="5dp"-->
+<!--        android:scrollbarThumbVertical="@color/gray"-->
+<!--        android:scrollbars="vertical"-->
+<!--        android:layout_weight="1"/>-->
+
+</LinearLayout>

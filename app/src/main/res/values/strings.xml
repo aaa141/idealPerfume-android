@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">IdealPerfume</string>
     <string name="question">우리에게\n궁금한 점이 있나요?</string>
+    <string name="mypick">내픽이상향</string>
+    <string name="home">홈</string>
+    <string name="event">이벤트</string>
+    <string name="setting">환경설정</string>
+    <string name="eventhead">진행중인\n이벤트를 만나보세요!</string>
+    <!-- TODO: Remove or change this placeholder text -->
 </resources>

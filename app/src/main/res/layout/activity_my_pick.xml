@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.MyPickActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28.8dp"
+        android:layout_marginLeft="20.5dp"
+        android:layout_marginRight="19dp">
+
+        <ImageView
+            style="@style/BackButton"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="0dp"/>
+
+        <TextView
+            style="@style/menutext"
+            android:text="@string/mypick"/>
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_mypick"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="16.5dp"
+        app:tabMode="fixed"
+        app:tabTextColor="#c4c4c4"
+        app:tabSelectedTextColor="#3c3c3c"
+        app:tabIndicatorColor="#3c3c3c"
+        app:tabIndicatorHeight="1dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabitem_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제품별"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabitem_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="브랜드별"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#ebebeb" />
+
+
+
+</LinearLayout>

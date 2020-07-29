@@ -10,17 +10,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+<!--        <ImageView-->
+<!--            android:id="@+id/login_back"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20.5dp"-->
+<!--            android:layout_marginTop="28.8dp"-->
+<!--            android:layout_marginRight="346.6dp"-->
+<!--            android:layout_marginBottom="30.4dp"-->
+<!--            android:fontFamily="@font/font"-->
+<!--            android:textColor="#707070"-->
+<!--            android:textStyle="bold"-->
+<!--            app:srcCompat="?attr/actionModeCloseDrawable" />-->
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20.5dp"
-            android:layout_marginTop="28.8dp"
-            android:layout_marginRight="346.6dp"
-            android:layout_marginBottom="30.4dp"
-            android:fontFamily="@font/font"
-            android:textColor="#707070"
-            android:textStyle="bold"
-            app:srcCompat="?attr/actionModeCloseDrawable" />
+            style="@style/BackButton"/>
 
         <TextView
             android:layout_width="wrap_content"

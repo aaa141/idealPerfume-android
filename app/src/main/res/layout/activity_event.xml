@@ -27,7 +27,7 @@
             android:text="@string/event"/>
     </RelativeLayout>
 
-    <view
+    <View
         style="@style/line"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"/>
@@ -36,16 +36,10 @@
         style="@style/Header"
         android:text="@string/eventhead"
         android:layout_marginTop="35.5dp"/>
-    
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/rv_event"-->
-<!--        android:layout_width="328dp"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_gravity="center_horizontal"-->
-<!--        android:scrollbarFadeDuration="0"-->
-<!--        android:scrollbarSize="5dp"-->
-<!--        android:scrollbarThumbVertical="@color/gray"-->
-<!--        android:scrollbars="vertical"-->
-<!--        android:layout_weight="1"/>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_eventlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

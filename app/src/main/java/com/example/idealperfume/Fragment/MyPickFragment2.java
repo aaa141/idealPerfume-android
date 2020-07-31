@@ -3,64 +3,48 @@ package com.example.idealperfume.Fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.idealperfume.Adapter.MyPickBrandAdapter;
+import com.example.idealperfume.Adapter.MyPickProductAdapter;
+import com.example.idealperfume.MyPickData;
 import com.example.idealperfume.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MyPickFragment2#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class MyPickFragment2 extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    View v;
+    private RecyclerView recyclerview;
+    private List<MyPickData> listpickdata;
+    private MyPickBrandAdapter myPickBrandAdapter;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        v = inflater.inflate(R.layout.fragment_my_pick2, container, false);
+        recyclerview = v.findViewById(R.id.rv_mypickbrand);
+        myPickBrandAdapter = new MyPickBrandAdapter(getContext(), listpickdata);
+        recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerview.setAdapter(myPickBrandAdapter);
 
-    public MyPickFragment2() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MyPickFragment2.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MyPickFragment2 newInstance(String param1, String param2) {
-        MyPickFragment2 fragment = new MyPickFragment2();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+        recyclerview.addItemDecoration(new DividerItemDecoration(v.getContext(), 1));
+        return v;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_pick2, container, false);
+        listpickdata = new ArrayList<>();
+        listpickdata.add(new MyPickData("일리윤","illiyoon", "아시아의 좋은 원료에서 찾은 피부과학", R.drawable.icon_circle));
+        listpickdata.add(new MyPickData("이니스프리", "innisfree","피부에 휴식을 주는 섬", R.drawable.icon_circle));
     }
 }

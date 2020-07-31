@@ -34,19 +34,20 @@
         app:tabTextColor="#c4c4c4"
         app:tabSelectedTextColor="#3c3c3c"
         app:tabIndicatorColor="#3c3c3c"
-        app:tabIndicatorHeight="1dp">
+        app:tabIndicatorHeight="1dp"
+        android:background="@drawable/tab_unselected_bottom">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tabitem_product"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="제품별"/>
+            android:text="제품픽"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tabitem_brand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="브랜드별"/>
+            android:text="브랜드픽"/>
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager

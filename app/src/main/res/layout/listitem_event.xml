@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="174dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginRight="23dp"
+    android:layout_marginLeft="23dp"
+    android:layout_marginBottom="14dp">
+
+    <ImageView
+        android:id="@+id/iv_eventlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dialog_border" />
+
+    <TextView
+        android:id="@+id/tv_eventdate"
+        android:layout_width="85dp"
+        android:layout_height="33dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="141dp"
+        android:layout_marginRight="13dp"
+        android:backgroundTint="#ebebeb"
+        android:background="@drawable/btn_signup_year"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="#3c3c3c"
+        android:fontFamily="@font/font"/>
+
+</FrameLayout>

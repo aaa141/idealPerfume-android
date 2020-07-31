@@ -10,9 +10,6 @@
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="match_parent"-->
 <!--        android:text="브랜드별" />-->
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatbtn_search"
@@ -23,4 +20,9 @@
         android:layout_marginBottom="52.5dp"
         android:src="@drawable/ic_launcher_background"
         android:clickable="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_mypickbrand"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </FrameLayout>

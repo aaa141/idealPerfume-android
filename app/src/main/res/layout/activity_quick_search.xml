@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    tools:context=".Activity.QuickSearchActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="22dp">
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+
+                android:text="퀵 검색"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tv"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentRight="true"
+                android:paddingRight="16dp"
+                android:text="초기화" />
+
+        </RelativeLayout>
+
+        <View style="@style/divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="19.5dp"
+            android:layout_marginRight="19.5dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="계열"
+                android:textSize="14sp"
+                android:layout_marginTop="17.5dp"
+                android:layout_marginBottom="17.5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="22dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_citrus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="시트러스"
+                        android:textSize="13sp"/>
+
+
+                    <CheckBox
+                        android:id="@+id/cb_floral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="플로럴"
+                        android:textSize="13sp"/>
+
+                    <CheckBox
+                        android:id="@+id/cb_fruity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="프루티"
+                        android:textSize="13sp"/>
+
+                    <CheckBox
+                        android:id="@+id/woody"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="우디"
+                        android:textSize="13sp"/>
+
+                    <CheckBox
+                        android:id="@+id/oriental"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="오리엔탈"
+                        android:textSize="13sp"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_marin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="마린"
+                        android:textSize="13sp" />
+
+                    <CheckBox
+                        android:id="@+id/cb_soap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="비누"
+                        android:textSize="13sp"/>
+
+                    <CheckBox
+                        android:id="@+id/cb_musk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="머스크"
+                        android:textSize="13sp"/>
+
+                    <CheckBox
+                        android:id="@+id/cb_green"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="그린"
+                        android:textSize="13sp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/divider"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="연령대"
+                android:textSize="14sp"
+                android:layout_marginTop="22.5dp"
+                android:layout_marginBottom="9dp"/>
+
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10대" />
+
+            <SeekBar
+                android:id="@+id/seekBar_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:indeterminate="false"
+                android:max="8"
+                android:progress="1"
+                android:progressBackgroundTint="@color/colorAccent"
+                android:thumb="@drawable/seekbar_thumb" />
+
+            <View style="@style/divider"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22.5dp"
+                android:layout_marginBottom="22dp"
+                android:text="이미지" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="22dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_clean"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="깨끗한"
+                        android:textSize="13sp"/>
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="청량한"
+                        android:textSize="13sp"/>
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="달콤한"
+                        android:textSize="13sp"/>
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="부드러운"
+                        android:textSize="13sp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <CheckBox
+                        android:id="@+id/cb_"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="상큼"
+                        android:textSize="13sp"/>
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="자연적인"
+                        android:textSize="13sp"/>
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="사랑스러운"
+                        android:textSize="13sp"/>
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="숲 속"
+                        android:textSize="13sp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <View style="@style/divider" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="9dp"
+                android:text="가격대" />
+
+
+            <com.jaygoo.widget.RangeSeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rangeSeekbar"
+                app:rsb_mode="range"
+                app:rsb_max="300000"
+                app:rsb_thumb_drawable="@drawable/seekbar_thumb"
+                app:rsb_indicator_show_mode="alwaysShow"
+                app:rsb_indicator_background_color="@android:color/transparent"
+                app:rsb_indicator_text_color="@color/black"
+                app:rsb_indicator_text_size="13sp"
+                app:rsb_indicator_padding_top="3dp"
+                app:rsb_progress_color="@color/colorAccent"
+                app:rsb_min_interval="5000"
+                app:rsb_steps="60"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="77dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0원"
+                    android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="300,000원"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="바로가기"
+                android:layout_marginBottom="45dp"
+
+                android:background="@drawable/btn_border"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

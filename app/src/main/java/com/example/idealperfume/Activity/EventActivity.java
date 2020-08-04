@@ -6,15 +6,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.example.idealperfume.Adapter.EventItemAdapter;
-import com.example.idealperfume.EventData;
+import com.example.idealperfume.Data.EventData;
 import com.example.idealperfume.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class EventActivity extends AppCompatActivity {
     private ArrayList<EventData> arrayList;

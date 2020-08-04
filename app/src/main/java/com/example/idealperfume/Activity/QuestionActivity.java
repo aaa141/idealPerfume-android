@@ -48,10 +48,9 @@ public class QuestionActivity extends AppCompatActivity {
         tv_show_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createBasicDialog(question, "문의유형을 선택하세요");
+                createBasicDialog(question, "");
             }
         });
-
 
         //텍스트 와쳐 - 버튼 색 변경 이벤트
         ed_question.addTextChangedListener(new TextWatcher() {
@@ -64,7 +63,7 @@ public class QuestionActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (ed_question.getText().length() > 0 && ed_email.getText().length() > 0) {
                     flag2 = true;
-                    if(flag1 && flag2){
+                    if (flag1 && flag2) {
                         buttonAfter(btn_next);
                     }
                 }
@@ -88,7 +87,7 @@ public class QuestionActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (ed_question.getText().length() > 0 && ed_email.getText().length() > 0) {
                     flag2 = true;
-                    if(flag1 && flag2){
+                    if (flag1 && flag2) {
                         buttonAfter(btn_next);
                     }
                 }
@@ -108,14 +107,14 @@ public class QuestionActivity extends AppCompatActivity {
     //메서드
 
     //버튼 클릭 전
-    private void buttonBefore(Button button){
+    private void buttonBefore(Button button) {
         button.setEnabled(false);
         button.setTextColor(getResources().getColor(R.color.gray));
         button.setBackgroundResource(R.drawable.btn_border);
     }
 
     //버튼 클릭 후
-    private void buttonAfter(Button button){
+    private void buttonAfter(Button button) {
         button.setEnabled(true);
         button.setTextColor(getResources().getColor(R.color.black));
         button.setBackgroundResource(R.drawable.btn_onclick);
@@ -128,7 +127,16 @@ public class QuestionActivity extends AppCompatActivity {
 
         //"xx"를 선택하세요.
         TextView titles = (TextView) view.findViewById(R.id.tv_bs_basic_title);
+        View line = (View) view.findViewById(R.id.line_bs_title);
         titles.setText(title);
+
+        //"xx"를 선택하세요.
+        if (!title.equals("")) {
+            titles.setText(title);
+        } else {
+            titles.setVisibility(View.GONE);
+            line.setVisibility(View.GONE);
+        }
 
         final TextView result = (TextView) findViewById(R.id.tv_show_list);
 
@@ -144,7 +152,7 @@ public class QuestionActivity extends AppCompatActivity {
 
                 result.setText(list.get(position));
                 flag1 = true;
-                if(flag1 && flag2){
+                if (flag1 && flag2) {
                     buttonAfter(btn_next);
                 }
                 BottomSheet.dismiss();

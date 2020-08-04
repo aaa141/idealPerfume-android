@@ -129,6 +129,7 @@
 
         <Button
             style="@style/Button"
+            android:clickable="false"
             android:id="@+id/btn_final_signup"
             android:text="가입완료"></Button>
     </LinearLayout>

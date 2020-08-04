@@ -151,6 +151,7 @@
         <Button
             android:id="@+id/button3"
             style="@style/Button"
+            android:clickable="false"
             android:layout_marginHorizontal="0dp"
             android:layout_alignParentLeft="false"
             android:layout_alignParentRight="false"

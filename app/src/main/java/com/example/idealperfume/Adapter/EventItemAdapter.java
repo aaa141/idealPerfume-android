@@ -8,11 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.idealperfume.EventData;
-import com.example.idealperfume.MyPickData;
+import com.example.idealperfume.Data.EventData;
 import com.example.idealperfume.R;
 
 import java.util.ArrayList;

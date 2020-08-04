@@ -1,4 +1,4 @@
-package com.example.idealperfume;
+package com.example.idealperfume.Data;
 
 public class MyPickData {
     private String name;

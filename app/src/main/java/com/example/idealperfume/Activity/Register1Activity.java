@@ -16,6 +16,7 @@ public class Register1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register1);
 
+        //인텐트
         Button btn_next = (Button) findViewById(R.id.button3);
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,6 +25,9 @@ public class Register1Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        
+
 
 
     }

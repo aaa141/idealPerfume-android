@@ -35,10 +35,9 @@ public class Register2Activity extends AppCompatActivity {
     //year, nickname, gender, job flag
     Button btn_next, btn_doublecheck;
     TextView tv_gender, tv_year, tv_job;
-    Drawable btn_border;
     BottomSheetDialog BottomSheet;
-    ArrayList<String> gender = new ArrayList<>(Arrays.asList("여성입니다.","남성입니다."));
-    ArrayList<String> job = new ArrayList<>(Arrays.asList("연구원입니다.","학생입니다.","회사원입니다.","자영업입니다.","전문직입니다."));
+    ArrayList<String> gender = new ArrayList<>(Arrays.asList("여성입니다.", "남성입니다."));
+    ArrayList<String> job = new ArrayList<>(Arrays.asList("연구원입니다.", "학생입니다.", "회사원입니다.", "자영업입니다.", "전문직입니다."));
     ArrayList<String> year = new ArrayList<>();
 
     @Override
@@ -47,16 +46,15 @@ public class Register2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_register2);
 
         btn_next = (Button) findViewById(R.id.button3);
-        btn_border = getResources().getDrawable(R.drawable.btn_border);
         btn_doublecheck = (Button) findViewById(R.id.btn_doublecheck);
 
-        tv_gender=(TextView)findViewById(R.id.tv_gender);
-        tv_year=(TextView)findViewById(R.id.tv_year);
-        tv_job=(TextView)findViewById(R.id.tv_job);
+        tv_gender = (TextView) findViewById(R.id.tv_gender);
+        tv_year = (TextView) findViewById(R.id.tv_year);
+        tv_job = (TextView) findViewById(R.id.tv_job);
         final EditText et_nickname = (EditText) findViewById(R.id.et_nickname);
 
         //날짜 데이터 넣어줌
-        for (int i=1940; i<=2020; i++) {
+        for (int i = 1940; i <= 2020; i++) {
             year.add(String.format("%d", i));
         }
 
@@ -70,7 +68,7 @@ public class Register2Activity extends AppCompatActivity {
         tv_job.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createBasicDialog(job,"직업을 선택해주세요.");
+                createBasicDialog(job, "직업을 선택해주세요.");
             }
         });
 
@@ -86,7 +84,7 @@ public class Register2Activity extends AppCompatActivity {
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Register3Activity.class);
+                Intent intent = new Intent(getApplicationContext(), Register3Activity.class);
                 startActivity(intent);
             }
         });
@@ -96,6 +94,9 @@ public class Register2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 //중복인 경우 바꿔줘야됨
                 flag2 = true;
+                if (flag1 && flag2 && flag3 && flag4) {
+                    buttonAfter(btn_next);
+                }
             }
         });
 
@@ -111,7 +112,8 @@ public class Register2Activity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (et_nickname.getText().length() > 0) {
                     buttonAfter(btn_doublecheck);
-                    if(flag1 && flag2 && flag3 && flag4){
+                    flag2 = false;
+                    if (flag1 && flag2 && flag3 && flag4) {
                         buttonAfter(btn_next);
                     }
                 }
@@ -128,39 +130,38 @@ public class Register2Activity extends AppCompatActivity {
     }
 
     //버튼 클릭 전
-    private void buttonBefore(Button button){
+    private void buttonBefore(Button button) {
         button.setEnabled(false);
         button.setTextColor(getResources().getColor(R.color.gray));
         button.setBackgroundResource(R.drawable.btn_border);
     }
 
     //버튼 클릭 후
-    private void buttonAfter(Button button){
+    private void buttonAfter(Button button) {
         button.setEnabled(true);
         button.setTextColor(getResources().getColor(R.color.black));
         button.setBackgroundResource(R.drawable.btn_onclick);
     }
 
 
-    private void createBasicDialog(final ArrayList<String> list, String title){
-        BSBasicAdapter adapter=new BSBasicAdapter(list);
-        View view=getLayoutInflater().inflate(R.layout.dialog_bs_basic, null);
+    private void createBasicDialog(final ArrayList<String> list, String title) {
+        BSBasicAdapter adapter = new BSBasicAdapter(list);
+        View view = getLayoutInflater().inflate(R.layout.dialog_bs_basic, null);
 
         //"xx"를 선택하세요.
         TextView titles = (TextView) view.findViewById(R.id.tv_bs_basic_title);
         titles.setText(title);
 
         final TextView result;
-        if(title.equals("성별을 선택해주세요.")) {
+        if (title.equals("성별을 선택해주세요.")) {
             flag3 = true;
             result = tv_gender;
-        }
-        else {
+        } else {
             flag4 = true;
             result = tv_job;
         }
 
-        RecyclerView recyclerView=(RecyclerView)view.findViewById(R.id.rcv_bs_basic);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rcv_bs_basic);
         recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL));
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -171,20 +172,20 @@ public class Register2Activity extends AppCompatActivity {
             public void onItemClick(View v, int position) {
                 result.setText(list.get(position));
                 BottomSheet.dismiss();
-                if(flag1 && flag2 && flag3 && flag4){
+                if (flag1 && flag2 && flag3 && flag4) {
                     buttonAfter(btn_next);
                 }
             }
-        }) ;
+        });
 
-        BottomSheet=new BottomSheetDialog(this);
+        BottomSheet = new BottomSheetDialog(this);
         BottomSheet.setContentView(view);
         BottomSheet.show();
 
     }
 
-    private void createYearDialog(ArrayList<String> list){
-        View view=getLayoutInflater().inflate(R.layout.dialog_signup_year, null);
+    private void createYearDialog(ArrayList<String> list) {
+        View view = getLayoutInflater().inflate(R.layout.dialog_signup_year, null);
         final NumberPicker picker_year = (NumberPicker) view.findViewById(R.id.picker_year);
         TextView btn_signup_year = (TextView) view.findViewById(R.id.btn_signup_year);
 
@@ -193,9 +194,9 @@ public class Register2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 flag1 = true;
                 int year = picker_year.getValue();
-                tv_year.setText(year+"");
+                tv_year.setText(year + "");
                 BottomSheet.dismiss();
-                if(flag1 && flag2 && flag3 && flag4){
+                if (flag1 && flag2 && flag3 && flag4) {
                     buttonAfter(btn_next);
                 }
             }
@@ -206,7 +207,7 @@ public class Register2Activity extends AppCompatActivity {
         picker_year.setValue(1997);
         picker_year.setWrapSelectorWheel(false);
 
-        BottomSheet=new BottomSheetDialog(this);
+        BottomSheet = new BottomSheetDialog(this);
         BottomSheet.setContentView(view);
         BottomSheet.show();
 

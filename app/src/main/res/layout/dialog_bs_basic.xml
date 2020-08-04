@@ -15,6 +15,7 @@
         android:text="abc"></TextView>
 
     <View
+        android:id="@+id/line_bs_title"
         style="@style/line"/>
 
     <androidx.recyclerview.widget.RecyclerView

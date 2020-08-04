@@ -138,6 +138,14 @@
         <item name="android:background">@color/black</item>
     </style>
 
+    //edit-text : 회색
+    <style name="editText_gray">
+        <item name="android:textSize">13sp</item>
+        <item name="android:background">@drawable/edit_gray</item>
+        <item name="android:layout_marginRight">17dp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
     <!--round textview-->
     <style name="roundText">
         <item name="android:background">@drawable/text_round</item>
@@ -146,9 +154,30 @@
         <item name="android:fontFamily">@font/font</item>
     </style>
 
+    // 환경설정 화면 텍스트
+    <style name="settingtext">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#8e8e8e</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:lineSpacingExtra">3sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/font</item>
+    </style>
+
     <!--no margin button style-->
     <style name="ButtonX" parent="@style/Button">
         <item name="android:layout_marginLeft">0dp</item>
         <item name="android:layout_marginRight">0dp</item>
+    </style>
+
+    // 환경설정화면 BottomSheetDialog
+    <style name="BottomSheetDialghTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/white</item>
     </style>
 </resources>

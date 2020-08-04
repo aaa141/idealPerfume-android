@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.idealperfume.MyPickData;
+import com.example.idealperfume.Data.MyPickData;
 import com.example.idealperfume.R;
 
 import java.util.List;

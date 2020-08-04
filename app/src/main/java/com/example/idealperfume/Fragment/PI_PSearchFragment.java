@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -30,13 +31,19 @@ public class PI_PSearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_pi_psearch, container, false);
 
-        TextView tv_sortBy = (TextView) view.findViewById(R.id.tv_sortBy);
-        tv_sortBy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createDialog(mSort, "", view);
-            }
-        });
+        if(container == view.findViewById(R.id.pi_quick_container)) {
+            LinearLayout ll = (LinearLayout) view.findViewById(R.id.ll_only_pi);
+            ll.setVisibility(View.GONE);
+        }
+        else {
+            TextView tv_sortBy = (TextView) view.findViewById(R.id.tv_sortBy);
+            tv_sortBy.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    createDialog(mSort, "", view);
+                }
+            });
+        }
 
         RecyclerView mRecyclerView = view.findViewById(R.id.rcv_pi_psearch);
         PI_PSearchAdapter searchAdapter = new PI_PSearchAdapter(getContext(), mList);
@@ -104,4 +111,5 @@ public class PI_PSearchFragment extends Fragment {
         BottomSheet.setContentView(view);
         BottomSheet.show();
     }
+
 }

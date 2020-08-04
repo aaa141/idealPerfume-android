@@ -8,11 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.idealperfume.Adapter.BSBasicAdapter;
+import com.example.idealperfume.Adapter.MyPickProductAdapter;
 import com.example.idealperfume.Adapter.PI_PSearchAdapter;
 import com.example.idealperfume.Adapter.PI_QuickAdapter;
 import com.example.idealperfume.Adapter.PI_SearchAdapter;
@@ -42,5 +46,7 @@ public class PI_QuickActivity extends AppCompatActivity {
 
         //제품리스트 프래그먼트
         PI_PSearchFragment = (PI_PSearchFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_pi_quick);
+
     }
+
 }

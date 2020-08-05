@@ -31,6 +31,7 @@ public class PI_PSearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_pi_psearch, container, false);
 
+        //???왜 되는거지??
         if(container == view.findViewById(R.id.pi_quick_container)) {
             LinearLayout ll = (LinearLayout) view.findViewById(R.id.ll_only_pi);
             ll.setVisibility(View.GONE);

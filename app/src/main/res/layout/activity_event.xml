@@ -28,9 +28,7 @@
     </RelativeLayout>
 
     <View
-        style="@style/line"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"/>
+        style="@style/divider"/>
 
     <TextView
         style="@style/Header"

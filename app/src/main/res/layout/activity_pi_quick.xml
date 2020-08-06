@@ -26,8 +26,7 @@
     </LinearLayout>
 
     <View
-        style="@style/line"
-        android:layout_marginHorizontal="0dp"></View>
+        style="@style/divider"></View>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_quick"

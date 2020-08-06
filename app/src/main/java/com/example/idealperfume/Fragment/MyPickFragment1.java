@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.idealperfume.Adapter.MyPickProductAdapter;
-import com.example.idealperfume.Data.MyPickData;
+import com.example.idealperfume.MyPickData;
 import com.example.idealperfume.R;
 
 import java.util.ArrayList;

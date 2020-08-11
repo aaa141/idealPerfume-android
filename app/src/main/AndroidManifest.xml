@@ -11,13 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.ReviewFilterActivity"></activity>
         <activity android:name=".Activity.PI_QuickActivity"></activity>
-        <activity android:name=".Activity.ReviewActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Activity.ReviewActivity"></activity>
         <activity android:name=".Activity.PI_QuickActivity"></activity>
         <activity android:name=".Activity.QuickSearchActivity" />
         <activity android:name=".Activity.ReviewRegActivity"></activity>

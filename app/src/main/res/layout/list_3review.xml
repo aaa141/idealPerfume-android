@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_3review"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+        //유저 이미지
+        <ImageView
+            android:id="@+id/iv_userImage"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:src="@drawable/edit_gray"></ImageView>
+
+        //닉네임, 수정시간, 신고하기
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"
+                android:text="사람이름"></TextView>
+
+            //수정시간, 신고하기
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:text="2000.00.00"></TextView>
+
+                <TextView
+                    android:id="@+id/tv_report"
+                    android:layout_marginLeft="13dp"
+                    android:textSize="12dp"
+                    android:textColor="@color/reviewTextColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="신고하기"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <RatingBar android:id="@+id/rb_ProductRating"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:numStars="5"
+                android:rating="4.5"
+                android:layout_marginTop="11dp"
+                style="@style/star_rating" />
+
+      </LinearLayout>
+
+        //책갈피
+
+        <ImageView
+            android:id="@+id/iv_bookmark"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:src="@drawable/edit_gray"></ImageView>
+    </LinearLayout>
+
+
+    //후기 : good
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="36dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/edit_gray"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_good"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:textSize="13dp"
+            android:ellipsize="end"></TextView>
+
+    </LinearLayout>
+
+
+    //후기 : bad
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="32dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/edit_gray"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_bad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:textSize="13dp"
+            android:ellipsize="end"/>
+    </LinearLayout>
+
+    //후기 : tag
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="32dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/edit_gray"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:textSize="13dp"
+            android:ellipsize="end"/>
+    </LinearLayout>
+
+    //더보기
+
+    <TextView
+        android:id="@+id/tv_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="14dp"
+        android:text="더보기..."
+        android:visibility="invisible"
+        android:textColor="@color/reviewTextColor"
+        android:textSize="12dp"></TextView>
+
+
+    //하트랑 댓글
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginBottom="14.5dp">
+
+        <ImageView
+            android:id="@+id/iv_heart"
+            android:layout_width="13dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="9dp"
+            android:src="@drawable/heart_off"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_numberOfHeart"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="13dp"
+            android:textColor="@color/reviewTextColor"
+            android:text="0명에게 도움이 되었어요"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/tv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/reviewTextColor"
+            android:textSize="13dp"
+            android:text="댓글 0"
+            ></TextView>
+    </LinearLayout>
+</LinearLayout>

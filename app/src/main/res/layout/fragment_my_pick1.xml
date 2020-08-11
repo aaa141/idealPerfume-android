@@ -29,6 +29,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_mypickproduct"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_marginLeft="19.5dp"
+        android:layout_marginRight="19.5dp"/>
 
 </FrameLayout>

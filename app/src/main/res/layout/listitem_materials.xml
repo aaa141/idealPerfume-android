@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="83dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp">
+    
+    <ImageView
+        android:id="@+id/iv_material"
+        android:layout_width="46dp"
+        android:layout_height="46dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="17dp"
+        android:layout_gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/tv_materialname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextLineSpacing"
+        android:layout_marginBottom="6dp"
+        android:textSize="14sp"
+        android:textColor="#3c3c3c"/>
+
+    <TextView
+        android:id="@+id/tv_materialdesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextLineSpacing"
+        android:layout_marginBottom="8dp"
+        android:textSize="13sp"
+        android:textColor="#8e8e8e"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/tv_materialrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:textColor="#c4c4c4"
+        android:letterSpacing="-0.02"
+        android:lineSpacingExtra="5sp"
+        android:text="50%"
+        android:layout_gravity="center_vertical"
+        android:gravity="right"/>
+</LinearLayout>

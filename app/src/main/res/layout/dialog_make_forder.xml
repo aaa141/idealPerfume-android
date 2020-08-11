@@ -41,6 +41,7 @@
         android:layout_marginTop="56dp">
 
         <Button
+            android:id="@+id/btn_cancle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -55,6 +56,7 @@
             android:clickable="true" />
 
         <Button
+            android:id="@+id/btn_make"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"

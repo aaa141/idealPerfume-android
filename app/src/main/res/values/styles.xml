@@ -12,52 +12,46 @@
         <item name="android:textViewStyle">@style/TextViewStyle</item>
     </style>
 
-    <!--bottom dialog 둥글게-->
-    <style name="AppBottomSheetDialogTheme"
-        parent="Theme.Design.Light.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+
+    <!--구분선-->
+    //구분선
+    <style name="divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/black</item>
     </style>
 
-    <style name="AppModalStyle"
-        parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/dialog_bottom</item>
+    //구분선 : 마진 있음
+    <style name="line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:background">@color/gray</item>
     </style>
 
-    //dialog bottom sheet_gender
-    <style name="dialog_gender">
-        <item name="android:textSize">@dimen/_14dp</item>
-        <item name="android:fontFamily">@font/font</item>
-        <item name="android:layout_marginBottom">@dimen/_18dp</item>
-        <item name="android:layout_marginTop">@dimen/_18dp</item>
-    </style>
-
-    //Header
-    <style name="Header">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">26dp</item>
-        <item name="android:fontFamily">@font/font</item>
-        <item name="android:includeFontPadding">false</item>
-        <item name="android:layout_marginBottom">33dp</item>
+    <!--버튼-->
+    //Button : 마진 있음
+    <style name="Button">
         <item name="android:layout_marginLeft">24dp</item>
-    </style>
-
-    //string
-    <style name="main_string">
-        <item name="android:fontFamily">@font/font</item>
-    </style>
-
-
-    <style name="Picker">
-        <item name="android:textSize">25dp</item></style>
-
-    <style name="TextViewStyle">
-        <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">14dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/btn_border</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:fontFamily">@font/font</item>
     </style>
 
+    //Button : 마진 없음
+    <style name="ButtonX" parent="@style/Button">
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginRight">0dp</item>
+    </style>
+
+
+    <!--백 버튼-->
     //백 버튼
     <style name="BackButton">
         <item name="android:layout_marginTop">28.8dp</item>
@@ -68,22 +62,14 @@
         <item name="android:layout_height">15.82dp</item>
     </style>
 
-    //subtitle
-    <style name="subtitle">
-        <item name="android:layout_marginBottom">12dp</item>
-        <item name="android:layout_marginLeft">28dp</item>
-        <item name="android:textSize">13sp</item>
-        <item name="android:includeFontPadding">false</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-    </style>
 
-    //combo box
+    <!--edit text-->
+    //edit text : 로그인, 회원가입, QnA에서 옆에 콤보박스 있는 edit text
     <style name="comboBox" parent="editText">
         <item name="android:drawableRight">@drawable/ic_launcher_background</item>
     </style>
 
-    //edit text
+    //edit text : 로그인, 회원가입, QnA 에서 쓰는 edit text
     <style name="editText">
         <item name="android:layout_marginLeft">23dp</item>
         <item name="android:layout_marginRight">23dp</item>
@@ -97,29 +83,17 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    //Button
-    <style name="Button">
-        <item name="android:layout_marginLeft">24dp</item>
-        <item name="android:layout_marginRight">24dp</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">50dp</item>
-        <item name="android:background">@drawable/btn_border</item>
-        <item name="android:layout_gravity">center</item>
-        <item name="android:gravity">center</item>
+    //edit-text : 회색배경의 editText
+    <style name="editText_gray">
+        <item name="android:textSize">13sp</item>
+        <item name="android:background">@drawable/edit_gray</item>
+        <item name="android:layout_marginRight">17dp</item>
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    //line
-    <style name="line">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1dp</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:background">@color/gray</item>
-    </style>
 
-    // 메뉴
+    <!--텍스트뷰-->
+    //title : 백 버튼 옆에 있는 타이틀
     <style name="menutext">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -131,22 +105,28 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-    <!--구분선(margin x)-->
-    <style name="divider">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1dp</item>
-        <item name="android:background">@color/black</item>
-    </style>
-
-    //edit-text : 회색
-    <style name="editText_gray">
+    //title : 회원가입, QnA에 있는 작은 타이틀
+    <style name="subtitle">
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:layout_marginLeft">28dp</item>
         <item name="android:textSize">13sp</item>
-        <item name="android:background">@drawable/edit_gray</item>
-        <item name="android:layout_marginRight">17dp</item>
         <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <!--round textview-->
+    //title : 로그인, 회원가입, QnA
+    <style name="Header">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">26dp</item>
+        <item name="android:fontFamily">@font/font</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_marginBottom">33dp</item>
+        <item name="android:layout_marginLeft">24dp</item>
+    </style>
+
+    //round textview : 상품검색에서 나오는 작은 버튼들
     <style name="roundText">
         <item name="android:background">@drawable/text_round</item>
         <item name="android:layout_marginRight">6dp</item>
@@ -154,30 +134,89 @@
         <item name="android:fontFamily">@font/font</item>
     </style>
 
-    // 환경설정 화면 텍스트
-    <style name="settingtext">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">#8e8e8e</item>
-        <item name="android:letterSpacing">-0.02</item>
-        <item name="android:lineSpacingExtra">3sp</item>
-        <item name="android:includeFontPadding">false</item>
-        <item name="fontFamily">@font/font</item>
-    </style>
+    //textsize 생년월일 선택 화면 글자 크기
+    <style name="Picker">
+        <item name="android:textSize">25dp</item></style>
 
-    <!--no margin button style-->
-    <style name="ButtonX" parent="@style/Button">
-        <item name="android:layout_marginLeft">0dp</item>
-        <item name="android:layout_marginRight">0dp</item>
-    </style>
 
-    // 환경설정화면 BottomSheetDialog
+
+    <!--bottom sheet dialog 환경설정화면-->
+    //환경설정화면 BottomSheetDialog
     <style name="BottomSheetDialghTheme" parent="Theme.Design.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
     </style>
 
+    //환경설정화면 BottomSheetDialog
     <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@android:color/white</item>
     </style>
+
+
+    <!--bottom sheet dialog 둥글게-->
+    //bottom dialog 둥글게
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    //bottom dialog 둥글게
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/dialog_bottom</item>
+    </style>
+
+    <!--별-->
+    //스타 레이팅 바
+    <style name="star_rating" parent="android:style/Widget.Material.RatingBar.Small">
+        <item name="android:progressDrawable">@drawable/star_rating</item>
+    </style>
+
+    <!--폰트 스타일-->
+    //전체적으로 적용되는 폰트 스타일
+    <style name="TextViewStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/font</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    //linespacing 있을때
+    <style name="TextLineSpacing">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/font</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:lineSpacingExtra">3sp</item>
+    </style>
+
+
+    //TextBold 폰트
+    <style name="TextBold">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:lineSpacingExtra">3sp</item>
+    </style>
+
+    //메안화면 헤더
+    <style name="MainHeader">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/font</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+        <item name="android:layout_marginLeft">23dp</item>
+    </style>
+
 </resources>

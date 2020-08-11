@@ -25,8 +25,6 @@
         android:text="폴더를 만들었어요!\n마음에 드는 제품을 담아요 :)"
         android:layout_marginTop="32dp" />
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="52dp"
@@ -34,6 +32,7 @@
         android:layout_marginTop="50dp">
 
         <Button
+            android:id="@+id/btn_close"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"

@@ -19,16 +19,17 @@
 <!--        app:layout_anchorGravity="top|end"/>-->
 
     <TextView
-        style="@style/settingtext"
+        style="@style/TextLineSpacing"
         android:textSize="16sp"
         android:textColor="#3c3c3c"
         android:layout_marginTop="78dp"
         android:text="이름"/>
 
     <TextView
-        style="@style/settingtext"
+        style="@style/TextLineSpacing"
         android:layout_marginTop="8dp"
-        android:text="00세 성별"/>
+        android:text="00세 성별"
+        android:textColor="#8e8e8e"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -53,24 +54,27 @@
 
             <TextView
                 android:id="@+id/tv_pointhead"
-                style="@style/settingtext"
+                style="@style/TextLineSpacing"
                 android:layout_toRightOf="@id/iv_seticon1"
-                android:text="이상향 포인트" />
+                android:text="이상향 포인트"
+                android:textColor="#3c3c3c"/>
 
             <TextView
                 android:id="@+id/tv_point"
-                style="@style/settingtext"
+                style="@style/TextLineSpacing"
                 android:layout_marginRight="3dp"
                 android:layout_toLeftOf="@id/tv_point_p"
                 android:text="777"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="#3c3c3c"/>
 
             <TextView
                 android:id="@+id/tv_point_p"
-                style="@style/settingtext"
+                style="@style/TextLineSpacing"
                 android:layout_marginRight="12.5dp"
                 android:layout_toLeftOf="@id/iv_point"
-                android:text="P" />
+                android:text="P"
+                android:textColor="#3c3c3c" />
 
             <ImageView
                 android:id="@+id/iv_point"
@@ -100,7 +104,7 @@
                 android:clickable="true">
 
                 <TextView
-                    style="@style/settingtext"
+                    style="@style/TextLineSpacing"
                     android:textSize="12sp"
                     android:textColor="#bfbfbf"
                     android:lineSpacingExtra="2sp"
@@ -116,7 +120,7 @@
 
                 <TextView
                     android:id="@+id/tv_myreview_num"
-                    style="@style/settingtext"
+                    style="@style/TextLineSpacing"
                     android:textSize="12sp"
                     android:textColor="#bfbfbf"
                     android:lineSpacingExtra="2sp"
@@ -134,7 +138,7 @@
                 android:clickable="true">
 
                 <TextView
-                    style="@style/settingtext"
+                    style="@style/TextLineSpacing"
                     android:textSize="12sp"
                     android:textColor="#bfbfbf"
                     android:lineSpacingExtra="2sp"
@@ -150,7 +154,7 @@
 
                 <TextView
                     android:id="@+id/tv_requestproduct"
-                    style="@style/settingtext"
+                    style="@style/TextLineSpacing"
                     android:textSize="12sp"
                     android:textColor="#bfbfbf"
                     android:lineSpacingExtra="2sp"
@@ -168,7 +172,7 @@
                 android:clickable="true">
 
                 <TextView
-                    style="@style/settingtext"
+                    style="@style/TextLineSpacing"
                     android:textSize="12sp"
                     android:textColor="#bfbfbf"
                     android:lineSpacingExtra="2sp"
@@ -184,7 +188,7 @@
 
                 <TextView
                     android:id="@+id/tv_scrapreview"
-                    style="@style/settingtext"
+                    style="@style/TextLineSpacing"
                     android:textSize="12sp"
                     android:textColor="#bfbfbf"
                     android:lineSpacingExtra="2sp"
@@ -216,9 +220,10 @@
 
             <TextView
                 android:id="@+id/tv_questionhead"
-                style="@style/settingtext"
+                style="@style/TextLineSpacing"
                 android:layout_toRightOf="@id/iv_seticon2"
-                android:text="1:1 문의하기" />
+                android:text="1:1 문의하기"
+                android:textColor="#3c3c3c"/>
 
             <ImageView
                 android:id="@+id/iv_question"
@@ -250,9 +255,10 @@
                 android:src="@drawable/icon_circle" />
 
             <TextView
-                style="@style/settingtext"
+                style="@style/TextLineSpacing"
                 android:layout_toRightOf="@id/iv_seticon3"
-                android:text="고객센터" />
+                android:text="고객센터"
+                android:textColor="#3c3c3c"/>
 
             <ImageView
                 android:id="@+id/iv_customerservice"
@@ -285,9 +291,10 @@
                 android:src="@drawable/icon_circle" />
 
             <TextView
-                style="@style/settingtext"
+                style="@style/TextLineSpacing"
                 android:layout_toRightOf="@id/iv_seticon4"
-                android:text="버전정보" />
+                android:text="버전정보"
+                android:textColor="#3c3c3c"/>
 
             <ImageView
                 android:id="@+id/iv_versioninfo"
@@ -319,9 +326,10 @@
                 android:src="@drawable/icon_circle"/>
 
             <TextView
-                style="@style/settingtext"
+                style="@style/TextLineSpacing"
                 android:text="알림설정"
-                android:gravity="left"/>
+                android:gravity="left"
+                android:textColor="#3c3c3c"/>
 
             <View
                 android:layout_width="0dp"
@@ -358,9 +366,10 @@
                 android:src="@drawable/icon_circle" />
 
             <TextView
-                style="@style/settingtext"
+                style="@style/TextLineSpacing"
                 android:layout_toRightOf="@id/iv_seticon6"
-                android:text="로그아웃" />
+                android:text="로그아웃"
+                android:textColor="#3c3c3c"/>
 
             <ImageView
                 android:id="@+id/iv_logout"

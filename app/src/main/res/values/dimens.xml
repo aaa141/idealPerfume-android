@@ -9,4 +9,5 @@
     <dimen name="_20dp">20dp</dimen>
     <dimen name="_26dp">26dp</dimen>
     <dimen name="line_spacing">-10dp</dimen>
+    <dimen name="mypick_dialog_width">336dp</dimen>
 </resources>

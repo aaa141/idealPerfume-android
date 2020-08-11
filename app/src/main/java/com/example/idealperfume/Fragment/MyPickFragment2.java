@@ -1,5 +1,7 @@
 package com.example.idealperfume.Fragment;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,10 +12,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.idealperfume.Activity.PI_SearchActivity;
 import com.example.idealperfume.Adapter.MyPickBrandAdapter;
 import com.example.idealperfume.Data.MyPickData;
+import com.example.idealperfume.MyButtonClickListener;
+import com.example.idealperfume.MyPickSwipeHelper;
 import com.example.idealperfume.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +31,8 @@ public class MyPickFragment2 extends Fragment {
     private RecyclerView recyclerview;
     private List<MyPickData> listpickdata;
     private MyPickBrandAdapter myPickBrandAdapter;
+    private FloatingActionButton floatbtn_search;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,6 +42,34 @@ public class MyPickFragment2 extends Fragment {
         myPickBrandAdapter = new MyPickBrandAdapter(getContext(), listpickdata);
         recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerview.setAdapter(myPickBrandAdapter);
+
+        floatbtn_search = v.findViewById(R.id.floatbtn_search);
+
+        MyPickSwipeHelper myPickSwipeHelper = new MyPickSwipeHelper(getContext(), recyclerview, 280) {
+            @Override
+            public void instantiaterMyButton(RecyclerView.ViewHolder viewHolder, List<MyButton> buffer) {
+                buffer.add(new MyButton(getContext(),
+                        "지우기",
+                        50,
+                        0,
+                        Color.parseColor("#6da048"),
+                        new MyButtonClickListener() {
+                            @Override
+                            public void onClick(int pos) {
+                                Toast.makeText(getContext(), "Click", Toast.LENGTH_SHORT).show();
+                                listpickdata.remove(pos);
+                            }
+                        }));
+            }
+        };
+
+        floatbtn_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), PI_SearchActivity.class);
+                startActivity(intent);
+            }
+        });
 
         recyclerview.addItemDecoration(new DividerItemDecoration(v.getContext(), 1));
         return v;

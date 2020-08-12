@@ -18,7 +18,7 @@
     <style name="divider">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
-        <item name="android:background">@color/black</item>
+        <item name="android:background">@color/lineColor</item>
     </style>
 
     //구분선 : 마진 있음
@@ -36,6 +36,7 @@
         <item name="android:layout_marginLeft">24dp</item>
         <item name="android:layout_marginRight">24dp</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#fff</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:background">@drawable/btn_border</item>
@@ -175,10 +176,18 @@
     //전체적으로 적용되는 폰트 스타일
     <style name="TextViewStyle">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">14dp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:fontFamily">@font/font</item>
         <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <!--bold체....인데..-->
+    <style name="BoldText">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/notosanskr_bold</item>
+        <item name="android:lineSpacingExtra">5sp</item>
     </style>
 
     //linespacing 있을때
@@ -193,12 +202,28 @@
         <item name="android:lineSpacingExtra">3sp</item>
     </style>
 
+    //색 있는 연한 텍스트 (더보기 )
+    <style name="LightTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#6da048</item>
+    </style>
 
     //TextBold 폰트
     <style name="TextBold">
         <item name="android:textColor">@color/black</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+
+    <!--원료 이미지-->
+    <style name="RawMaterialImageStyle">
+        <item name="android:layout_width">46dp</item>
+        <item name="android:layout_height">46dp</item>
+        <item name="android:background">@drawable/image_round10</item>
         <item name="android:textSize">16sp</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:fontFamily">@font/font_bold</item>

@@ -10,4 +10,8 @@
     <dimen name="_26dp">26dp</dimen>
     <dimen name="line_spacing">-10dp</dimen>
     <dimen name="mypick_dialog_width">336dp</dimen>
+    <drawable name="homemenu">@drawable/ic_launcher_background</drawable>
+    <drawable name="mypickmenu">@drawable/ic_launcher_background</drawable>
+    <drawable name="eventmenu">@drawable/ic_launcher_background</drawable>
+    <drawable name="settingmenu">@drawable/ic_launcher_background</drawable>
 </resources>

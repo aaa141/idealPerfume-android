@@ -21,8 +21,8 @@ public class MyPickAdapter extends FragmentPagerAdapter {
         items.add(new MyPickFragment1());
         items.add(new MyPickFragment2());
 
-        menus.add("제품별");
-        menus.add("브랜드별");
+        menus.add("제품픽");
+        menus.add("브랜드픽");
     }
 
     @NonNull

@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Ranking_10sFragment extends Fragment {
+public class Ranking_TotalFragment extends Fragment {
     View v;
     private RecyclerView recyclerview;
     private List<RankingData> rankingData;
@@ -28,7 +28,7 @@ public class Ranking_10sFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        v = inflater.inflate(R.layout.fragment_ranking_10s, container, false);
+        v = inflater.inflate(R.layout.fragment_ranking__total, container, false);
         recyclerview = v.findViewById(R.id.rv_ranking);
         rankingAdapter = new RankingAdapter(getContext(), rankingData);
         recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -44,10 +44,10 @@ public class Ranking_10sFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         rankingData = new ArrayList<>();
-        rankingData.add(new RankingData(1,2, R.drawable.main_perfume,"일리윤", "illiyoon", "아시아의 좋은 원료에서 찾은 피부과학"));
-        rankingData.add(new RankingData(2,1,R.drawable.main_diffuser,"이니스프리", "innisfree","피부에 휴식을 주는 섬"));
-        rankingData.add(new RankingData(3,2, R.drawable.main_perfume,"일리윤", "illiyoon", "아시아의 좋은 원료에서 찾은 피부과학"));
-        rankingData.add(new RankingData(4,1,R.drawable.main_perfume,"이니스프리", "innisfree","피부에 휴식을 주는 섬"));
-        rankingData.add(new RankingData(5,2, R.drawable.main_perfume,"일리윤", "illiyoon", "아시아의 좋은 원료에서 찾은 피부과학"));
-      }
+        rankingData.add(new RankingData(1,2, R.drawable.main_aromaoil,"일리윤", "illiyoon", "아시아의 좋은 원료에서 찾은 피부과학"));
+        rankingData.add(new RankingData(2,1,R.drawable.main_aromaoil,"이니스프리", "innisfree","피부에 휴식을 주는 섬"));
+        rankingData.add(new RankingData(3,2, R.drawable.main_aromaoil,"일리윤", "illiyoon", "아시아의 좋은 원료에서 찾은 피부과학"));
+        rankingData.add(new RankingData(4,1,R.drawable.main_aromaoil,"이니스프리", "innisfree","피부에 휴식을 주는 섬"));
+        rankingData.add(new RankingData(5,2, R.drawable.main_aromaoil,"일리윤", "illiyoon", "아시아의 좋은 원료에서 찾은 피부과학"));
+    }
 }

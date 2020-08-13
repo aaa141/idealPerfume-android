@@ -62,8 +62,8 @@ public class QuickSearchActivity extends AppCompatActivity {
             @Override
             public void onRangeChanged(RangeSeekBar view, float leftValue, float rightValue, boolean isFromUser) {
 
-                view.getLeftSeekBar().setIndicatorText(format.format((((int)leftValue)/1000)*1000));
-                view.getRightSeekBar().setIndicatorText(format.format((((int)rightValue)/1000)*1000));
+                view.getLeftSeekBar().setIndicatorText(format.format((((int)leftValue)/5000)*5000));
+                view.getRightSeekBar().setIndicatorText(format.format((((int)rightValue)/5000)*5000));
             }
 
             @Override

@@ -11,4 +11,6 @@
     <color name="reviewTextColor">#8e8e8e</color>
     <color name="reviewTextDarkGray">#686868</color>
     <color name="green">#6da048</color>
+    <color name="yellow">#f9d070</color>
+    <color name="lightBlack">#3c3c3c</color>
 </resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/list_productInfo"
+    android:paddingRight="12dp">
+
+    <ImageView
+        android:id="@+id/img_product"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
+        android:background="@drawable/image_rounding" />
+
+    <TextView
+        android:id="@+id/tv_pdBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="브랜드명"
+        android:textColor="@color/reviewTextColor"
+        android:layout_below="@id/img_product"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="6dp"/>
+    <TextView
+        android:id="@+id/tv_pdName"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="제품명"
+        android:layout_below="@+id/tv_pdBrand"
+        android:layout_alignLeft="@id/tv_pdBrand"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/tv_pdPrice"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가격"
+        android:layout_below="@id/tv_pdName"
+        android:layout_alignLeft="@id/tv_pdName"
+        android:layout_marginTop="12dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SplashActivity"
+    android:background="@drawable/splash">
+
+    <TextView
+        android:id="@+id/splashText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="529dp"
+        android:layout_marginLeft="30.5dp"
+        android:text="당신이 그리는\n이상향을\n찾아드리는\n큐레이션 서비스"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/notosanskr_medium"
+        android:lineSpacingExtra="12sp"/>
+
+
+</LinearLayout>

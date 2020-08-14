@@ -7,12 +7,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.idealperfume.Adapter.PI_ProductAdapter;
+import com.example.idealperfume.Adapter.ReviewAdapter;
+import com.example.idealperfume.Data.ProductInfoData;
+import com.example.idealperfume.Data.ReviewData;
 import com.example.idealperfume.R;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -27,7 +33,8 @@ public class ProductInfoActivity extends AppCompatActivity {
     PieChart pieChart;
     BarChart barChart;
 
-    RecyclerView rv_recommend, rv_ranking;
+    //LinearLayout review_layout;
+    RecyclerView rv_review, rv_recommend, rv_ranking;
     PI_ProductAdapter recommendAdapter, rankingAdapter;
 
     @Override
@@ -40,54 +47,110 @@ public class ProductInfoActivity extends AppCompatActivity {
         barChart = (BarChart) findViewById(R.id.barChart);
         rv_recommend = findViewById(R.id.rv_recommend);
         rv_ranking = findViewById(R.id.rv_ranking);
-
-
+        rv_review = findViewById(R.id.rv_review);
 
         init();
         drawPieChart();
     }
 
+    //8.13) 구성원료랑 해시태그는 나중에
     public void init(){
-        //상품 브랜드, 상품명, 별점, 가격
+        //상품 ID 넘기면
+        //상품 브랜드, 상품명, 별점, 가격, 브랜드 설명, 원료 이미지, 원료명, 이걸 다가져와야...하나..?
+
+
+
+
 
         //해시태그 textview 설정
-        String[] hastag ={"#보습","촉촉/수분","향/냄새","건조","#흡수력","#끈적"};
+        String[] hastag ={"보습","촉촉/수분","향/냄새","건조","흡수력","끈적"};
         for (int i=0; i<hastag.length; i++) {
             TextView tv = new TextView(this);
-            tv.setText("#"+hastag[i]); //(#을 내가 붙여야되는지..)
-            tv.setBackground(getResources().getDrawable(R.drawable.text_round));
+            tv.setText("#"+hastag[i]);
+            tv.setBackground(getResources().getDrawable(R.drawable.text_round,null));
+            tv.setTextColor(getResources().getColor(R.color.green));
             pdHashtagLayout.addView(tv);
         }
+
+        //세줄 후기
+        ArrayList<ReviewData> mList = new ArrayList<>();
+        mList.add(new ReviewData("정은재은재"
+                ,"2020.05.29"
+                ,"이모가 선물로 사준 향수이며 저의 첫 향수에요 :)향덕이 된 이유는 이 향수랍니다 ㅎㅎ"
+                , "정말 단점이 없지만 굳이 뽑자면 첫향이 조금"
+                ,"#보습"
+                ,"4","11","4",true
+                ,true,R.drawable.check));
+        mList.add(new ReviewData("정은재은재"
+                ,"2020.05.29"
+                ,"이모가 선물로 사준 향수이며 저의 첫 향수에요 :)향덕이 된 이유는 이 향수랍니다 ㅎㅎ"
+                , "정말 단점이 없지만 굳이 뽑자면 첫향이 조금"
+                ,"#보습"
+                ,"4","11","4",true
+                ,true,R.drawable.check));
+        ReviewAdapter reviewAdapter = new ReviewAdapter(this, mList);
+        rv_review.setLayoutManager(new LinearLayoutManager(this));
+        rv_review.setAdapter(reviewAdapter);
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
         rv_recommend.setLayoutManager(manager);
-        rv_ranking.setLayoutManager(manager);
+        //rv_ranking.setLayoutManager(manager);
 
 
         // 데이터 받아와서 넣기
-        //recommendAdapter = new PI_ProductAdapter(this,);
+        ArrayList<ProductInfoData> list = new ArrayList<ProductInfoData>();
+        list.add(new ProductInfoData(R.drawable.productx,"일리윤(illiyoon)","세라마이드 아토 로션 350ml",19000));
+        list.add(new ProductInfoData(R.drawable.productx,"닥터지","레드 블레미쉬 크림",23000));
+        list.add(new ProductInfoData(R.drawable.productx,"샤넬","샹스 오드 퍼퓸 스프레이",239100));
+
+        recommendAdapter = new PI_ProductAdapter(this, list);
         //rankingAdapter = new PI_ProductAdapter(this,);
 
         rv_recommend.setAdapter(recommendAdapter);
         rv_ranking.setAdapter(rankingAdapter);
     }
-    public void drawPieChart(){
-        
 
-        pieChart.setCenterText("이 더 많이 구매한 제품");
+    private void drawPieChart(){
+        
+        int[] colorArray =
+                new int[]{getResources().getColor(R.color.green)
+                        , getResources().getColor(R.color.yellow)
+                        , getResources().getColor(R.color.lineColor)};
+
+        pieChart.setCenterText("여성이 더 많이\n구매한 제품");
+        pieChart.setCenterTextSize(14f);
+        pieChart.setCenterTextColor(getResources().getColor(R.color.reviewTextColor));
+
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setDrawEntryLabels(false);
+        pieChart.getLegend().setEnabled(false);
+        pieChart.setClickable(false);
         pieChart.setHoleRadius(86f);
         pieChart.setTransparentCircleRadius(86f);
 
         List<PieEntry> value = new ArrayList<>();
         //value 가져오기
-        value.add(new PieEntry(40f,"여성"));
-        value.add(new PieEntry(30f,"남성"));
-        value.add(new PieEntry(30f,"기타"));
+        value.add(new PieEntry(75f,"여성")); //여성
+        value.add(new PieEntry(20f,"남성")); //남성
+        value.add(new PieEntry(5f,"기타")); //기타
 
-        PieDataSet pieDataSet = new PieDataSet(value,"?");
+        PieDataSet pieDataSet = new PieDataSet(value,"");
+        pieDataSet.setColors(colorArray);
+        pieDataSet.setDrawValues(false);
+
         PieData pieData = new PieData(pieDataSet);
         pieChart.setData(pieData);
-    }
 
+    }
+    private void setLegend(){
+        Legend legend = pieChart.getLegend();
+        legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+        legend.setForm(Legend.LegendForm.SQUARE);
+        legend.setTextSize(13f);
+        legend.setTextColor(getResources().getColor(R.color.lightBlack));
+
+
+        //legend.setForm(Legend.LegendForm.);
+    }
 }

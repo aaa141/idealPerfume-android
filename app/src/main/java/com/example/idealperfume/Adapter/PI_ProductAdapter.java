@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,9 +37,10 @@ public class PI_ProductAdapter extends RecyclerView.Adapter<PI_ProductAdapter.Pr
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
+        holder.img_product.setImageResource(mList.get(position).getProductImg());
         holder.tv_pdBrand.setText(mList.get(position).getBrand());
         holder.tv_pdName.setText(mList.get(position).getName());
-        holder.tv_pdPrice.setText(mList.get(position).getPrice()+"원");
+        holder.tv_pdPrice.setText(String.format("%,d",mList.get(position).getPrice())+"원");
     }
 
     @Override
@@ -50,6 +52,7 @@ public class PI_ProductAdapter extends RecyclerView.Adapter<PI_ProductAdapter.Pr
   // ViewHolder
     class ProductViewHolder extends RecyclerView.ViewHolder{
 
+        ImageView img_product;
         TextView tv_pdBrand;
         TextView tv_pdName;
         TextView tv_pdPrice;
@@ -57,6 +60,7 @@ public class PI_ProductAdapter extends RecyclerView.Adapter<PI_ProductAdapter.Pr
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            img_product = itemView.findViewById(R.id.img_product);
             tv_pdBrand = itemView.findViewById(R.id.tv_pdBrand);
             tv_pdName = itemView.findViewById(R.id.tv_pdName);
             tv_pdPrice = itemView.findViewById(R.id.tv_pdPrice);

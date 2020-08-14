@@ -2,8 +2,10 @@ package com.example.idealperfume.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.idealperfume.R;
@@ -39,9 +41,12 @@ public class ReviewFilterActivity extends AppCompatActivity implements View.OnCl
         tv_early30.setOnClickListener(this);
         tv_late30.setOnClickListener(this);
         tv_over40.setOnClickListener(this);
-        tv_genderAll.setOnClickListener(this);
-        tv_female.setOnClickListener(this);
-        tv_male.setOnClickListener(this);
+
+
+        tv_genderAll.setOnClickListener(gender_listener);
+        tv_female.setOnClickListener(gender_listener);
+        tv_male.setOnClickListener(gender_listener);
+
         tv_reviewAll.setOnClickListener(this);
         tv_reviewPositive.setOnClickListener(this);
         tv_reviewNegative.setOnClickListener(this);
@@ -60,6 +65,16 @@ public class ReviewFilterActivity extends AppCompatActivity implements View.OnCl
         tv_reviewAll.setBackground(getDrawable(R.drawable.text_round_checked));
     }
 
+    View.OnClickListener gender_listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            isDeselected(tv_genderAll);
+            isDeselected(tv_female);
+            isDeselected(tv_male);
+
+            isSelected((TextView)v);
+        }
+    };
 
 
     //Text 이벤트 처리
@@ -71,7 +86,7 @@ public class ReviewFilterActivity extends AppCompatActivity implements View.OnCl
 
         } else{//text
             if(v.getBackground().getConstantState()
-                    .equals(getResources().getDrawable(R.drawable.text_round_checked).getConstantState())){
+                    .equals(getResources().getDrawable(R.drawable.text_round_checked,null).getConstantState())){
                 isDeselected((TextView)v);
             }else{
                 isSelected((TextView)v);
@@ -81,11 +96,13 @@ public class ReviewFilterActivity extends AppCompatActivity implements View.OnCl
 
 
     private void isSelected(TextView textView){
-        textView.setBackground(getResources().getDrawable(R.drawable.text_round_checked));
+        textView.setBackground(getResources().getDrawable(R.drawable.text_round_checked,null));
+        textView.setTextColor(Color.WHITE);
     }
 
     private void isDeselected(TextView textView){
-        textView.setBackground(getResources().getDrawable(R.drawable.text_round));
+        textView.setBackground(getResources().getDrawable(R.drawable.text_round,null));
+        textView.setTextColor(getResources().getColor(R.color.green));
     }
 
 

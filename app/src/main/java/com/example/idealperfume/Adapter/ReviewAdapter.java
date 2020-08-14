@@ -1,11 +1,9 @@
 package com.example.idealperfume.Adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.graphics.drawable.GradientDrawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.idealperfume.Activity.EventActivity;
-import com.example.idealperfume.Activity.MainActivity;
 import com.example.idealperfume.Activity.ProductInfoActivity;
 import com.example.idealperfume.Activity.ReviewActivity;
 import com.example.idealperfume.Data.ReviewData;
@@ -96,7 +92,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
                 public void onClick(View v) {
                     int position = getAdapterPosition();
                     if (!mList.get(position).isHeart() == true) {
-                        heartImage.setImageResource(R.drawable.heart_on);
+                        heartImage.setImageResource(R.drawable.img_heart_on);
                         mList.get(position).setHeart(true);
                         String tmp = mList.get(position).getNumberOfHeart();
                         int temp = Integer.parseInt(tmp);
@@ -105,7 +101,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
                         numberOfHeart.setText(mList.get(position).getNumberOfHeart() + "명에게 도움이 되었어요!");
                         numberOfHeart.setTextColor(context.getResources().getColor(R.color.green6D));
                     } else {
-                        heartImage.setImageResource(R.drawable.heart_off);
+                        heartImage.setImageResource(R.drawable.img_heart_off);
                         mList.get(position).setHeart(false);
                         String tmp = mList.get(position).getNumberOfHeart();
                         int temp = Integer.parseInt(tmp);
@@ -123,11 +119,11 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
                 public void onClick(View v) {
                     int position = getAdapterPosition();
                     if (!mList.get(position).isBookmark() == true) {
-                        bookmarkImage.setImageResource(R.drawable.heart_on);
+                        bookmarkImage.setImageResource(R.drawable.img_heart_on);
                         mList.get(position).setBookmark(true);
 
                     } else {
-                        bookmarkImage.setImageResource(R.drawable.heart_off);
+                        bookmarkImage.setImageResource(R.drawable.img_heart_off);
                         mList.get(position).setBookmark(false);
                     }
                 }
@@ -164,15 +160,15 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
         holder.date.setText(mList.get(position).getDate() + " 수정됨");
         holder.userImage.setImageResource(mList.get(position).getUserImage());
         if (mList.get(position).isHeart() == true) {
-            holder.heartImage.setImageResource(R.drawable.heart_on);
+            holder.heartImage.setImageResource(R.drawable.img_heart_on);
             holder.numberOfHeart.setTextColor(context.getResources().getColor(R.color.green));
         } else {
-            holder.heartImage.setImageResource(R.drawable.heart_off);
+            holder.heartImage.setImageResource(R.drawable.img_heart_off);
         }
         if (mList.get(position).isBookmark() == true) {
-            holder.bookmarkImage.setImageResource(R.drawable.heart_on);
+            holder.bookmarkImage.setImageResource(R.drawable.img_heart_on);
         } else {
-            holder.bookmarkImage.setImageResource(R.drawable.heart_off);
+            holder.bookmarkImage.setImageResource(R.drawable.img_heart_off);
         }
 
 

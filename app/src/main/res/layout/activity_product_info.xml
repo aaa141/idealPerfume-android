@@ -38,7 +38,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="right|top"
-                    android:src="@drawable/heart_off" />
+                    android:src="@drawable/img_heart_off" />
 
 
                 <!--상품 정보 레이아웃-->

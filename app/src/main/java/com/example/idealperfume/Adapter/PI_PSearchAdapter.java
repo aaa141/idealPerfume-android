@@ -1,6 +1,5 @@
 package com.example.idealperfume.Adapter;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +17,6 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.idealperfume.Activity.PI_SearchActivity;
 import com.example.idealperfume.Activity.ProductInfoActivity;
 import com.example.idealperfume.Data.Pi_PSearchData;
 import com.example.idealperfume.R;
@@ -91,7 +89,7 @@ public class PI_PSearchAdapter extends RecyclerView.Adapter<PI_PSearchAdapter.Cu
                         CreateQuestionDialog(heartImage, position);
                     }
                     else{
-                        heartImage.setImageResource(R.drawable.heart_off);
+                        heartImage.setImageResource(R.drawable.img_heart_off);
                         mList.get(position).setHeart(false);
                     }
                 }
@@ -108,10 +106,10 @@ public class PI_PSearchAdapter extends RecyclerView.Adapter<PI_PSearchAdapter.Cu
         holder.starPoint.setText(mList.get(position).getStarPoint());
         holder.prodImage.setImageResource(mList.get(position).getProdImage());
         if(mList.get(position).isHeart() == true){
-            holder.heartImage.setImageResource(R.drawable.heart_on);
+            holder.heartImage.setImageResource(R.drawable.img_heart_on);
         }
         else{
-            holder.heartImage.setImageResource(R.drawable.heart_off);
+            holder.heartImage.setImageResource(R.drawable.img_heart_off);
         }
     }
 
@@ -154,7 +152,7 @@ public class PI_PSearchAdapter extends RecyclerView.Adapter<PI_PSearchAdapter.Cu
         customDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         customDialog.show();
         customDialog.setCancelable(true);
-        heart.setImageResource(R.drawable.heart_on);
+        heart.setImageResource(R.drawable.img_heart_on);
 
         mList.get(position).setHeart(true);
         final Button closeBtn = (Button) customDialog.findViewById(R.id.btn_close);

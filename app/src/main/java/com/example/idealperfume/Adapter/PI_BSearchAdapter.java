@@ -63,11 +63,11 @@ public class PI_BSearchAdapter extends RecyclerView.Adapter<PI_BSearchAdapter.Cu
                 public void onClick(View v) {
                     int position = getAdapterPosition() ;
                     if (!mList.get(position).isHeart() == true) {
-                        heartImage.setImageResource(R.drawable.heart_on);
+                        heartImage.setImageResource(R.drawable.img_heart_on);
                         mList.get(position).setHeart(true);
                     }
                     else{
-                        heartImage.setImageResource(R.drawable.heart_off);
+                        heartImage.setImageResource(R.drawable.img_heart_off);
                         mList.get(position).setHeart(false);
                     }
                 }
@@ -81,10 +81,10 @@ public class PI_BSearchAdapter extends RecyclerView.Adapter<PI_BSearchAdapter.Cu
         holder.slogan.setText(mList.get(position).getSlogan());
         holder.brandImage.setImageResource(mList.get(position).getBrandImage());
         if(mList.get(position).isHeart() == true){
-            holder.heartImage.setImageResource(R.drawable.heart_on);
+            holder.heartImage.setImageResource(R.drawable.img_heart_on);
         }
         else{
-            holder.heartImage.setImageResource(R.drawable.heart_off);
+            holder.heartImage.setImageResource(R.drawable.img_heart_off);
         }
     }
 

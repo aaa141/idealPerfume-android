@@ -1,7 +1,5 @@
 package com.example.idealperfume.Fragment;
 
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,17 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.example.idealperfume.Activity.PI_SearchActivity;
-import com.example.idealperfume.Adapter.MyPickBrandAdapter;
 import com.example.idealperfume.Adapter.RankingAdapter;
-import com.example.idealperfume.Data.MyPickData;
 import com.example.idealperfume.Data.RankingData;
-import com.example.idealperfume.MyButtonClickListener;
-import com.example.idealperfume.MyPickSwipeHelper;
 import com.example.idealperfume.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,10 +44,10 @@ public class Ranking_10sFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         rankingData = new ArrayList<>();
-        rankingData.add(new RankingData(1,2, R.drawable.icon_circle,"일리윤", "illiyoon", "아시아의 좋은 원료에서 찾은 피부과학"));
-        rankingData.add(new RankingData(2,1,R.drawable.icon_circle,"이니스프리", "innisfree","피부에 휴식을 주는 섬"));
-        rankingData.add(new RankingData(3,2, R.drawable.icon_circle,"일리윤", "illiyoon", "아시아의 좋은 원료에서 찾은 피부과학"));
-        rankingData.add(new RankingData(4,1,R.drawable.icon_circle,"이니스프리", "innisfree","피부에 휴식을 주는 섬"));
-        rankingData.add(new RankingData(5,2, R.drawable.icon_circle,"일리윤", "illiyoon", "아시아의 좋은 원료에서 찾은 피부과학"));
-      }
+        rankingData.add(new RankingData(1,2, R.drawable.main_perfume,"일리윤", "illiyoon", "아시아의 좋은 원료에서 찾은 피부과학"));
+        rankingData.add(new RankingData(2,1,R.drawable.main_diffuser,"이니스프리", "innisfree","피부에 휴식을 주는 섬"));
+        rankingData.add(new RankingData(3,2, R.drawable.main_perfume,"일리윤", "illiyoon", "아시아의 좋은 원료에서 찾은 피부과학"));
+        rankingData.add(new RankingData(4,1,R.drawable.main_perfume,"이니스프리", "innisfree","피부에 휴식을 주는 섬"));
+        rankingData.add(new RankingData(5,2, R.drawable.main_perfume,"일리윤", "illiyoon", "아시아의 좋은 원료에서 찾은 피부과학"));
+    }
 }

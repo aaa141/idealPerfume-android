@@ -9,6 +9,10 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.idealperfume.Fragment.MyPickFragment1;
 import com.example.idealperfume.Fragment.MyPickFragment2;
 import com.example.idealperfume.Fragment.Ranking_10sFragment;
+import com.example.idealperfume.Fragment.Ranking_20sFragment;
+import com.example.idealperfume.Fragment.Ranking_30sFragment;
+import com.example.idealperfume.Fragment.Ranking_40sFragment;
+import com.example.idealperfume.Fragment.Ranking_TotalFragment;
 
 import java.util.ArrayList;
 
@@ -19,8 +23,13 @@ public class MainRankingAdapter extends FragmentPagerAdapter {
     public MainRankingAdapter(@NonNull FragmentManager fm) {
         super(fm);
         items = new ArrayList<>();
+        items.add(new Ranking_TotalFragment());
         items.add(new Ranking_10sFragment());
+        items.add(new Ranking_20sFragment());
+        items.add(new Ranking_30sFragment());
+        items.add(new Ranking_40sFragment());
 
+        item.add("전체");
         item.add("10대");
         item.add("20대");
         item.add("30대");

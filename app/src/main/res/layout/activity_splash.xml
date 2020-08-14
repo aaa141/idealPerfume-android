@@ -1,23 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.SplashActivity"
-    android:background="@drawable/splash">
+    tools:context=".Activity.SplashActivity">
+    <!--scaletype center crop-->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:background="@drawable/splash"/>
 
     <TextView
         android:id="@+id/splashText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="529dp"
-        android:layout_marginLeft="30.5dp"
-        android:text="당신이 그리는\n이상향을\n찾아드리는\n큐레이션 서비스"
-        android:textSize="30sp"
-        android:textColor="@color/white"
         android:fontFamily="@font/notosanskr_medium"
-        android:lineSpacingExtra="12sp"/>
+        android:text="당신이 그리는\n이상향을\n찾아드리는\n큐레이션 서비스"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="170dp"
+        android:layout_marginLeft="36dp"/>
+    <!--android:lineSpacingExtra="12sp"-->
 
-
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="© double slash"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="66dp"/>
+</RelativeLayout>

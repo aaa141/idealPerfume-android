@@ -37,7 +37,7 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
 
     RecyclerView rv_review, rv_recommend, rv_ranking;
     PI_ProductAdapter recommendAdapter, rankingAdapter;
-    TextView tv_pdPrice,tv_pdBrand, tv_pdName, tv_reviewMore;
+    TextView tv_pdPrice,tv_pdBrand, tv_pdName, tv_reviewMore2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +46,12 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
 
         pdHashtagLayout = (FlexboxLayout) findViewById(R.id.pdHashtagLayout);
         pieChart = (PieChart) findViewById(R.id.pieChart);
-        barChart = (BarChart) findViewById(R.id.barChart);
+        //barChart = (BarChart) findViewById(R.id.barChart);
         rv_recommend = findViewById(R.id.rv_recommend);
         rv_ranking = findViewById(R.id.rv_ranking);
         rv_review = findViewById(R.id.rv_review);
 
-        tv_reviewMore = findViewById(R.id.tv_reviewMore);
+        tv_reviewMore2 = findViewById(R.id.tv_reviewMore2);
         tv_pdBrand = findViewById(R.id.tv_pdBrand);
         tv_pdName = findViewById(R.id.tv_pdName);
         tv_pdPrice = findViewById(R.id.tv_pdPrice);
@@ -63,12 +63,13 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
     //8.13) 구성원료랑 해시태그는 나중에
     public void init(){
         //상품 ID 넘기면
-        //상품 브랜드, 상품명, 별점, 가격, 브랜드 설명, 원료 이미지, 원료명, 이걸 다가져와야...하나..?
+        //상품 브랜드, 상품명, 별점, 가격, 브랜드 설명, 원료 이미지, 원료명, ...
+
 
 
 
         //해시태그 textview 설정
-        String[] hastag ={"보습","촉촉/수분","향/냄새","건조","흡수력","끈적"};
+        String[] hastag ={"보습","촉촉/수분","향/냄새","건조","흡수력","끈적","발림성","민감/예민", "유분"};
         for (int i=0; i<hastag.length; i++) {
             TextView tv = new TextView(this);
             tv.setText("#"+hastag[i]);
@@ -159,24 +160,22 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
         pieChart.setData(pieData);
 
     }
-
     private void setLegend(){
         Legend legend = pieChart.getLegend();
         legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);
         legend.setForm(Legend.LegendForm.SQUARE);
         legend.setTextSize(13f);
         legend.setTextColor(getResources().getColor(R.color.lightBlack));
-
-
-//        legend.setForm(Legend.LegendForm.);
+        //legend.setForm(Legend.LegendForm.);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.tv_reviewMore:
-                
+            case R.id.tv_reviewMore2:
+                startActivity(new Intent(ProductInfoActivity.this,ReviewActivity.class));
                 break;
         }
     }
 }
+

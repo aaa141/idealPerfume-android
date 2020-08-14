@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class EventActivity extends AppCompatActivity {
     private ArrayList<EventData> arrayList;
-//    private List<EventData> listeventdata;
+    //    private List<EventData> listeventdata;
     private EventItemAdapter eventItemAdapter;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;

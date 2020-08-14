@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,61 +7,174 @@
     tools:context=".Activity.MyPickActivity"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28.8dp"
-        android:layout_marginLeft="20.5dp"
-        android:layout_marginRight="19dp">
-
-        <ImageView
-            style="@style/BackButton"
-            android:layout_width="6dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp" />
-
-        <TextView
-            style="@style/menutext"
-            android:text="@string/mypick"/>
-    </RelativeLayout>
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_mypick"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginTop="16.5dp"
-        app:tabMode="fixed"
-        app:tabTextColor="#c4c4c4"
-        app:tabSelectedTextColor="#3c3c3c"
-        app:tabIndicatorColor="#3c3c3c"
-        app:tabIndicatorHeight="1dp"
-        android:background="@drawable/tab_unselected_bottom">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabitem_product"
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="제품픽"/>
+            android:layout_marginTop="28.8dp"
+            android:layout_marginLeft="20.5dp"
+            android:layout_marginRight="19dp">
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabitem_brand"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="브랜드픽"/>
-    </com.google.android.material.tabs.TabLayout>
+            <ImageView
+                style="@style/BackButton"
+                android:layout_width="6dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp" />
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager"
+            <TextView
+                style="@style/menutext"
+                android:text="@string/mypick"/>
+        </RelativeLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_mypick"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="16.5dp"
+            app:tabMode="fixed"
+            app:tabTextColor="#c4c4c4"
+            app:tabSelectedTextColor="#3c3c3c"
+            app:tabIndicatorColor="#3c3c3c"
+            app:tabIndicatorHeight="1dp"
+            android:background="@drawable/tab_unselected_bottom"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#ebebeb" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/white">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_gravity="center_horizontal"
-        android:background="#ebebeb" />
+        <RelativeLayout
+            android:id="@+id/layout_homemenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true">
 
+            <ImageView
+                android:id="@+id/iv_homemenu"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="11.6dp"
+                android:src="@drawable/homemenu"
+                android:layout_centerHorizontal="true"/>
 
-</LinearLayout>
+            <TextView
+                style="@style/TextLineSpacing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="홈"
+                android:textColor="@color/bottommenu"
+                android:textSize="10sp"
+                android:lineSpacingExtra="2sp"
+                android:layout_below="@id/iv_homemenu"
+                android:layout_marginTop="8.5dp"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_mypickmenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/iv_mypickmenu"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="11.6dp"
+                android:src="@drawable/mypickmenu"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                style="@style/TextLineSpacing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="내픽이상향"
+                android:textColor="@color/green"
+                android:textSize="10sp"
+                android:lineSpacingExtra="2sp"
+                android:layout_below="@id/iv_mypickmenu"
+                android:layout_marginTop="8.5dp"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_eventmenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/iv_eventmenu"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="11.6dp"
+                android:src="@drawable/eventmenu"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                style="@style/TextLineSpacing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이벤트"
+                android:textColor="@color/bottommenu"
+                android:textSize="10sp"
+                android:lineSpacingExtra="2sp"
+                android:layout_below="@id/iv_eventmenu"
+                android:layout_marginTop="8.5dp"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_settingmenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/iv_settingmenu"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="11.6dp"
+                android:src="@drawable/settingmenu"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                style="@style/TextLineSpacing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="환경설정"
+                android:textColor="@color/bottommenu"
+                android:textSize="10sp"
+                android:lineSpacingExtra="2sp"
+                android:layout_below="@id/iv_settingmenu"
+                android:layout_marginTop="8.5dp"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

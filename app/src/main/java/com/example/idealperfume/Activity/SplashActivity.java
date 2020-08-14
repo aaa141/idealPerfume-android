@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
@@ -30,10 +32,15 @@ public class SplashActivity extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.splashText);
         String content = textView.getText().toString();
-        SpannableString spannableString = new SpannableString(content);
+
         String word = "이상향";
         int start = content.indexOf(word);
         int end = start + word.length();
+
+        Typeface boldFont = Typeface.createFromAsset(getAssets(), "font/notosanskr_bold.otf");
+        SpannableStringBuilder stringBuilder = new SpannableStringBuilder(textView.getText());
+        stringBuilder.setSpan(new CustomTypefaceSpan("",boldFont),start,end, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        textView.setText(stringBuilder);
 
         startLoading();
     }
@@ -44,6 +51,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent = new Intent(SplashActivity.this, SplashActivity.class);
+                //main 화면으로 넘어갈 때, splash 스택에서 삭제
                 startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
                 finish();
             }

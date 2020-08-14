@@ -19,391 +19,393 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <FrameLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <!--상품 이미지-->
-            <ImageView
+            android:layout_height="wrap_content">
+
+
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:background="@color/yellow"
-                android:scaleType="center"/>
-
-            <ImageView
-                android:id="@+id/img_heart"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="right|top"
-                android:src="@drawable/heart_off"/>
-
-
-            <!--상품 정보 레이아웃-->
-            <LinearLayout
-                android:background="@drawable/dialog_border"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="374dp"
-                android:paddingLeft="19.5dp"
-                android:paddingRight="19.5dp">
-
-                <!--다른 제품 전까지의 레이아웃-->
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        style="@style/LightTextStyle.gray"
-                        android:id="@+id/tv_pdBrand"
-                        android:text="상품 브랜드 명"
-                        android:layout_marginTop="30dp"/>
-                    <TextView
-                        android:id="@+id/tv_pdName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="상품명"
-                        android:textSize="16sp"
-                        android:layout_below="@id/tv_pdBrand"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="52dp"/>
-                    <RatingBar
-                        android:id="@+id/ratingBar_main"
-                        style="@style/Widget.AppCompat.RatingBar.Small"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:numStars="5"
-                        android:isIndicator="true"
-                        android:layout_alignBottom="@+id/pdPrice"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="4.41"
-                        android:textSize="12sp"
-                        android:fontFamily="@font/notosanskr_medium"
-                        android:layout_marginLeft="7dp"
-                        android:layout_toRightOf="@+id/ratingBar_main"
-                        android:layout_alignBottom="@+id/ratingBar_main"/>
-                    <TextView
-                        android:id="@+id/pdPrice"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="가격"
-                        android:textSize="16sp"
-                        android:layout_below="@id/tv_pdName"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginBottom="23dp"/>
-
-                </RelativeLayout>
-                <View style="@style/divider" />
-
-                <RelativeLayout
+                android:layout_height="match_parent">
+                <!--상품 이미지-->
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="79dp"
-                    android:background="@drawable/image_rounding"
-                    android:backgroundTint="@color/gray"
-                    android:layout_marginTop="29dp">
+                    android:layout_height="400dp"
+                    android:background="@color/yellow"
+                    android:scaleType="center"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_heart"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right|top"
+                    android:src="@drawable/heart_off"/>
 
 
-                    <TextView
-                        android:id="@+id/textBrand"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:text="일리윤(illiyoon)"/>
-                    <TextView
-                        style="@style/LightTextStyle.gray"
-                        android:layout_alignLeft="@id/textBrand"
-                        android:layout_below="@id/textBrand"
-                        android:text="브랜드 설명"/>
-
-                </RelativeLayout>
-                <com.google.android.flexbox.FlexboxLayout
-                    android:id="@+id/pdHashtagLayout"
+                <!--상품 정보 레이아웃-->
+                <LinearLayout
+                    android:background="@drawable/dialog_border"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:flexWrap="wrap"
-                    android:layout_marginTop="29dp"
-                    android:layout_marginBottom="29.5dp">
+                    android:orientation="vertical"
+                    android:layout_marginTop="374dp"
+                    android:paddingLeft="19.5dp"
+                    android:paddingRight="19.5dp">
 
-
-                </com.google.android.flexbox.FlexboxLayout>
-
-                <View style="@style/divider" />
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="137dp"
-                    android:paddingTop="22dp">
-                    <TextView
-                        style="@style/BoldText"
-                        android:id="@+id/textRaw"
+                    <!--다른 제품 전까지의 레이아웃-->
+                    <RelativeLayout
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            style="@style/LightTextStyle.gray"
+                            android:id="@+id/tv_pdBrand"
+                            android:text="상품 브랜드 명"
+                            android:layout_marginTop="30dp"/>
+                        <TextView
+                            android:id="@+id/tv_pdName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="상품명"
+                            android:textSize="16sp"
+                            android:layout_below="@id/tv_pdBrand"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="52dp"/>
+                        <RatingBar
+                            android:id="@+id/ratingBar_main"
+                            style="@style/Widget.AppCompat.RatingBar.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:numStars="5"
+                            android:isIndicator="true"
+                            android:layout_alignBottom="@+id/pdPrice"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4.41"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:layout_marginLeft="7dp"
+                            android:layout_toRightOf="@+id/ratingBar_main"
+                            android:layout_alignBottom="@+id/ratingBar_main"/>
+                        <TextView
+                            android:id="@+id/pdPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="가격"
+                            android:textSize="16sp"
+                            android:layout_below="@id/tv_pdName"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="23dp"/>
+
+                    </RelativeLayout>
+                    <View style="@style/divider" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="79dp"
+                        android:background="@drawable/image_rounding"
+                        android:backgroundTint="@color/gray"
+                        android:layout_marginTop="29dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/image_brand"
+                            android:layout_width="46dp"
+                            android:layout_height="46dp"
+                            android:background="@drawable/icon_circle"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"/>
+                        <TextView
+                            android:id="@+id/textBrand"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:text="일리윤(illiyoon)"
+                            android:layout_toRightOf="@+id/image_brand"/>
+                        <TextView
+                            style="@style/LightTextStyle.gray"
+                            android:layout_alignLeft="@id/textBrand"
+                            android:layout_below="@id/textBrand"
+                            android:text="브랜드 설명" />
+
+                    </RelativeLayout>
+                    <com.google.android.flexbox.FlexboxLayout
+                        android:id="@+id/pdHashtagLayout"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="구성된 원료는"
-                        android:layout_marginBottom="22dp"/>
+                        app:flexWrap="wrap"
+                        android:layout_marginTop="29dp"
+                        android:layout_marginBottom="29.5dp">
 
-                    <TextView
-                        style="@style/LightTextStyle"
-                        android:id="@+id/tv_materialMore"
-                        android:layout_width="wrap_content"
+
+                    </com.google.android.flexbox.FlexboxLayout>
+
+                    <View style="@style/divider" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="137dp"
+                        android:paddingTop="22dp">
+                        <TextView
+                            style="@style/BoldText"
+                            android:id="@+id/textRaw"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="구성된 원료는"
+                            android:layout_marginBottom="22dp"/>
+
+                        <TextView
+                            style="@style/LightTextStyle"
+                            android:id="@+id/tv_materialMore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="더보기>"
+                            android:layout_alignParentRight="true"/>
+
+                        <ImageView
+                            style="@style/RawMaterialImageStyle"
+                            android:id="@+id/img_rawMaterial"
+                            android:layout_below="@id/textRaw"
+                            android:src="@color/gray"
+                            android:layout_marginLeft="3dp" />
+
+                        <TextView
+                            android:id="@+id/tv_rawMaterial"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="원료명"
+                            android:textSize="14sp"
+                            android:layout_alignTop="@id/img_rawMaterial"
+                            android:layout_toRightOf="@id/img_rawMaterial"
+                            android:layout_marginLeft="14dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="원료 소개"
+                            android:textSize="13sp"
+                            android:layout_alignLeft="@id/tv_rawMaterial"
+                            android:layout_below="@id/tv_rawMaterial"/>
+
+                    </RelativeLayout>
+                    <View style="@style/divider" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="더보기>"
-                        android:layout_alignParentRight="true"/>
+                        android:paddingTop="22dp">
+                        <TextView
+                            android:id="@+id/textReview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="세줄후기" />
 
-                    <ImageView
-                        style="@style/RawMaterialImageStyle"
-                        android:id="@+id/img_rawMaterial"
-                        android:layout_below="@id/textRaw"
-                        android:src="@color/gray"
-                        android:layout_marginLeft="3dp" />
+                        <TextView
+                            style="@style/LightTextStyle"
+                            android:id="@+id/tv_reviewMore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="180dp"
+                            android:text="더보기>"
+                            android:layout_alignParentRight="true"/>
 
-                    <TextView
-                        android:id="@+id/tv_rawMaterial"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="원료명"
-                        android:textSize="14sp"
-                        android:layout_alignTop="@id/img_rawMaterial"
-                        android:layout_toRightOf="@id/img_rawMaterial"
-                        android:layout_marginLeft="14dp"/>
+                        <fragment
+                            android:id="@+id/fg_rating"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textReview"
+                            android:name="com.example.idealperfume.Fragment.RatingFragment"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="원료 소개"
-                        android:textSize="13sp"
-                        android:layout_alignLeft="@id/tv_rawMaterial"
-                        android:layout_below="@id/tv_rawMaterial"/>
-
-                </RelativeLayout>
-                <View style="@style/divider" />
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="22dp">
-                    <TextView
-                        android:id="@+id/textReview"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="세줄후기" />
-
-                    <TextView
-                        style="@style/LightTextStyle"
-                        android:id="@+id/tv_reviewMore"
-                        android:layout_width="wrap_content"
-                        android:layout_height="180dp"
-                        android:text="더보기>"
-                        android:layout_alignParentRight="true"/>
-                    <TextView
-                        android:id="@+id/tv_rate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/textReview"
-                        android:layout_marginTop="36dp"
-                        android:layout_marginLeft="77dp"
-                        android:text="4.41"
-                        android:textSize="26sp"/>
-                    <RatingBar
-                        android:id="@+id/ratingBar"
-                        style="@style/Widget.AppCompat.RatingBar.Small"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:numStars="5"
-                        android:isIndicator="true"
-                        android:layout_below="@id/tv_rate"
-                        android:layout_marginTop="11dp"/>
-
-                    <com.github.mikephil.charting.charts.BarChart
-                        android:id="@+id/barChart"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/textReview"
-                        android:layout_marginTop="34dp"
-                        android:layout_marginRight="50dp"
-                        android:layout_alignParentRight="true"/>
-
-                </RelativeLayout>
-                <View style="@style/divider"/>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_review"
-                    android:overScrollMode="never"
-                    android:nestedScrollingEnabled="false"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <View style="@style/divider"/>
-                <TextView
-                    style="@style/LightTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2301개의 더보기>"
-                    android:paddingTop="14.5dp"
-                    android:paddingBottom="17.5dp"
-                    android:layout_gravity="center_horizontal"/>
-                <View style="@style/divider"/>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginBottom="36dp">
-
-                    <TextView
-                        style="@style/BoldText"
-                        android:id="@+id/text_user"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="제품의 사용자는"
-                        android:layout_marginBottom="40dp"/>
-
-                    <com.github.mikephil.charting.charts.PieChart
-                        android:id="@+id/pieChart"
-                        android:layout_width="210dp"
-                        android:layout_height="210dp"
-                        android:layout_below="@+id/text_user"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="40dp"/>
-
-
-                    <View
-                        android:id="@+id/rec1"
-                        android:layout_width="14dp"
-                        android:layout_height="14dp"
-                        android:background="@drawable/rec_radius5"
-                        android:backgroundTint="#6da048"
-                        android:layout_below="@+id/pieChart"
-                        android:layout_alignParentLeft="true"
-                        android:layout_marginTop="40dp"
-                        android:layout_marginLeft="27dp"/>
-
-                    <TextView
-                        style="@style/TextViewStyle"
-                        android:id="@+id/tv_rateFemale"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="여성 75%"
-                        android:layout_toRightOf="@+id/rec1"
-                        android:layout_alignBottom="@+id/rec1"
-                        android:layout_marginLeft="6dp"/>
-
-                    <View
-                        android:id="@+id/rec2"
-                        android:layout_width="14dp"
-                        android:layout_height="14dp"
-                        android:background="@drawable/rec_radius5"
-                        android:backgroundTint="#f9d070"
-                        android:layout_alignBottom="@+id/rec1"
-                        android:layout_toRightOf="@+id/tv_rateFemale"
-                        android:layout_marginLeft="35dp"/>
-
-                    <TextView
-                        style="@style/TextViewStyle"
-                        android:id="@+id/tv_rateMale"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="남성 25%"
-                        android:layout_toRightOf="@+id/rec2"
-                        android:layout_alignBottom="@+id/rec1"
-                        android:layout_marginLeft="6dp"/>
-                    <View
-                        android:id="@+id/rec3"
-                        android:layout_width="14dp"
-                        android:layout_height="14dp"
-                        android:background="@drawable/rec_radius5"
-                        android:backgroundTint="#ebebeb"
-                        android:layout_alignBottom="@+id/rec1"
-                        android:layout_toLeftOf="@+id/tv_etc"
-                        android:layout_marginRight="6dp"/>
-
-                    <TextView
-                        android:id="@+id/tv_etc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="기타 0%"
-                        android:layout_alignBottom="@+id/rec1"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="27dp"/>
-                </RelativeLayout>
-
-                <View style="@style/divider"/>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="22dp"
-                    android:layout_marginBottom="56dp">
-
-                    <TextView
-                        style="@style/BoldText"
-                        android:id="@+id/r1text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="시트러스를 사용한 다른제품"
-                        android:layout_marginBottom="10dp"/>
-                    <TextView
-                        style="@style/LightTextStyle"
-                        android:id="@+id/tv_recommendMore"
-                        android:text="더보기>"
-                        android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+                    <View style="@style/divider"/>
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_recommend"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/r1text"
-                        android:layout_marginTop="21dp"/>
+                        android:id="@+id/rv_review"
+                        android:overScrollMode="never"
+                        android:nestedScrollingEnabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-                </RelativeLayout>
-
-                <View style="@style/divider"/>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="22.5dp"
-                    android:layout_marginBottom="69dp">
-
+                    <View style="@style/divider"/>
                     <TextView
-                        android:id="@+id/r2text"
-                        style="@style/BoldText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:text="10대 픽 랭킹 BEST10" />
-
-                    <TextView
-                        android:id="@+id/tv_rankMore"
                         style="@style/LightTextStyle"
-                        android:layout_alignParentRight="true"
-                        android:text="더보기>" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_ranking"
+                        android:id="@+id/tv_reviewMore2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/r2text"
-                        android:layout_marginTop="21dp"/>
+                        android:text="2301개의 더보기>"
+                        android:paddingTop="14.5dp"
+                        android:paddingBottom="17.5dp"
+                        android:layout_gravity="center_horizontal"/>
+                    <View style="@style/divider"/>
 
-                </RelativeLayout>
-            </LinearLayout>
-        </FrameLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="36dp">
 
-    </ScrollView>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="57dp"
-        android:layout_height="57dp"
-        android:clickable="true"
-        app:srcCompat="@drawable/ic_edit"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"/>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+                        <TextView
+                            style="@style/BoldText"
+                            android:id="@+id/text_user"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="제품의 사용자는"
+                            android:layout_marginBottom="40dp"/>
+
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/pieChart"
+                            android:layout_width="210dp"
+                            android:layout_height="210dp"
+                            android:layout_below="@+id/text_user"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="40dp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_below="@id/pieChart"
+                            android:layout_marginTop="40dp"
+                            android:layout_gravity="center_horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal">
+                                <View
+                                    android:id="@+id/rec1"
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:background="@drawable/rec_radius5"
+                                    android:backgroundTint="#6da048"
+                                    android:layout_gravity="center_vertical"/>
+
+                                <TextView
+                                    style="@style/TextViewStyle"
+                                    android:id="@+id/tv_rateFemale"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="여성 75%"
+                                    android:layout_marginLeft="6dp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal">
+                                <View
+                                    android:id="@+id/rec2"
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:background="@drawable/rec_radius5"
+                                    android:backgroundTint="#f9d070"
+                                    android:layout_gravity="center_vertical"/>
+
+                                <TextView
+                                    style="@style/TextViewStyle"
+                                    android:id="@+id/tv_rateMale"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="남성 25%"
+                                    android:layout_marginLeft="6dp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal">
+                                <View
+                                    android:id="@+id/rec3"
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:background="@drawable/rec_radius5"
+                                    android:backgroundTint="#ebebeb"
+                                    android:layout_gravity="center_vertical"/>
+
+                                <TextView
+                                    android:id="@+id/tv_etc"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="기타 0%"
+                                    android:layout_marginLeft="6dp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View style="@style/divider"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginBottom="56dp">
+
+                        <TextView
+                            style="@style/BoldText"
+                            android:id="@+id/r1text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="시트러스를 사용한 다른제품"
+                            android:layout_marginBottom="10dp"/>
+                        <TextView
+                            style="@style/LightTextStyle"
+                            android:id="@+id/tv_recommendMore"
+                            android:text="더보기>"
+                            android:layout_alignParentRight="true"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_recommend"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/r1text"
+                            android:layout_marginTop="21dp"/>
+
+                    </RelativeLayout>
+
+                    <View style="@style/divider"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22.5dp"
+                        android:layout_marginBottom="69dp">
+
+                        <TextView
+                            android:id="@+id/r2text"
+                            style="@style/BoldText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="10대 픽 랭킹 BEST10" />
+
+                        <TextView
+                            android:id="@+id/tv_rankMore"
+                            style="@style/LightTextStyle"
+                            android:layout_alignParentRight="true"
+                            android:text="더보기>" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_ranking"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/r2text"
+                            android:layout_marginTop="21dp"/>
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+        </ScrollView>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_edit"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="16dp"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
 </LinearLayout>
+

@@ -4,48 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.MaterialsActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Activity.MaterialsActivity">
 
     <RelativeLayout
         android:id="@+id/main_event"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="21.5dp"
         android:layout_marginLeft="20.5dp"
-        android:layout_marginRight="19dp">
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginBottom="21.5dp">
 
         <ImageView
             style="@style/BackButton"
+            android:layout_marginLeft="0dp"
             android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:layout_marginLeft="0dp"/>
+            android:layout_marginBottom="0dp" />
 
         <TextView
             style="@style/menutext"
-            android:text="구성원료"/>
+            android:text="구성원료" />
     </RelativeLayout>
 
-    <View
-        style="@style/divider"/>
+    <View style="@style/divider" />
 
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:id="@+id/graph"
-        android:layout_width="match_parent"
-        android:layout_height="335dp"
-        android:orientation="horizontal" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_materialslist"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/graph"
-        android:layout_marginLeft="19.5dp"
-        android:layout_marginRight="19.5dp"/>
-    </RelativeLayout>
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="match_parent"
+                android:layout_height="335dp"></com.github.mikephil.charting.charts.PieChart>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_materialslist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="19.5dp"
+                android:layout_marginRight="19.5dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

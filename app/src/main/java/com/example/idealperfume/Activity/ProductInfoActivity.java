@@ -25,6 +25,7 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.google.android.flexbox.FlexboxLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,10 +35,10 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
     FlexboxLayout pdHashtagLayout;
     PieChart pieChart;
     BarChart barChart;
-
+    FloatingActionButton floatingActionButton;
     RecyclerView rv_review, rv_recommend, rv_ranking;
     PI_ProductAdapter recommendAdapter, rankingAdapter;
-    TextView tv_pdPrice,tv_pdBrand, tv_pdName, tv_reviewMore2;
+    TextView tv_pdPrice,tv_pdBrand, tv_pdName, tv_reviewMore, tv_reviewMore2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +51,16 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
         rv_recommend = findViewById(R.id.rv_recommend);
         rv_ranking = findViewById(R.id.rv_ranking);
         rv_review = findViewById(R.id.rv_review);
-
+        floatingActionButton = findViewById(R.id.floatingActionButton);
         tv_reviewMore2 = findViewById(R.id.tv_reviewMore2);
+        tv_reviewMore = findViewById(R.id.tv_reviewMore);
         tv_pdBrand = findViewById(R.id.tv_pdBrand);
         tv_pdName = findViewById(R.id.tv_pdName);
         tv_pdPrice = findViewById(R.id.tv_pdPrice);
 
+        tv_reviewMore.setOnClickListener(this);
+        tv_reviewMore2.setOnClickListener(this);
+        floatingActionButton.setOnClickListener(this);
         init();
         drawPieChart();
     }
@@ -172,8 +177,11 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.tv_reviewMore2:
+            case R.id.tv_reviewMore: case R.id.tv_reviewMore2:
                 startActivity(new Intent(ProductInfoActivity.this,ReviewActivity.class));
+                break;
+            case R.id.floatingActionButton:
+                startActivity(new Intent(ProductInfoActivity.this,ReviewRegActivity.class));
                 break;
         }
     }

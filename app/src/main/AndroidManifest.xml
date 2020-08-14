@@ -14,7 +14,13 @@
         <activity android:name=".Activity.SplashActivity"></activity>
         <activity android:name=".Activity.OnBoardingActivity" />
         <activity android:name=".Activity.ReviewFilterActivity" />
-        <activity android:name=".Activity.ReviewActivity"/>
+        <activity android:name=".Activity.ReviewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Activity.PI_QuickActivity"/>
         <activity android:name=".Activity.QuickSearchActivity"/>
         <activity android:name=".Activity.ReviewRegActivity"></activity>
@@ -35,7 +41,13 @@
         </activity>
         <activity android:name=".Activity.MaterialsActivity" />
         <activity android:name=".Activity.SettingActivity" />
-        <activity android:name=".Activity.ProductInfoActivity"/>
+        <activity android:name=".Activity.ProductInfoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -70,9 +70,6 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
         //상품 ID 넘기면
         //상품 브랜드, 상품명, 별점, 가격, 브랜드 설명, 원료 이미지, 원료명, ...
 
-
-
-
         //해시태그 textview 설정
         String[] hastag ={"보습","촉촉/수분","향/냄새","건조","흡수력","끈적","발림성","민감/예민", "유분"};
         for (int i=0; i<hastag.length; i++) {
@@ -94,20 +91,22 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
         //세줄 후기
         //(서버) 공감수 순으로 리뷰 2개 가져오기
         ArrayList<ReviewData> mList = new ArrayList<>();
-        mList.add(new ReviewData("정은재은재"
+
+        mList.add(new ReviewData("김현지"
+                ,"2020.08.07"
+                , getResources().getString(R.string.testGoodReview)
+                , getResources().getString(R.string.testBadReview)
+                ,getResources().getString(R.string.testTagReview)
+                ,"4","15","5",true
+                ,true,R.drawable.tmp_review3));
+        mList.add(new ReviewData("이현우"
                 ,"2020.05.29"
-                ,"이모가 선물로 사준 향수이며 저의 첫 향수에요 :)향덕이 된 이유는 이 향수랍니다 ㅎㅎ"
-                , "정말 단점이 없지만 굳이 뽑자면 첫향이 조금"
-                ,"#보습"
-                ,"4","11","4",true
-                ,true,R.drawable.icon_circle));
-        mList.add(new ReviewData("정은재은재"
-                ,"2020.05.29"
-                ,"이모가 선물로 사준 향수이며 저의 첫 향수에요 :)향덕이 된 이유는 이 향수랍니다 ㅎㅎ"
-                , "정말 단점이 없지만 굳이 뽑자면 첫향이 조금"
-                ,"#보습"
-                ,"4","11","4",true
-                ,true,R.drawable.icon_circle));
+                ,"부드럽고 포근한 향이에요 :)\n클린의 웜코튼과 비슷한 향입니다!"
+                , "가격이 비싸다는 것과 지속력이 많이 떨어져요ㅠㅠ\n 이러한 점들만 보완되면 좋겠어요"
+                ,"#섬유유연제향 #촉촉 #부드러움 #포근함"
+                ,"1","10","2",true
+                ,true,R.drawable.tmp_review2));
+
         ReviewAdapter reviewAdapter = new ReviewAdapter(this, mList);
         rv_review.setLayoutManager(new LinearLayoutManager(this));
         rv_review.setAdapter(reviewAdapter);

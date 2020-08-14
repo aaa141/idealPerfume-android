@@ -1,6 +1,8 @@
 package com.example.idealperfume.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Paint;
 import android.graphics.drawable.GradientDrawable;
 import android.util.Log;
@@ -15,6 +17,10 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.idealperfume.Activity.EventActivity;
+import com.example.idealperfume.Activity.MainActivity;
+import com.example.idealperfume.Activity.ProductInfoActivity;
+import com.example.idealperfume.Activity.ReviewActivity;
 import com.example.idealperfume.Data.ReviewData;
 import com.example.idealperfume.R;
 
@@ -131,10 +137,15 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
             tv_more.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    good.setMaxLines(Integer.MAX_VALUE);
-                    bad.setMaxLines(Integer.MAX_VALUE);
-                    tag.setMaxLines(Integer.MAX_VALUE);
-                    tv_more.setVisibility(View.INVISIBLE);
+                    if(context instanceof ReviewActivity) {
+                        good.setMaxLines(Integer.MAX_VALUE);
+                        bad.setMaxLines(Integer.MAX_VALUE);
+                        tag.setMaxLines(Integer.MAX_VALUE);
+                        tv_more.setVisibility(View.INVISIBLE);
+                    }
+                    else if(context instanceof ProductInfoActivity){
+                        context.startActivity(new Intent(context, ReviewActivity.class));
+                    }
                 }
             });
 

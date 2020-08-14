@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -27,15 +29,15 @@ import com.google.android.flexbox.FlexboxLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductInfoActivity extends AppCompatActivity {
+public class ProductInfoActivity extends AppCompatActivity implements View.OnClickListener {
 
     FlexboxLayout pdHashtagLayout;
     PieChart pieChart;
     BarChart barChart;
 
-    //LinearLayout review_layout;
     RecyclerView rv_review, rv_recommend, rv_ranking;
     PI_ProductAdapter recommendAdapter, rankingAdapter;
+    TextView tv_pdPrice,tv_pdBrand, tv_pdName, tv_reviewMore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,11 @@ public class ProductInfoActivity extends AppCompatActivity {
         rv_ranking = findViewById(R.id.rv_ranking);
         rv_review = findViewById(R.id.rv_review);
 
+        tv_reviewMore = findViewById(R.id.tv_reviewMore);
+        tv_pdBrand = findViewById(R.id.tv_pdBrand);
+        tv_pdName = findViewById(R.id.tv_pdName);
+        tv_pdPrice = findViewById(R.id.tv_pdPrice);
+
         init();
         drawPieChart();
     }
@@ -60,8 +67,6 @@ public class ProductInfoActivity extends AppCompatActivity {
 
 
 
-
-
         //해시태그 textview 설정
         String[] hastag ={"보습","촉촉/수분","향/냄새","건조","흡수력","끈적"};
         for (int i=0; i<hastag.length; i++) {
@@ -69,10 +74,19 @@ public class ProductInfoActivity extends AppCompatActivity {
             tv.setText("#"+hastag[i]);
             tv.setBackground(getResources().getDrawable(R.drawable.text_round,null));
             tv.setTextColor(getResources().getColor(R.color.green));
+
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
+
+            params.rightMargin = Math.round(5*getResources().getDisplayMetrics().density);
+            params.bottomMargin = Math.round(10*getResources().getDisplayMetrics().density);
+            tv.setLayoutParams(params);
             pdHashtagLayout.addView(tv);
         }
 
         //세줄 후기
+        //(서버) 공감수 순으로 리뷰 2개 가져오기
         ArrayList<ReviewData> mList = new ArrayList<>();
         mList.add(new ReviewData("정은재은재"
                 ,"2020.05.29"
@@ -80,22 +94,24 @@ public class ProductInfoActivity extends AppCompatActivity {
                 , "정말 단점이 없지만 굳이 뽑자면 첫향이 조금"
                 ,"#보습"
                 ,"4","11","4",true
-                ,true,R.drawable.check));
+                ,true,R.drawable.icon_circle));
         mList.add(new ReviewData("정은재은재"
                 ,"2020.05.29"
                 ,"이모가 선물로 사준 향수이며 저의 첫 향수에요 :)향덕이 된 이유는 이 향수랍니다 ㅎㅎ"
                 , "정말 단점이 없지만 굳이 뽑자면 첫향이 조금"
                 ,"#보습"
                 ,"4","11","4",true
-                ,true,R.drawable.check));
+                ,true,R.drawable.icon_circle));
         ReviewAdapter reviewAdapter = new ReviewAdapter(this, mList);
         rv_review.setLayoutManager(new LinearLayoutManager(this));
         rv_review.setAdapter(reviewAdapter);
 
-        LinearLayoutManager manager = new LinearLayoutManager(this);
-        manager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        rv_recommend.setLayoutManager(manager);
-        //rv_ranking.setLayoutManager(manager);
+        LinearLayoutManager manager1 = new LinearLayoutManager(this);
+        LinearLayoutManager manager2 = new LinearLayoutManager(this);
+        manager1.setOrientation(LinearLayoutManager.HORIZONTAL);
+        manager2.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rv_recommend.setLayoutManager(manager1);
+        rv_ranking.setLayoutManager(manager2);
 
 
         // 데이터 받아와서 넣기
@@ -105,7 +121,7 @@ public class ProductInfoActivity extends AppCompatActivity {
         list.add(new ProductInfoData(R.drawable.productx,"샤넬","샹스 오드 퍼퓸 스프레이",239100));
 
         recommendAdapter = new PI_ProductAdapter(this, list);
-        //rankingAdapter = new PI_ProductAdapter(this,);
+        rankingAdapter = new PI_ProductAdapter(this,list);
 
         rv_recommend.setAdapter(recommendAdapter);
         rv_ranking.setAdapter(rankingAdapter);
@@ -152,5 +168,14 @@ public class ProductInfoActivity extends AppCompatActivity {
 
 
         //legend.setForm(Legend.LegendForm.);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.tv_reviewMore:
+                
+                break;
+        }
     }
 }

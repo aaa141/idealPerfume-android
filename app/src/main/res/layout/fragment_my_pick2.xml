@@ -5,6 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.MyPickFragment2">
 
+    <!-- TODO: Update blank fragment layout -->
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="브랜드별" />-->
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatbtn_search"
         android:layout_width="57dp"
@@ -19,5 +25,6 @@
         android:id="@+id/rv_mypickbrand"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="19.5dp"/>
+        android:layout_marginLeft="19.5dp"
+        android:layout_marginRight="19.5dp"/>
 </FrameLayout>

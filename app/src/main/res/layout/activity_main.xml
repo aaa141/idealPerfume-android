@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,66 +7,45 @@
     android:orientation="vertical"
     tools:context=".Activity.MainActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
         android:orientation="vertical">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/iv_mainbackground"
-                android:layout_width="match_parent"
-                android:layout_height="454dp"
-                android:background="@drawable/mainbackground"
-                android:scaleType="centerCrop" />
+        <ImageView
+            android:id="@+id/iv_mainbackground"
+            android:layout_width="match_parent"
+            android:layout_height="454dp"
+            android:background="@drawable/mainbackground"
+            android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/tv_login"
                 style="@style/MainHeader"
                 android:layout_marginTop="162dp"
-                android:clickable="true"
-                android:text="@string/mainhead" />
+                android:text="@string/mainhead"
+                android:clickable="true"/>
 
-            <RelativeLayout
-                android:id="@+id/layout_gotest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginRight="44dp"
+            <TextView
+                style="@style/MainHeader"
                 android:layout_marginTop="363dp"
-                android:clickable="true">
-
-                <TextView
-                    android:id="@+id/tv_gotest"
-                    style="@style/MainHeader"
-                    android:text="이상향 테스트 바로가기"
-                    android:textSize="14sp" />
-
-                <ImageView
-                    android:layout_toRightOf="@id/tv_gotest"
-                    android:layout_width="5.5dp"
-                    android:layout_height="5.5dp"
-                    android:layout_marginLeft="15.5dp"
-                    android:src="@drawable/ic_launcher_background"/>
-            </RelativeLayout>
+                android:layout_marginRight="44dp"
+                android:text="이상향 테스트 바로가기"
+                android:textSize="14sp"
+                android:layout_gravity="right"/>
         </FrameLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-22dp"
             android:background="@drawable/dialog_bottom"
+            android:orientation="vertical"
             android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:orientation="vertical">
+            android:focusableInTouchMode="true">
 
             <EditText
                 android:id="@+id/et_mainsearch"
@@ -77,10 +56,10 @@
                 android:layout_marginTop="33dp"
                 android:layout_marginRight="23dp"
                 android:layout_marginBottom="36dp"
-                android:hint="제품 또는 브랜드를 검색해보세요!"
                 android:letterSpacing="-0.02"
                 android:lineSpacingExtra="3sp"
-                android:textColor="#b5b5b5" />
+                android:hint="제품 또는 브랜드를 검색해보세요!"
+                android:textColor="#b5b5b5"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -93,78 +72,70 @@
                     android:id="@+id/ll_review"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:clickable="true"
+                    android:orientation="vertical"
                     android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:clickable="true"
+                    android:layout_weight="1">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/iv_review"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                    <ImageView
                         android:layout_width="87dp"
                         android:layout_height="87dp"
-                        android:layout_marginBottom="14dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/main_review"/>
+                        android:background="@drawable/border_radius45"
+                        android:layout_marginBottom="14dp"/>
 
                     <TextView
-                        style="@style/TextLineSpacing"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="리뷰남기기"
-                        android:textColor="#3c3c3c" />
+                        style="@style/TextLineSpacing"
+                        android:textColor="#3c3c3c"
+                        android:text="리뷰남기기"/>
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/ll_perfume"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:clickable="true"
+                    android:orientation="vertical"
                     android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:clickable="true"
+                    android:layout_weight="1">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/iv_perfume"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                    <ImageView
                         android:layout_width="87dp"
                         android:layout_height="87dp"
                         android:layout_marginBottom="14dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/main_perfume" />
+                        android:background="@drawable/border_radius45" />
 
                     <TextView
-                        style="@style/TextLineSpacing"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="향수"
-                        android:textColor="#3c3c3c" />
+                        style="@style/TextLineSpacing"
+                        android:textColor="#3c3c3c"
+                        android:text="향수"/>
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/ll_diffuser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:clickable="true"
+                    android:orientation="vertical"
                     android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:clickable="true"
+                    android:layout_weight="1">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/iv_diffuser"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                    <ImageView
+
                         android:layout_width="87dp"
                         android:layout_height="87dp"
-                        android:layout_marginBottom="14dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/main_diffuser" />
+                        android:background="@drawable/border_radius45"
+                        android:layout_marginBottom="14dp"/>
 
                     <TextView
-                        style="@style/TextLineSpacing"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="디퓨저"
-                        android:textColor="#3c3c3c" />
+                        style="@style/TextLineSpacing"
+                        android:textColor="#3c3c3c"
+                        android:text="디퓨저"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -172,96 +143,88 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:layout_marginTop="12dp"
                 android:layout_marginRight="23dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
 
                 <LinearLayout
                     android:id="@+id/ll_candle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:clickable="true"
+                    android:orientation="vertical"
                     android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:clickable="true"
+                    android:layout_weight="1">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/iv_candle"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                    <ImageView
                         android:layout_width="87dp"
                         android:layout_height="87dp"
-                        android:layout_marginBottom="14dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/main_candle" />
+                        android:background="@drawable/border_radius45"
+                        android:layout_marginBottom="14dp" />
 
                     <TextView
-                        style="@style/TextLineSpacing"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="캔들"
-                        android:textColor="#3c3c3c" />
+                        style="@style/TextLineSpacing"
+                        android:textColor="#3c3c3c"
+                        android:text="캔들"/>
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/ll_aromaoil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:clickable="true"
+                    android:orientation="vertical"
                     android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:clickable="true"
+                    android:layout_weight="1">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/iv_aromaoil"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                    <ImageView
                         android:layout_width="87dp"
                         android:layout_height="87dp"
-                        android:layout_marginBottom="14dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/main_aromaoil" />
+                        android:background="@drawable/border_radius45"
+                        android:layout_marginBottom="14dp"/>
 
                     <TextView
-                        style="@style/TextLineSpacing"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="아로마 오일"
-                        android:textColor="#3c3c3c" />
+                        style="@style/TextLineSpacing"
+                        android:textColor="#3c3c3c"
+                        android:text="아로마 오일"/>
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/ll_bodylotion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:clickable="true"
+                    android:orientation="vertical"
                     android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:clickable="true"
+                    android:layout_weight="1">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/iv_bodylotion"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                    <ImageView
+
                         android:layout_width="87dp"
                         android:layout_height="87dp"
-                        android:layout_marginBottom="14dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/main_bodylotion" />
+                        android:background="@drawable/border_radius45"
+                        android:layout_marginBottom="14dp"/>
 
                     <TextView
-                        style="@style/TextLineSpacing"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="바디로션"
-                        android:textColor="#3c3c3c" />
+                        style="@style/TextLineSpacing"
+                        android:textColor="#3c3c3c"
+                        android:text="바디로션"/>
                 </LinearLayout>
             </LinearLayout>
 
             <View
                 style="@style/divider"
                 android:layout_marginLeft="19.5dp"
-                android:layout_marginTop="51.5dp"
                 android:layout_marginRight="19.5dp"
+                android:layout_marginTop="51.5dp"
                 android:layout_marginBottom="31.5dp"
-                android:background="#ebebeb" />
+                android:background="#ebebeb"/>
 
         </LinearLayout>
 
@@ -270,228 +233,125 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="21dp"
             android:layout_marginRight="23dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
             <TextView
-                style="@style/TextBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="월간 랭킹"
-                android:textColor="#3c3c3c" />
+                style="@style/TextBold"
+                android:textColor="#3c3c3c"
+                android:text="월간 랭킹"/>
 
             <TextView
                 android:id="@+id/tv_rankcategoty"
-                style="@style/TextBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="6dp"
-                android:text="향수"
-                android:textColor="@color/green" />
-            <!--            <Spinner-->
-            <!--                android:id="@+id/spinner"-->
-            <!--                android:layout_width="20dp"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                app:spinnerMode="buttomsheet"/>-->
+                style="@style/TextBold"
+                android:textColor="@color/green"
+                android:text="향수 ▼"
+                android:layout_marginLeft="6dp"/>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"/>
 
             <ImageView
                 android:layout_width="6dp"
                 android:layout_height="11.5dp"
                 android:layout_gravity="right"
-                android:src="@drawable/ic_launcher_background" />
+                android:src="@drawable/ic_launcher_background"/>
         </LinearLayout>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_ranking"
-            style="@style/TextBold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="18dp"
+            style="@style/TextBold"
+            app:tabSelectedTextColor="@color/green"
             app:tabIndicatorColor="@color/green"
             app:tabIndicatorHeight="2dp"
-            app:tabMode="fixed"
-            app:tabSelectedTextColor="@color/green" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+<!--            <com.google.android.material.tabs.TabItem-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="전체"/>-->
+
+<!--            <com.google.android.material.tabs.TabItem-->
+<!--                android:id="@+id/tabitem_10s"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="10대"/>-->
+
+<!--            <com.google.android.material.tabs.TabItem-->
+<!--                android:id="@+id/tabitem_20s"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="20대"/>-->
+
+<!--            <com.google.android.material.tabs.TabItem-->
+<!--                android:id="@+id/tabitem_30s"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="30대"/>-->
+
+<!--            <com.google.android.material.tabs.TabItem-->
+<!--                android:id="@+id/tabitem_40s"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="40대 이상"/>-->
+
+        </com.google.android.material.tabs.TabLayout>
 
         <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewpager_rank"
+            android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="440dp"
-            android:layout_marginLeft="19.5dp"
-            android:layout_marginRight="19.5dp" />
+            android:layout_height="match_parent"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="21dp"
-            android:layout_marginTop="31.5dp"
             android:layout_marginRight="23dp"
+            android:layout_marginTop="31.5dp"
             android:layout_marginBottom="20dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
             <TextView
-                style="@style/TextBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="이상향"
-                android:textColor="#3c3c3c" />
+                style="@style/TextBold"
+                android:textColor="#3c3c3c"
+                android:text="이상향"/>
 
             <TextView
-                style="@style/TextBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="6dp"
+                style="@style/TextBold"
+                android:textColor="@color/green"
                 android:text="매거진"
-                android:textColor="@color/green" />
+                android:layout_marginLeft="6dp"/>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"/>
 
             <ImageView
                 android:layout_width="6dp"
                 android:layout_height="11.5dp"
                 android:layout_gravity="right"
-                android:src="@drawable/ic_launcher_background" />
+                android:src="@drawable/ic_launcher_background"/>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_idealmagagine"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
-    </ScrollView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="@color/white">
-
-        <RelativeLayout
-            android:id="@+id/layout_homemenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true">
-
-            <ImageView
-                android:id="@+id/iv_homemenu"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="11.6dp"
-                android:src="@drawable/homemenu"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                style="@style/TextLineSpacing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="홈"
-                android:textColor="@color/green"
-                android:textSize="10sp"
-                android:lineSpacingExtra="2sp"
-                android:layout_below="@id/iv_homemenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout_mypickmenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:clickable="true">
-
-            <ImageView
-                android:id="@+id/iv_mypickmenu"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="11.6dp"
-                android:src="@drawable/mypickmenu"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                style="@style/TextLineSpacing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="내픽이상향"
-                android:textColor="@color/bottommenu"
-                android:textSize="10sp"
-                android:lineSpacingExtra="2sp"
-                android:layout_below="@id/iv_mypickmenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout_eventmenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:clickable="true">
-
-            <ImageView
-                android:id="@+id/iv_eventmenu"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="11.6dp"
-                android:src="@drawable/eventmenu"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                style="@style/TextLineSpacing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="이벤트"
-                android:textColor="@color/bottommenu"
-                android:textSize="10sp"
-                android:lineSpacingExtra="2sp"
-                android:layout_below="@id/iv_eventmenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout_settingmenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:clickable="true">
-
-            <ImageView
-                android:id="@+id/iv_settingmenu"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="11.6dp"
-                android:src="@drawable/settingmenu"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                style="@style/TextLineSpacing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="환경설정"
-                android:textColor="@color/bottommenu"
-                android:textSize="10sp"
-                android:lineSpacingExtra="2sp"
-                android:layout_below="@id/iv_settingmenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
-        </RelativeLayout>
-    </LinearLayout>
-
-</RelativeLayout>
+</ScrollView>

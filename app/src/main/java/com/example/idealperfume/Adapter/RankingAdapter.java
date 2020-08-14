@@ -18,7 +18,6 @@ import java.text.BreakIterator;
 import java.util.List;
 
 public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.MyViewHolder> {
-
     Context context;
     List<RankingData> rankingData;
 
@@ -29,7 +28,7 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.MyViewHo
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RankingAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v;
         v = LayoutInflater.from(context).inflate(R.layout.listitem_main_ranking, parent, false);
         MyViewHolder viewHolder = new MyViewHolder(v);
@@ -38,9 +37,9 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.MyViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.tv_rank.setText(rankingData.get(position).getRank()+"");
-        holder.tv_change.setText(rankingData.get(position).getChange()+"");
+    public void onBindViewHolder(@NonNull RankingAdapter.MyViewHolder holder, int position) {
+        holder.tv_rank.setText(rankingData.get(position).getRank());
+        holder.tv_change.setText(rankingData.get(position).getChange());
         holder.tv_name.setText(rankingData.get(position).getName() + " (" + rankingData.get(position).getName_eng() + ")");
         holder.tv_desc.setText(rankingData.get(position).getDesc());
         holder.iv_producticon.setImageResource(rankingData.get(position).getProductimg());

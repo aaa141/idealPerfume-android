@@ -33,10 +33,10 @@ public class OnBoardingActivity extends AppCompatActivity {
         mSlideViewPager.registerOnPageChangeCallback(callback);
     }
 
-    public void addDotsIndicator(int position){
+    public void addDotsIndicator(int position) {
         mDots = new TextView[3];
 
-        for(int i=0; i<mDots.length; i++){
+        for (int i = 0; i < mDots.length; i++) {
             mDots[i] = new TextView(this);
             mDots[i].setText(Html.fromHtml("&#8226;"));
             mDots[i].setTextSize(35);
@@ -45,7 +45,7 @@ public class OnBoardingActivity extends AppCompatActivity {
             mDotLayout.addView(mDots[i]);
         }
 
-        if(mDots.length>0){
+        if (mDots.length > 0) {
             mDots[position].setTextColor(getResources().getColor(R.color.white));
         }
     }

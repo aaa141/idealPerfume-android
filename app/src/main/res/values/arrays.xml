@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tmp_popular">
+        <item>바디로션</item>
+        <item>화이트 머스크</item>
+        <item>랄프로렌</item>
+        <item>우디</item>
+        <item>캔들</item>
+        <item>아로마 오일</item>
+        <item>20대 향수</item>
+        <item>여자 향수</item>
+        <item>양키 캔들</item>
+        <item>상큼</item>
+    </string-array>
+</resources>

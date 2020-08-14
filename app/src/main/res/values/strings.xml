@@ -9,11 +9,21 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- TODO: Remove or change this placeholder text -->
-<!--    <string name="mainhead">당신의 <b>이상향</b>을\n찾아보시겠어요?</string>-->
+    <!--    <string name="mainhead">당신의 <b>이상향</b>을\n찾아보시겠어요?</string>-->
 
-    <string name="testReview">네모네모멈뭄멈뭄네모네모멈뭄멈뭄네모네모멈뭄멈뭄네모
-        네모멈뭄멈뭄네모네모멈뭄멈뭄네모네모멈뭄멈뭄네모네모멈뭄멈뭄네모네모멈뭄멈뭄
-    네모네모멈뭄멈뭄네모네모멈뭄멈뭄네모네모멈뭄멈뭄네모네모멈뭄멈뭄네모네모멈뭄멈뭄</string>
+    <string name="testGoodReview">이모가 선물로 사준 향수이며 저의 첫 향수에요 :)\n향덕이 된 이유는 이 향수랍니다 ㅎㅎ\n
+굉장히 오랫동안 저의 넘버원 향수입니다!\n이미 공병은 너무 많았지만 다 버리고, 지금 2개 동시에 사서 이미 하나는 다썼답니다.\n
+여러 향수들을 써봤지만 저한테 이만큼 좋은 향수는 없었어요! 그리고 주위에서도 향 좋다고 무슨 향수 쓰는지 많이 물어봐요.\n
+향은 찾아보면 자세한 설명이 있을텐데, 달콤한 꽃향과 과일향이 은은하게 섞였어요! 피부에 따라 조금씩 다른 향이 나게될거같아요!</string>
+
+    <string name="testBadReview">정말 단점이 없지만 굳이 뽑자면 첫향이 조금 알코올 냄새가 강하지만 금방 사라져서 괜찮아요 :)\n
+그리고 유명해서 조금 흔할 수 있다는 점이 단점!\n
+어찌되었든 저에겐 굉장히 만족스러운 향수입니다 :)\n
+지속력이 좀 떨어진다는 이야기가 많았어요.\n
+유지력이 떨어진다고 크게 느끼진 않았지만 꿀팁이 따로 필요해요!\n
+가격이 아무래도 저렴한편은 아니라서 부담스러울 수 있지만 어느정도 감안하고 구매했습니다.</string>
+
+    <string name="testTagReview">#보습#촉촉#향#건조</string>
 
     <string name="mainhead">로그인 후\n당신의 이상향을\n찾아보시겠어요?</string>
 </resources>

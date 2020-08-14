@@ -28,7 +28,7 @@ import java.util.Arrays;
 
 public class PI_QuickActivity extends AppCompatActivity {
 
-    ArrayList<String> mList = new ArrayList<>(Arrays.asList("계열 : ㅇㅇㅇ", "연령대 : 20대", "이미지 : 자연적인" , "가격 : 5조"));
+    ArrayList<String> mList = new ArrayList<>(Arrays.asList("카테고리 : 바디로션", "가격 : 0원 - 50,000원", "연령대 : 20대", "계열 : 시트러스, 머스크", "이미지 : 자연적인, 청량함" ));
     PI_PSearchFragment PI_PSearchFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

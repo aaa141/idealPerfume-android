@@ -46,15 +46,17 @@ public class ReviewFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String tmp = getResources().getString(R.string.testReview);
-        addItem("김가나다", "2000.20.00", tmp, tmp,
-                tmp, "4", "10", "4.5",true, false, R.drawable.edit_gray);
+        String good = getResources().getString(R.string.testGoodReview);
+        String bad = getResources().getString(R.string.testBadReview);
+        String tag = getResources().getString(R.string.testTagReview);
+        addItem("김현지", "2020.08.07", good, bad,
+                tag, "4", "15", "5.0",true, true, R.drawable.tmp_review3);
 
-        addItem("김가나다", "2000.20.00", "조아용", "사실 뻥이에요",
-                "#다다", "4", "10", "1.5",true, false, R.drawable.edit_gray);
+        addItem("이현우", "2020.07.17", "부드럽고 포근한 향이에요 :)\n클린의 웜코튼과 비슷한 향입니다!", "가격이 비싸다는 것과 지속력이 많이 떨어져요ㅠㅠ\n 이러한 점들만 보완되면 좋겠어요",
+                "#섬유유연제향 #촉촉 #부드러움 #포근함", "1", "10", "2.5",false, true, R.drawable.tmp_review2);
 
-        addItem("김가나다", "2000.20.00", "조아용", "사실 뻥이에요",
-                tmp, "4", "10", "4.5",true, false, R.drawable.edit_gray);
+        addItem("최민아", "2020.07.31", "겨울에 어울리는 포근한 향이에요!", "향은 너무 좋지만 생각보다 지속력이 떨어져요",
+                "#복숭아 #달콤 #과일향", "0", "8", "3.5",false, false, R.drawable.tmp_review1);
 
     }
 

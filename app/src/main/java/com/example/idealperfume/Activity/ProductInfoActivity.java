@@ -128,7 +128,7 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void drawPieChart(){
-        
+
         int[] colorArray =
                 new int[]{getResources().getColor(R.color.green)
                         , getResources().getColor(R.color.yellow)
@@ -159,6 +159,7 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
         pieChart.setData(pieData);
 
     }
+
     private void setLegend(){
         Legend legend = pieChart.getLegend();
         legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);
@@ -167,7 +168,7 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
         legend.setTextColor(getResources().getColor(R.color.lightBlack));
 
 
-        //legend.setForm(Legend.LegendForm.);
+//        legend.setForm(Legend.LegendForm.);
     }
 
     @Override

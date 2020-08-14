@@ -21,6 +21,8 @@ public class PI_SearchActivity extends AppCompatActivity {
         vp.setAdapter(PI_SearchAdapter);
 
         TabLayout tabLayout = findViewById(R.id.tab_pi_search);
+        tabLayout.setTabTextColors(getResources().getColor(R.color.gray),getResources().getColor(R.color.green6D));
+        tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.green6D));
         tabLayout.setupWithViewPager(vp);
     }
 }

@@ -2,6 +2,7 @@ package com.example.idealperfume.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,20 +21,32 @@ public class SettingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        // 하단바 만들면 환경설정 버튼에 연결하고, 하단바 메뉴 모든 화면에서 열 수 있게 추가해야 함
-        Button test = findViewById(R.id.btn_modal);
-        test.setOnClickListener(new View.OnClickListener() {
+        home = findViewById(R.id.layout_homemenu);
+        mypick = findViewById(R.id.layout_mypickmenu);
+        event = findViewById(R.id.layout_eventmenu);
+
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
-                            SettingActivity.this, R.style.BottomSheetDialghTheme);
-                    View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(
-                            R.layout.activity_setting_fragment, (LinearLayout)findViewById(R.id.layout_settingbottomsheet)
+                Intent intent = new Intent(SettingActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
-                );
-                    bottomSheetDialog.setContentView(bottomSheetView);
-                    bottomSheetDialog.show();
-                }
+        mypick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingActivity.this, MyPickActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        event.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingActivity.this, EventActivity.class);
+                startActivity(intent);
+            }
         });
 
     }

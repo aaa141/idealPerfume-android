@@ -1,5 +1,7 @@
 package com.example.idealperfume.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,12 +9,15 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.idealperfume.Activity.PI_SearchActivity;
+import com.example.idealperfume.Activity.Register2Activity;
 import com.example.idealperfume.R;
 
 import java.util.ArrayList;
 
-public class PI_QuickAdapter extends RecyclerView.Adapter<PI_QuickAdapter.ViewHolder> {
+public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder> {
     private ArrayList<String> list;
+    private Context Activity;
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView textView;
@@ -25,37 +30,37 @@ public class PI_QuickAdapter extends RecyclerView.Adapter<PI_QuickAdapter.ViewHo
                 public void onClick(View v) {
                     int pos = getAdapterPosition() ;
                     if (pos != RecyclerView.NO_POSITION) {
-                        if (mListener != null) {
-                            mListener.onItemClick(v, pos) ;
-                        }
+                        Activity.startActivity(new Intent(Activity, PI_SearchActivity.class));
                     }
                 }
             });
         }
     }
 
-    public interface OnItemClickListener {
-        void onItemClick(View v, int position) ;
-    }
+//외부에서 클릭했을 때, 내부를 바꾸고 싶다면
+//    public interface OnItemClickListener {
+//        void onItemClick(View v, int position) ;
+//    }
+//
+//    private SearchAdapter.OnItemClickListener mListener = null ;
+//
+//    public void setOnItemClickListener(SearchAdapter.OnItemClickListener listener) {
+//        this.mListener = listener ;
+//    }
 
-    private PI_QuickAdapter.OnItemClickListener mListener = null ;
-
-    public void setOnItemClickListener(PI_QuickAdapter.OnItemClickListener listener) {
-        this.mListener = listener ;
-    }
-
-    public PI_QuickAdapter(ArrayList<String> list) {
+    public SearchAdapter(Context con, ArrayList<String> list) {
+        Activity = con;
         this.list = list;
     }
 
     @Override
-    public PI_QuickAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SearchAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View root = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_green_bubble, parent, false);
-        return new PI_QuickAdapter.ViewHolder(root);
+        return new SearchAdapter.ViewHolder(root);
     }
 
     @Override
-    public void onBindViewHolder(PI_QuickAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(SearchAdapter.ViewHolder holder, int position) {
         String str=list.get(position);
         holder.textView.setText(str);
     }
@@ -65,5 +70,3 @@ public class PI_QuickAdapter extends RecyclerView.Adapter<PI_QuickAdapter.ViewHo
         return list.size();
     }
 }
-
-

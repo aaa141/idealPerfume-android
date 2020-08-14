@@ -42,13 +42,15 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
         GradientDrawable drawable =
                 (GradientDrawable) ResourcesCompat.getDrawable(view.getResources(), R.drawable.image_rounding, null);
         imageView.setBackground(drawable);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         imageView.setClipToOutline(true);
+
 
         //신고버튼
         TextView tv_report = (TextView) view.findViewById(R.id.tv_report);
         tv_report.setPaintFlags(tv_report.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
-        ReviewAdapter.CustomViewHolder viewHolder = new ReviewAdapter.CustomViewHolder(view);
+        CustomViewHolder viewHolder = new CustomViewHolder(view);
 
         return viewHolder;
     }
@@ -95,6 +97,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
                         temp++;
                         mList.get(position).setNumberOfHeart(temp+"");
                         numberOfHeart.setText(mList.get(position).getNumberOfHeart() + "명에게 도움이 되었어요!");
+                        numberOfHeart.setTextColor(context.getResources().getColor(R.color.green6D));
                     } else {
                         heartImage.setImageResource(R.drawable.heart_off);
                         mList.get(position).setHeart(false);
@@ -103,6 +106,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
                         temp--;
                         mList.get(position).setNumberOfHeart(temp+"");
                         numberOfHeart.setText(mList.get(position).getNumberOfHeart() + "명에게 도움이 되었어요!");
+                        numberOfHeart.setTextColor(context.getResources().getColor(R.color.reviewTextColor));
                     }
                 }
             });
@@ -115,6 +119,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
                     if (!mList.get(position).isBookmark() == true) {
                         bookmarkImage.setImageResource(R.drawable.heart_on);
                         mList.get(position).setBookmark(true);
+
                     } else {
                         bookmarkImage.setImageResource(R.drawable.heart_off);
                         mList.get(position).setBookmark(false);
@@ -149,6 +154,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
         holder.userImage.setImageResource(mList.get(position).getUserImage());
         if (mList.get(position).isHeart() == true) {
             holder.heartImage.setImageResource(R.drawable.heart_on);
+            holder.numberOfHeart.setTextColor(context.getResources().getColor(R.color.green));
         } else {
             holder.heartImage.setImageResource(R.drawable.heart_off);
         }

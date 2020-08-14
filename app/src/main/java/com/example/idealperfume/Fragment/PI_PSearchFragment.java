@@ -61,11 +61,17 @@ public class PI_PSearchFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         addItem(R.drawable.ic_launcher_background, false,
-                "제품명", "4.1", "(1,233)", "브랜드명", "30,000원");
+                "세라마이드 아토 로션 350ml", "4.41", "(9,267)", "일리윤 (illiyoon)", "19,900원");
         addItem(R.drawable.ic_launcher_background,true,
-                "제품명", "4.1", "(1,233)", "브랜드명", "30,000원");
+                "데일리 모이스처 바디 로션 400ml", "4.32", "(2,934)", "더마비 (Derma:B)", "16,000원");
         addItem(R.drawable.ic_launcher_background, false,
-                "제품명", "4.1", "(1,233)", "브랜드명", "30,000원");
+                "베이비 로션", "4.33", "(1,274)", "보타니컬테라티 (Botanical Therapy)", "25,000원");
+        addItem(R.drawable.ic_launcher_background, false,
+                "아토베리어 로션", "4.23", "(1,557)", "에스트라 (Aestura)", "35,000원");
+        addItem(R.drawable.ic_launcher_background, false,
+                "세라마이드 아토 로션 350ml", "4.41", "(9,267)", "일리윤 (illiyoon)", "19,900원");
+        addItem(R.drawable.ic_launcher_background,true,
+                "데일리 모이스처 바디 로션 400ml", "4.32", "(2,934)", "더마비 (Derma:B)", "16,000원");
     }
 
 
@@ -94,7 +100,7 @@ public class PI_PSearchFragment extends Fragment {
 
         final TextView result = (TextView) v.findViewById(R.id.tv_sortBy);
 
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rcv_bs_basic);
+        final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rcv_bs_basic);
         recyclerView.addItemDecoration(new DividerItemDecoration(view.getContext(), DividerItemDecoration.VERTICAL));
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -104,6 +110,7 @@ public class PI_PSearchFragment extends Fragment {
             @Override
             public void onItemClick(View v, int position) {
                 result.setText(list.get(position)+ " ∨");
+                result.setTextColor(getResources().getColor(R.color.green6D));
                 BottomSheet.dismiss();
             }
         });

@@ -93,8 +93,6 @@
                         android:text="바디로션"
                         android:textSize="13sp"/>
 
-
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -380,8 +378,9 @@
 
 
             <Button
+                android:id="@+id/btn_next"
                 style="@style/ButtonX"
-                android:text="바로가기"/>
+                android:text="검색하기"/>
 
 
         </LinearLayout>

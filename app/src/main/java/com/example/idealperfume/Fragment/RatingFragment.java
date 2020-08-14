@@ -42,7 +42,7 @@ public class RatingFragment extends Fragment {
         BarDataSet barDataSet = new BarDataSet(data2(),"1");
         BarDataSet barDataSet2 = new BarDataSet(data1(),"2");
 
-        barDataSet2.setColor(getResources().getColor(R.color.black));
+        barDataSet2.setColor(getResources().getColor(R.color.green7C));
         barDataSet.setColor(getResources().getColor(R.color.gray));
 
         BarData barData = new BarData(barDataSet);
@@ -91,7 +91,7 @@ public class RatingFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addItem("4.5", "1", "2", "3", "4", "5");
+        addItem("4.41", "3", "2", "3", "4", "3");
 
     }
 

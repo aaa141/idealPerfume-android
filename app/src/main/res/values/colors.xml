@@ -7,10 +7,12 @@
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="gray">#D2D2D2</color>
-    <color name="darkgray">#DEDEDE</color>
-    <color name="reviewTextColor">#8e8e8e</color>
-    <color name="reviewTextDarkGray">#686868</color>
+    <color name="darkgray">#EBEBEB</color>
+    <color name="reviewTextColor">#C4C4C4</color>
+    <color name="reviewTextDarkGray">#8E8E8E</color>
     <color name="green">#6da048</color>
+    <color name="green6D">#6da048</color>
+    <color name="green7C">#7caf57</color>
     <color name="yellow">#f9d070</color>
     <color name="lightBlack">#3c3c3c</color>
 </resources>

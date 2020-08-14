@@ -21,13 +21,13 @@
             android:layout_marginLeft="14.5dp"
             app:endIconMode="clear_text"
             android:layout_marginTop="3dp"
-
             app:endIconDrawable="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:id="@+id/tv_pisearch_title"
                 android:layout_height="match_parent"
+                android:text="바디로션"
                 android:textCursorDrawable="@drawable/edit_gray"
                 style="@style/editText_gray" />
         </com.google.android.material.textfield.TextInputLayout>

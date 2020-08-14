@@ -1,7 +1,9 @@
 package com.example.idealperfume.Adapter;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
@@ -16,6 +18,8 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.idealperfume.Activity.PI_SearchActivity;
+import com.example.idealperfume.Activity.ProductInfoActivity;
 import com.example.idealperfume.Data.Pi_PSearchData;
 import com.example.idealperfume.R;
 
@@ -60,6 +64,17 @@ public class PI_PSearchAdapter extends RecyclerView.Adapter<PI_PSearchAdapter.Cu
 
         public CustomViewHolder(View view) {
             super(view);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition() ;
+                    if (pos != RecyclerView.NO_POSITION) {
+                        context.startActivity(new Intent(context, ProductInfoActivity.class));
+                    }
+                }
+            });
+
             this.brandName = (TextView) view.findViewById(R.id.tv_brandName);
             this.productName = (TextView) view.findViewById(R.id.tv_productName);
             this.price = (TextView) view.findViewById(R.id.tv_price);

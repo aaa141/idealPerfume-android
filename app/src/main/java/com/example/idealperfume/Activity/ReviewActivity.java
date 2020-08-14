@@ -2,6 +2,7 @@ package com.example.idealperfume.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -16,7 +17,6 @@ public class ReviewActivity extends AppCompatActivity {
     ReviewFragment ReviewFragment;
     RatingFragment RatingFragment;
     LinearLayout btn_filter;
-    TextView tv_filter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,8 @@ public class ReviewActivity extends AppCompatActivity {
         btn_filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(),ReviewFilterActivity.class);
+                startActivity(intent);
             }
         });
 

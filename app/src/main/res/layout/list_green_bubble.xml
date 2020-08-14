@@ -5,13 +5,15 @@
     android:layout_height="wrap_content"
     android:paddingHorizontal="11dp"
     android:paddingVertical="8dp"
-    android:background="@drawable/text_quick_round"
+    android:background="@drawable/text_green_round"
     android:gravity="center"
     android:layout_marginRight="6dp"
+    android:layout_marginBottom="10dp"
     >
     <TextView
-        android:id="@+id/tv_pi_quick"
+        android:id="@+id/tv_green_bubble"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/green6D"
         android:text="에어컨"></TextView>
 </LinearLayout>

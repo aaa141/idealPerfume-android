@@ -1,6 +1,7 @@
 package com.example.idealperfume.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
 import android.graphics.Paint;
@@ -33,13 +34,16 @@ public class SplashActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.splashText);
         String content = textView.getText().toString();
 
+
+        // 특정 문자열(이상향) BOLD체로 처리
         String word = "이상향";
         int start = content.indexOf(word);
         int end = start + word.length();
 
-        Typeface boldFont = Typeface.createFromAsset(getAssets(), "font/notosanskr_bold.otf");
+        Typeface boldFont = ResourcesCompat.getFont(getApplicationContext(),R.font.notosanskr_bold);
         SpannableStringBuilder stringBuilder = new SpannableStringBuilder(textView.getText());
-        stringBuilder.setSpan(new CustomTypefaceSpan("",boldFont),start,end, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        stringBuilder.setSpan(new CustomTypefaceSpan("",boldFont)
+                ,start,end, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
         textView.setText(stringBuilder);
 
         startLoading();
@@ -50,7 +54,7 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, SplashActivity.class);
+                Intent intent = new Intent(SplashActivity.this, OnBoardingActivity.class);
                 //main 화면으로 넘어갈 때, splash 스택에서 삭제
                 startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
                 finish();
@@ -58,7 +62,7 @@ public class SplashActivity extends AppCompatActivity {
         },2000);
     }
 
-
+    // spannable에서 커스텀 폰트 사용하기 위한 클래스
     public class CustomTypefaceSpan extends TypefaceSpan {
         private final Typeface newType;
 

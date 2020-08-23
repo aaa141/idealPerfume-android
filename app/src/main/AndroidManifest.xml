@@ -15,11 +15,7 @@
         <activity android:name=".Activity.OnBoardingActivity" />
         <activity android:name=".Activity.ReviewFilterActivity" />
         <activity android:name=".Activity.ReviewActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activity.PI_QuickActivity"/>
         <activity android:name=".Activity.QuickSearchActivity"/>
@@ -28,9 +24,11 @@
         <activity android:name=".Activity.MyPickActivity" />
         <activity android:name=".Activity.PI_SearchActivity"/>
         <activity android:name=".Activity.QuestionActivity" />
-        <activity android:name=".Activity.Register2Activity" />
+        <activity android:name=".Activity.Register2Activity" >
+        </activity>
         <activity android:name=".Activity.LoginActivity" />
-        <activity android:name=".Activity.Register1Activity" />
+        <activity android:name=".Activity.Register1Activity" >
+        </activity>
         <activity android:name=".Activity.Register3Activity" />
         <activity android:name=".Activity.MainActivity">
 <!--            <intent-filter>-->
@@ -47,11 +45,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.MaterialsActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity android:name=".Activity.SettingActivity" />
         <activity android:name=".Activity.ProductInfoActivity">

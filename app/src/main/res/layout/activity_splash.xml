@@ -10,8 +10,10 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignWithParentIfMissing="false"
         android:scaleType="centerCrop"
-        android:background="@drawable/splash"/>
+        android:adjustViewBounds="true"
+        android:src="@drawable/splash"/>
 
     <TextView
         android:id="@+id/splashText"

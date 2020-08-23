@@ -3,16 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="37.5dp"
-    android:layout_marginRight="45dp">
+    android:layout_marginRight="45dp"
+    android:gravity="bottom">
 
     <TextView
         android:id="@+id/tv_main"
+        android:fontFamily="@font/notosanskr_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="26sp"
-        android:lineSpacingExtra="9sp"
-        android:layout_marginTop="490dp"/>
+        android:lineSpacingExtra="9sp" />
 
     <TextView
         style="@style/TextViewStyle"
@@ -20,7 +21,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:fontFamily="@font/notosanskr_medium"
+        android:textColor="@color/bottommenu"
         android:layout_below="@+id/tv_main"
-        android:layout_marginTop="33dp"/>
+        android:layout_marginTop="33dp"
+        android:paddingBottom="175dp"/>
 
 </RelativeLayout>

@@ -1,9 +1,14 @@
 package com.example.idealperfume.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSmoothScroller;
+import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import android.content.Intent;
 import android.graphics.PorterDuff;
@@ -11,6 +16,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,9 +25,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.idealperfume.Adapter.BSBasicAdapter;
+import com.example.idealperfume.Adapter.YearAdapter;
 import com.example.idealperfume.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -30,6 +38,8 @@ public class Register2Activity extends AppCompatActivity {
 
     private static final int MAX_YEAR = 2020;
     private static final int MIN_YEAR = 1940;
+    private static final String TAG = MainActivity.class.getSimpleName();
+    private String str_year;
 
     boolean flag1 = false, flag2 = false, flag3 = false, flag4 = false;
     //year, nickname, gender, job flag
@@ -53,9 +63,15 @@ public class Register2Activity extends AppCompatActivity {
         tv_job = (TextView) findViewById(R.id.tv_job);
         final EditText et_nickname = (EditText) findViewById(R.id.et_nickname);
 
-        //날짜 데이터 넣어줌
+        //날짜 데이터 넣음
+        for (int i = 0; i < 2; i++) {
+            year.add("");
+        }
         for (int i = 1940; i <= 2020; i++) {
             year.add(String.format("%d", i));
+        }
+        for (int i = 0; i < 2; i++) {
+            year.add("");
         }
 
         tv_gender.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +88,6 @@ public class Register2Activity extends AppCompatActivity {
             }
         });
 
-
         tv_year.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,22 +95,28 @@ public class Register2Activity extends AppCompatActivity {
             }
         });
 
-        //인텐드
+
+        //인텐트
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Register3Activity.class);
-                startActivity(intent);
+                if(flag1 && flag2 && flag3 && flag4) {
+                    Intent intent = new Intent(getApplicationContext(), Register3Activity.class);
+                    startActivity(intent);
+                }
             }
         });
 
+        //닉네임 중복확인
         btn_doublecheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //중복인 경우 바꿔줘야됨
-                flag2 = true;
-                if (flag1 && flag2 && flag3 && flag4) {
-                    buttonAfter(btn_next);
+                if (et_nickname.getText().length() > 0) {
+                    flag2 = true;
+                    if (flag1 && flag2 && flag3 && flag4) {
+                        buttonAfter(btn_next);
+                    }
                 }
             }
         });
@@ -113,15 +134,13 @@ public class Register2Activity extends AppCompatActivity {
                 if (et_nickname.getText().length() > 0) {
                     buttonAfter(btn_doublecheck);
                     flag2 = false;
-                    if (flag1 && flag2 && flag3 && flag4) {
-                        buttonAfter(btn_next);
-                    }
                 }
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
                 if (et_nickname.getText().length() == 0) {
+                    flag2 = false;
                     buttonBefore(btn_next);
                     buttonBefore(btn_doublecheck);
                 }
@@ -132,14 +151,14 @@ public class Register2Activity extends AppCompatActivity {
     //버튼 클릭 전
     private void buttonBefore(Button button) {
         button.setEnabled(false);
-        button.setTextColor(getResources().getColor(R.color.gray));
-        button.setBackgroundResource(R.drawable.btn_border);
+        button.setTextColor(getResources().getColor(R.color.black));
+        button.setBackgroundResource(R.drawable.btn_bfrclick);
     }
 
     //버튼 클릭 후
     private void buttonAfter(Button button) {
         button.setEnabled(true);
-        button.setTextColor(getResources().getColor(R.color.black));
+        button.setTextColor(getResources().getColor(R.color.white));
         button.setBackgroundResource(R.drawable.btn_onclick);
     }
 
@@ -186,26 +205,60 @@ public class Register2Activity extends AppCompatActivity {
 
     private void createYearDialog(ArrayList<String> list) {
         View view = getLayoutInflater().inflate(R.layout.dialog_signup_year, null);
-        final NumberPicker picker_year = (NumberPicker) view.findViewById(R.id.picker_year);
         TextView btn_signup_year = (TextView) view.findViewById(R.id.btn_signup_year);
+        RecyclerView rcv_year = (RecyclerView) view.findViewById(R.id.rcv_year);
+
+        final YearAdapter yearAdapter = new YearAdapter(year);
+        rcv_year.setAdapter(yearAdapter);
+
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        rcv_year.setLayoutManager(layoutManager);
+
+        RecyclerView.SmoothScroller smoothScroller = new
+                LinearSmoothScroller(getApplicationContext()) {
+                    @Override protected int getVerticalSnapPreference() {
+                        return LinearSmoothScroller.SNAP_TO_START;
+                    }
+                };
+
+        smoothScroller.setTargetPosition(rcv_year.getAdapter().getItemCount()-25);
+        layoutManager.startSmoothScroll(smoothScroller);
+
+        final SnapHelper snapHelper = new LinearSnapHelper();
+        if (rcv_year.getOnFlingListener() == null)
+            snapHelper.attachToRecyclerView(rcv_year);
+
+        rcv_year.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                LinearLayoutManager layoutManager =
+                        LinearLayoutManager.class.cast(recyclerView.getLayoutManager());
+                int firstPos = layoutManager.findFirstVisibleItemPosition();
+                int lastPos = layoutManager.findLastVisibleItemPosition();
+                int middle = Math.abs(lastPos - firstPos) / 2 + firstPos;
+
+                str_year = yearAdapter.getItem(middle);
+                yearAdapter.notifyDataSetChanged();
+            }
+        });
 
         btn_signup_year.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 flag1 = true;
-                int year = picker_year.getValue();
-                tv_year.setText(year + "");
+                tv_year.setText(str_year);
                 BottomSheet.dismiss();
                 if (flag1 && flag2 && flag3 && flag4) {
                     buttonAfter(btn_next);
                 }
             }
         });
-
-        picker_year.setMinValue(MIN_YEAR);
-        picker_year.setMaxValue(MAX_YEAR);
-        picker_year.setValue(1997);
-        picker_year.setWrapSelectorWheel(false);
 
         BottomSheet = new BottomSheetDialog(this);
         BottomSheet.setContentView(view);

@@ -142,7 +142,7 @@
                     android:layout_height="42dp"
                     android:layout_below="@id/textView2"
                     android:layout_alignParentRight="true"
-                    android:background="@drawable/btn_border"
+                    android:background="@drawable/btn_bfrclick"
                     android:text="중복확인"
                     android:textSize="14sp" />
             </RelativeLayout>
@@ -150,8 +150,7 @@
 
         <Button
             android:id="@+id/button3"
-            style="@style/Button"
-            android:clickable="false"
+            style="@style/BfrButton"
             android:layout_marginHorizontal="0dp"
             android:layout_alignParentLeft="false"
             android:layout_alignParentRight="false"

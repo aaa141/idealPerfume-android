@@ -7,20 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.LinearLayout;
 
 import com.example.idealperfume.Adapter.MaterialsAdapter;
 import com.example.idealperfume.Data.MaterialsData;
 import com.example.idealperfume.R;
-import com.example.idealperfume.Util.CustomBarChartRender;
-import com.github.mikephil.charting.animation.Easing;
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.Description;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.List;

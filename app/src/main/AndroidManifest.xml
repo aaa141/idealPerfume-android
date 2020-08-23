@@ -33,6 +33,13 @@
         <activity android:name=".Activity.Register1Activity" />
         <activity android:name=".Activity.Register3Activity" />
         <activity android:name=".Activity.MainActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".Activity.MaterialsActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

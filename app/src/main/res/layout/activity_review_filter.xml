@@ -15,15 +15,18 @@
             android:id="@+id/back"/>
         <TextView
             style="@style/menutext"
-            android:id="@+id/menutext"
             android:text="필터"
-            android:layout_alignBottom="@+id/back"/>
+            android:layout_centerVertical="true"/>
         <TextView
+            android:id="@+id/tv_filterReset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="초기화"
-            android:layout_alignParentRight="true"
-            android:layout_alignBottom="@+id/menutext"/>
+            android:fontFamily="@font/notosanskr_bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_centerVertical="true"/>
 
     </RelativeLayout>
     <View

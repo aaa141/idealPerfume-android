@@ -65,7 +65,7 @@
         <item name="android:layout_marginTop">28.8dp</item>
         <item name="android:layout_marginBottom">30.4dp</item>
         <item name="android:layout_marginLeft">20.5dp</item>
-        <item name="android:src">@drawable/ic_launcher_background</item>
+        <item name="android:src">@drawable/img_back</item>
         <item name="android:layout_width">7.91dp</item>
         <item name="android:layout_height">15.82dp</item>
     </style>
@@ -220,7 +220,7 @@
     </style>
 
     <style name="LightTextStyle.gray" parent="LightTextStyle">
-        <item name="android:textColor">@color/reviewTextColor</item>
+        <item name="android:textColor">@color/reviewTextDarkGray</item>
     </style>
 
     //TextBold 폰트
@@ -261,5 +261,18 @@
         <item name="colorControlNormal">@color/gray</item>
         <item name="colorControlActivated">@color/yellow</item>
     </style>
+
+    <style name="QuickSearch_CheckBox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:button">@drawable/checkbox</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/lightBlack</item>
+        <item name="fontFamily">@font/notosanskr_medium</item>
+    </style>
+
 
 </resources>

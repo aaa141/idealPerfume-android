@@ -11,6 +11,11 @@ import android.os.Bundle;
 import com.example.idealperfume.Adapter.MaterialsAdapter;
 import com.example.idealperfume.Data.MaterialsData;
 import com.example.idealperfume.R;
+import com.github.mikephil.charting.animation.Easing;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -275,4 +275,19 @@
     </style>
 
 
+    //로그인화면 edittext
+    <style name="editCursor" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:paddingLeft">23dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">13dp</item>
+        <item name="android:textColor">#b5b5b5</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textCursorDrawable">@color/green6D</item>
+        <item name="android:fontFamily">@font/font</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
 </resources>

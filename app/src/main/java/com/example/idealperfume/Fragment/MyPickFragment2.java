@@ -71,7 +71,7 @@ public class MyPickFragment2 extends Fragment {
             }
         });
 
-        recyclerview.addItemDecoration(new DividerItemDecoration(v.getContext(), 1));
+//        recyclerview.addItemDecoration(new DividerItemDecoration(v.getContext(), 1));
         return v;
     }
 
@@ -80,7 +80,7 @@ public class MyPickFragment2 extends Fragment {
         super.onCreate(savedInstanceState);
 
         listpickdata = new ArrayList<>();
-        listpickdata.add(new MyPickData("일리윤","illiyoon", "아시아의 좋은 원료에서 찾은 피부과학", R.drawable.icon_circle));
-        listpickdata.add(new MyPickData("이니스프리", "innisfree","피부에 휴식을 주는 섬", R.drawable.icon_circle));
+        listpickdata.add(new MyPickData("일리윤","illiyoon", "아시아의 좋은 원료에서 찾은 피부과학", R.drawable.icon_circle, MyPickData.Code.ViewType.ProductListItem));
+        listpickdata.add(new MyPickData("이니스프리", "innisfree","피부에 휴식을 주는 섬", R.drawable.icon_circle, MyPickData.Code.ViewType.ProductListItem));
     }
 }

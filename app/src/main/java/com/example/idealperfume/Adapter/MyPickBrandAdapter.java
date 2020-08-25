@@ -37,7 +37,7 @@ public class MyPickBrandAdapter extends RecyclerView.Adapter<MyPickBrandAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.tv_brandname.setText(pickData.get(position).getProductName() + " (" + pickData.get(position).getName_eng() + ")");
+        holder.tv_brandname.setText(pickData.get(position).getProductName() + " (" + pickData.get(position).getSub() + ")");
         holder.tv_branddesc.setText(pickData.get(position).getDesc());
         holder.img.setImageResource(pickData.get(position).getIcon());
     }

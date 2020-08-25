@@ -6,9 +6,6 @@
     <solid android:color="@color/colorPrimary" />
 <!--btn_login.setBackgroundColor(0xebebeb);-->
     <corners
-        android:bottomLeftRadius="20dp"
-        android:bottomRightRadius="20dp"
-        android:topLeftRadius="20dp"
-        android:topRightRadius="20dp" />
+        android:radius="20dp"/>
 
 </shape>

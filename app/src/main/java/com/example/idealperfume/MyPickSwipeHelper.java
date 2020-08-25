@@ -153,7 +153,7 @@ public abstract class MyPickSwipeHelper extends ItemTouchHelper.SimpleCallback {
             float x=0, y=0;
             if (imageResId == 0) {
                 x = cWidth / 2f - r.width() / 2f - r.left;
-                y = cHeight / 2f - r.height() / 2f - r.bottom;
+                y = cHeight / 2f - r.height() / 2f - r.bottom + 40;
                 // 텍스트 위치 조정
                 c.drawText(text, rectF.left + x, rectF.top + y, p);
 //                c.drawText(text, rectF.centerX(), rectF.centerY() , p);

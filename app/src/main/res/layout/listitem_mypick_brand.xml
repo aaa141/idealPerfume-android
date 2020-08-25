@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="83dp"
-    android:orientation="horizontal"
-    android:gravity="center_vertical"
+    android:layout_centerVertical="true"
     android:layout_marginLeft="20dp">
-    
+
     <ImageView
         android:id="@+id/iv_brand"
         android:layout_width="46dp"
-        android:layout_height="46dp"/>
+        android:layout_height="46dp"
+        android:layout_centerVertical="true"/>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_centerVertical="true"
         android:layout_marginLeft="16dp"
-        android:layout_gravity="center_vertical">
+        android:layout_toRightOf="@id/iv_brand"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/font"
-        android:textSize="14sp"
-        android:textColor="#3c3c3c"
-        android:lineSpacingExtra="3sp"/>
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/TextLineSpacing"
+            android:layout_marginBottom="8dp"
+            android:lineSpacingExtra="3sp"
+            android:textColor="@color/lightBlack" />
 
-    <TextView
-        android:id="@+id/tv_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/font"
-        android:textSize="13sp"
-        android:textColor="#8e8e8e"
-        android:lineSpacingExtra="3sp"/>
-    </LinearLayout>
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_desc"
+            style="@style/TextLineSpacing"
+            android:layout_below="@id/tv_name"
+            android:textColor="#8e8e8e"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <View
+        style="@style/divider"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="19.5dp" />
+</RelativeLayout>

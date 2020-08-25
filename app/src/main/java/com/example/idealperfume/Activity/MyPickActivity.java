@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.idealperfume.Adapter.MyPickAdapter;
+import com.example.idealperfume.Adapter.MyPickProductAdapter;
 import com.example.idealperfume.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -25,6 +26,8 @@ import java.util.ArrayList;
 public class MyPickActivity extends AppCompatActivity {
 
     private RelativeLayout home, event, setting;
+
+    MyPickAdapter myPickAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,9 +62,12 @@ public class MyPickActivity extends AppCompatActivity {
             }
         });
 
+
         ViewPager vp = findViewById(R.id.viewpager);
-        MyPickAdapter myPickAdapter = new MyPickAdapter(getSupportFragmentManager());
+        myPickAdapter = new MyPickAdapter(getSupportFragmentManager());
         vp.setAdapter(myPickAdapter);
+
+        myPickAdapter.notifyDataSetChanged();
 
         TabLayout tabLayout = findViewById(R.id.tab_mypick);
         tabLayout.setupWithViewPager(vp);

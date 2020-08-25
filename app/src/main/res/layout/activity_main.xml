@@ -40,8 +40,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:layout_marginRight="44dp"
                     android:layout_marginTop="363dp"
+                    android:layout_marginRight="44dp"
                     android:clickable="true">
 
                     <TextView
@@ -51,11 +51,12 @@
                         android:textSize="14sp" />
 
                     <ImageView
-                        android:layout_toRightOf="@id/tv_gotest"
                         android:layout_width="5.5dp"
-                        android:layout_height="5.5dp"
+                        android:layout_height="11dp"
+                        android:layout_centerVertical="true"
                         android:layout_marginLeft="15.5dp"
-                        android:src="@drawable/ic_launcher_background"/>
+                        android:layout_toRightOf="@id/tv_gotest"
+                        android:src="@drawable/img_main_shortcut" />
                 </RelativeLayout>
             </FrameLayout>
 
@@ -68,19 +69,33 @@
                 android:focusableInTouchMode="true"
                 android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/et_mainsearch"
-                    style="@style/editText_gray"
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_marginLeft="23dp"
                     android:layout_marginTop="33dp"
-                    android:layout_marginRight="23dp"
-                    android:layout_marginBottom="36dp"
-                    android:hint="제품 또는 브랜드를 검색해보세요!"
-                    android:letterSpacing="-0.02"
-                    android:lineSpacingExtra="3sp"
-                    android:textColor="#b5b5b5" />
+                    android:layout_marginBottom="36dp">
+
+                    <EditText
+                        android:id="@+id/et_mainsearch"
+                        style="@style/editText_gray"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="제품 또는 브랜드를 검색해보세요!"
+                        android:letterSpacing="-0.02"
+                        android:lineSpacingExtra="3sp"
+                        android:textColor="#b5b5b5" />
+
+                    <ImageView
+                        android:id="@+id/iv_mainsearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginVertical="15dp"
+                        android:layout_marginRight="17.5dp"
+                        android:src="@drawable/img_search"
+                        android:clickable="true"/>
+                </FrameLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -98,14 +113,13 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/iv_review"
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="87dp"
                             android:layout_height="87dp"
                             android:layout_marginBottom="14dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/main_review"/>
+                            android:src="@drawable/main_review" />
 
                         <TextView
                             style="@style/TextLineSpacing"
@@ -124,9 +138,8 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/iv_perfume"
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="87dp"
                             android:layout_height="87dp"
                             android:layout_marginBottom="14dp"
@@ -150,9 +163,8 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/iv_diffuser"
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="87dp"
                             android:layout_height="87dp"
                             android:layout_marginBottom="14dp"
@@ -185,9 +197,8 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/iv_candle"
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="87dp"
                             android:layout_height="87dp"
                             android:layout_marginBottom="14dp"
@@ -211,9 +222,8 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/iv_aromaoil"
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="87dp"
                             android:layout_height="87dp"
                             android:layout_marginBottom="14dp"
@@ -237,9 +247,8 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/iv_bodylotion"
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="87dp"
                             android:layout_height="87dp"
                             android:layout_marginBottom="14dp"
@@ -303,7 +312,7 @@
                     android:layout_width="6dp"
                     android:layout_height="11.5dp"
                     android:layout_gravity="right"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/img_shortcut_point" />
             </LinearLayout>
 
             <com.google.android.material.tabs.TabLayout
@@ -360,7 +369,7 @@
                     android:layout_width="6dp"
                     android:layout_height="11.5dp"
                     android:layout_gravity="right"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/img_shortcut_point" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -375,8 +384,8 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:orientation="horizontal">
 
         <RelativeLayout
             android:id="@+id/layout_homemenu"
@@ -389,21 +398,21 @@
                 android:id="@+id/iv_homemenu"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="11.6dp"
-                android:src="@drawable/homemenu"
-                android:layout_centerHorizontal="true"/>
+                android:src="@drawable/img_home_on" />
 
             <TextView
                 style="@style/TextLineSpacing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/iv_homemenu"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8.5dp"
+                android:lineSpacingExtra="2sp"
                 android:text="홈"
                 android:textColor="@color/green"
-                android:textSize="10sp"
-                android:lineSpacingExtra="2sp"
-                android:layout_below="@id/iv_homemenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
+                android:textSize="10sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -411,28 +420,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:clickable="true">
+            android:clickable="true"
+            android:gravity="center_horizontal">
 
             <ImageView
                 android:id="@+id/iv_mypickmenu"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="11.6dp"
-                android:src="@drawable/mypickmenu"
-                android:layout_centerHorizontal="true"/>
+                android:src="@drawable/mypickmenu" />
 
             <TextView
                 style="@style/TextLineSpacing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/iv_mypickmenu"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8.5dp"
+                android:lineSpacingExtra="2sp"
                 android:text="내픽이상향"
                 android:textColor="@color/bottommenu"
-                android:textSize="10sp"
-                android:lineSpacingExtra="2sp"
-                android:layout_below="@id/iv_mypickmenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
+                android:textSize="10sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -440,28 +449,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:clickable="true">
+            android:clickable="true"
+            android:gravity="center_horizontal">
 
             <ImageView
                 android:id="@+id/iv_eventmenu"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="11.6dp"
-                android:src="@drawable/eventmenu"
-                android:layout_centerHorizontal="true"/>
+                android:src="@drawable/eventmenu" />
 
             <TextView
                 style="@style/TextLineSpacing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/iv_eventmenu"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8.5dp"
+                android:lineSpacingExtra="2sp"
                 android:text="이벤트"
                 android:textColor="@color/bottommenu"
-                android:textSize="10sp"
-                android:lineSpacingExtra="2sp"
-                android:layout_below="@id/iv_eventmenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
+                android:textSize="10sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -469,28 +478,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:clickable="true">
+            android:clickable="true"
+            android:gravity="center_horizontal">
 
             <ImageView
                 android:id="@+id/iv_settingmenu"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="11.6dp"
-                android:src="@drawable/settingmenu"
-                android:layout_centerHorizontal="true"/>
+                android:src="@drawable/settingmenu" />
 
             <TextView
                 style="@style/TextLineSpacing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/iv_settingmenu"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8.5dp"
+                android:lineSpacingExtra="2sp"
                 android:text="환경설정"
                 android:textColor="@color/bottommenu"
-                android:textSize="10sp"
-                android:lineSpacingExtra="2sp"
-                android:layout_below="@id/iv_settingmenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
+                android:textSize="10sp" />
         </RelativeLayout>
     </LinearLayout>
 

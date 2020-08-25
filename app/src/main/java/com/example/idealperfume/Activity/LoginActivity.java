@@ -27,13 +27,18 @@ public class LoginActivity extends AppCompatActivity {
         final EditText et_password = findViewById(R.id.et_password);
         final Button btn_login = findViewById(R.id.btn_login);
         final Drawable btn_border = getResources().getDrawable(R.drawable.btn_border);
-        final TextView tv_next = findViewById(R.id.tv_next);
+        final TextView tv_join = findViewById(R.id.tv_join);
+        final TextView tv_findpassword = findViewById(R.id.tv_findpassword);
+
+        btn_login.setEnabled(false);
+        btn_border.setColorFilter(0xffebebeb, PorterDuff.Mode.SRC_ATOP);
+        btn_login.setBackground(btn_border);
 
         et_id.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 btn_login.setEnabled(false);
-                btn_border.setColorFilter(0xffebebe, PorterDuff.Mode.SRC_ATOP);
+                btn_border.setColorFilter(0xffebebeb, PorterDuff.Mode.SRC_ATOP);
                 btn_login.setBackground(btn_border);
             }
 
@@ -41,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (et_id.getText().length() > 0 && et_password.getText().length() > 0) {
                     btn_login.setEnabled(true);
-                    btn_border.setColorFilter(0xff8e8e8e, PorterDuff.Mode.SRC_ATOP);
+                    btn_border.setColorFilter(0x6da048, PorterDuff.Mode.SRC_ATOP);
                     btn_login.setBackground(btn_border);
                 }
             }
@@ -50,8 +55,9 @@ public class LoginActivity extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
                 if (et_id.getText().length() == 0 || et_password.getText().length() == 0) {
                     btn_login.setEnabled(false);
-                    btn_border.setColorFilter(0xffebebe, PorterDuff.Mode.SRC_ATOP);
+                    btn_border.setColorFilter(0xffebebeb, PorterDuff.Mode.SRC_ATOP);
                     btn_login.setBackground(btn_border);
+
                 }
             }
         });
@@ -60,15 +66,16 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 btn_login.setEnabled(false);
-                btn_border.setColorFilter(0xffebebe, PorterDuff.Mode.SRC_ATOP);
+                btn_border.setColorFilter(0xffebebeb, PorterDuff.Mode.SRC_ATOP);
                 btn_login.setBackground(btn_border);
+
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (et_id.getText().length() > 0 && et_password.getText().length() > 0) {
                     btn_login.setEnabled(true);
-                    btn_border.setColorFilter(0xff8e8e8e, PorterDuff.Mode.SRC_ATOP);
+                    btn_border.setColorFilter(0x6da048, PorterDuff.Mode.SRC_ATOP);
                     btn_login.setBackground(btn_border);
                 }
             }
@@ -77,9 +84,29 @@ public class LoginActivity extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
                 if (et_id.getText().length() == 0 || et_password.getText().length() == 0) {
                     btn_login.setEnabled(false);
-                    btn_border.setColorFilter(0xffebebe, PorterDuff.Mode.SRC_ATOP);
+                    btn_border.setColorFilter(0xffebebeb, PorterDuff.Mode.SRC_ATOP);
                     btn_login.setBackground(btn_border);
                 }
+            }
+        });
+
+        et_id.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                    et_id.setBackgroundResource(R.drawable.edit_greenborder);
+                else
+                    et_id.setBackgroundResource(R.drawable.edit_round);
+            }
+        });
+
+        et_password.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                    et_password.setBackgroundResource(R.drawable.edit_greenborder);
+                else
+                    et_password.setBackgroundResource(R.drawable.edit_round);
             }
         });
 
@@ -90,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         }) ;
 
-        tv_next.setOnClickListener(new View.OnClickListener() {
+        tv_join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Register1Activity.class);
@@ -98,5 +125,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        tv_findpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),ResetPasswordActivity1.class);
+                startActivity(intent);
+            }
+        });
     }
 }

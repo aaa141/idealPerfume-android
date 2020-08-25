@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.idealperfume.Fragment.MyPickFragment1;
 import com.example.idealperfume.Fragment.MyPickFragment2;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 
 public class MyPickAdapter extends FragmentPagerAdapter {
     private ArrayList<Fragment> items;
-    private ArrayList<String> menus = new ArrayList<String>();;
+    private ArrayList<String> menus = new ArrayList<String>();
 
     public MyPickAdapter(@NonNull FragmentManager fm) {
         super(fm);

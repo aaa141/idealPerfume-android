@@ -12,12 +12,17 @@
         android:layout_gravity="end|bottom"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="108dp"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@drawable/floatbtn_search"
+        android:scaleType="centerCrop"
         android:clickable="true"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_mypickbrand"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="19.5dp"/>
+        android:layout_height="match_parent" />
+
+    <View
+        style="@style/divider"
+        android:layout_marginLeft="19.5dp"
+        android:layout_marginRight="19.5dp"/>
 </FrameLayout>

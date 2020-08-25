@@ -4,84 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.MaterialsActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Activity.MaterialsActivity">
 
     <RelativeLayout
         android:id="@+id/main_event"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="21.5dp"
         android:layout_marginLeft="20.5dp"
-        android:layout_marginRight="19dp">
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginBottom="21.5dp">
 
         <ImageView
             style="@style/BackButton"
+            android:layout_marginLeft="0dp"
             android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:layout_marginLeft="0dp"/>
+            android:layout_marginBottom="0dp" />
 
         <TextView
             style="@style/menutext"
-            android:text="구성원료"/>
+            android:text="구성원료" />
     </RelativeLayout>
 
-    <View
-        style="@style/divider"/>
+    <View style="@style/divider" />
+
+    <!--    <RelativeLayout-->
+    <!--        android:id="@+id/graph_material"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="335dp"-->
+    <!--        android:gravity="center">-->
+
+    <!--        <com.github.mikephil.charting.charts.PieChart-->
+    <!--            android:id="@+id/pie_1"-->
+    <!--            android:layout_width="150dp"-->
+    <!--            android:layout_height="150dp"-->
+    <!--            />-->
+    <!--        &lt;!&ndash;        <com.github.mikephil.charting.charts.PieChart&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:id="@+id/pie_2"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_toRightOf="@id/pie_1"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_above="@id/pie_4"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_width="140dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_height="140dp"/>&ndash;&gt;-->
+    <!--        &lt;!&ndash;        <com.github.mikephil.charting.charts.PieChart&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:id="@+id/pie_3"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_alignBottom="@id/pie_1"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_width="115dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_height="115dp"/>&ndash;&gt;-->
+    <!--        &lt;!&ndash;        <com.github.mikephil.charting.charts.PieChart&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:id="@+id/pie_4"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_toRightOf="@id/pie_3"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_width="180dp"&ndash;&gt;-->
+    <!--        &lt;!&ndash;            android:layout_height="180dp"/>&ndash;&gt;-->
+    <!--    </RelativeLayout>-->
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.github.mikephil.charting.charts.PieChart
-                android:id="@+id/pieChart"
-                android:layout_width="match_parent"
-                android:layout_height="335dp"></com.github.mikephil.charting.charts.PieChart>
-    <RelativeLayout
-        android:id="@+id/graph_material"
-        android:layout_width="match_parent"
-        android:layout_height="335dp"
-        android:gravity="center">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
         <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/pie_1"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            />
-        <!--        <com.github.mikephil.charting.charts.PieChart-->
-        <!--            android:id="@+id/pie_2"-->
-        <!--            android:layout_toRightOf="@id/pie_1"-->
-        <!--            android:layout_above="@id/pie_4"-->
-        <!--            android:layout_width="140dp"-->
-        <!--            android:layout_height="140dp"/>-->
-        <!--        <com.github.mikephil.charting.charts.PieChart-->
-        <!--            android:id="@+id/pie_3"-->
-        <!--            android:layout_alignBottom="@id/pie_1"-->
-        <!--            android:layout_width="115dp"-->
-        <!--            android:layout_height="115dp"/>-->
-        <!--        <com.github.mikephil.charting.charts.PieChart-->
-        <!--            android:id="@+id/pie_4"-->
-        <!--            android:layout_toRightOf="@id/pie_3"-->
-        <!--            android:layout_width="180dp"-->
-        <!--            android:layout_height="180dp"/>-->
-    </RelativeLayout>
+            android:id="@+id/pieChart"
+            android:layout_width="match_parent"
+            android:layout_height="335dp">
+
+        </com.github.mikephil.charting.charts.PieChart>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_materialslist"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="19.5dp"
-                android:layout_marginRight="19.5dp" />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_materialslist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="19.5dp"
+            android:layout_marginRight="19.5dp" />
+    </RelativeLayout>
 </LinearLayout>

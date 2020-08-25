@@ -15,49 +15,92 @@ import com.example.idealperfume.R;
 
 import java.util.List;
 
-public class MyPickProductAdapter extends RecyclerView.Adapter<MyPickProductAdapter.MyViewHolder> {
+public class MyPickProductAdapter extends RecyclerView.Adapter {
 
     Context context;
-    List<MyPickData> pickData;
+    List<MyPickData> listpickdata;
 
-    public MyPickProductAdapter(Context context, List<MyPickData> pickData) {
+    public MyPickProductAdapter(Context context, List<MyPickData> listpickdata) {
         this.context = context;
-        this.pickData = pickData;
+        this.listpickdata = listpickdata;
     }
+
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v;
-        v = LayoutInflater.from(context).inflate(R.layout.listitem_mypick_product, parent, false);
-        MyViewHolder viewHolder = new MyViewHolder(v);
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view;
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
 
-        return viewHolder;
+        if (viewType == 0) {
+            view = layoutInflater.inflate(R.layout.listitem_mypick_product, parent, false);
+            return new MyPickViewHolder(view);
+        } else {
+            view = layoutInflater.inflate(R.layout.listitem_mypick_folder, parent, false);
+            return new FolderViewHolder(view);
+        }
+
+//        return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.tv_productname.setText(pickData.get(position).getProductName() + " (" + pickData.get(position).getName_eng() + ")");
-        holder.tv_productdesc.setText(pickData.get(position).getDesc());
-        holder.img.setImageResource(pickData.get(position).getIcon());
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
+        if(holder instanceof MyPickViewHolder)
+        {
+            ((MyPickViewHolder) holder).tv_productname.setText(listpickdata.get(position).getProductName() + " (" + listpickdata.get(position).getSub() + ")");
+            ((MyPickViewHolder) holder).tv_productdesc.setText(listpickdata.get(position).getDesc());
+            ((MyPickViewHolder) holder).icon.setImageResource(listpickdata.get(position).getIcon());
+
+        }
+        else if(holder instanceof FolderViewHolder)
+        {
+            ((FolderViewHolder) holder).tv_foldername.setText(listpickdata.get(position).getProductName()+ " (" + listpickdata.get(position).getSub() + ")");
+            ((FolderViewHolder) holder).tv_folderdesc.setText(listpickdata.get(position).getDesc());
+            ((FolderViewHolder) holder).icon.setImageResource(listpickdata.get(position).getIcon());
+        }
     }
 
     @Override
     public int getItemCount() {
-        return pickData.size();
+        return listpickdata.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public int getItemViewType(int position) {
+        if (listpickdata.get(position).getViewType() ==  MyPickData.Code.ViewType.ProductListItem)
+            return 0;
+        else return 1;
+    }
+
+    public class MyPickViewHolder extends RecyclerView.ViewHolder{
         private TextView tv_productname;
         private TextView tv_productdesc;
-        private ImageView img;
+        private ImageView icon;
 
-        public MyViewHolder(@NonNull View itemView) {
+        MyPickViewHolder(View itemView)
+        {
             super(itemView);
 
             tv_productname = itemView.findViewById(R.id.tv_name);
             tv_productdesc = itemView.findViewById(R.id.tv_desc);
-            img = itemView.findViewById(R.id.iv_brand);
+            icon = itemView.findViewById(R.id.iv_brand);
         }
     }
+
+    public class FolderViewHolder extends RecyclerView.ViewHolder{
+        private TextView tv_foldername;
+        private TextView tv_folderdesc;
+        private ImageView icon;
+
+        FolderViewHolder(View itemView)
+        {
+            super(itemView);
+
+            tv_foldername = itemView.findViewById(R.id.tv_fname);
+            tv_folderdesc = itemView.findViewById(R.id.tv_fdesc);
+            icon = itemView.findViewById(R.id.iv_foldericon);
+        }
+    }
+
 }

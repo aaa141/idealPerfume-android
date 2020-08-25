@@ -9,29 +9,32 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.idealperfume.Adapter.MyPickAdapter;
 import com.example.idealperfume.Adapter.MyPickProductAdapter;
 import com.example.idealperfume.Data.MyPickData;
 import com.example.idealperfume.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class MyPickDialogFragment1 extends DialogFragment {
 
     private static final String TAG = "MyPickDialog1";
+
+    List<MyPickData> listpickdata = new ArrayList<>();
 
     public interface OnInputSelected{
         void sendInput(String input);
@@ -39,15 +42,18 @@ public class MyPickDialogFragment1 extends DialogFragment {
 
     public OnInputSelected mOnInputSelected;
 
+    MyPickProductAdapter myPickProductAdapter;
+
     //widgets
     private EditText et_foldername;
     private Button btn_cancel, btn_make;
 
+
     @Nullable
     @Override
-    public View onCreateView(final LayoutInflater inflater, @Nullable final ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, @Nullable final ViewGroup container, final Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.dialog_make_forder, container, false);
+        final View view = inflater.inflate(R.layout.dialog_make_forder, container, false);
 
         Dialog dialog = getDialog();
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // 모서리 투명하게
@@ -68,15 +74,27 @@ public class MyPickDialogFragment1 extends DialogFragment {
             public void onClick(View v) {
                 String foldername = et_foldername.getText().toString();
 
+                myPickProductAdapter = new MyPickProductAdapter(getContext(),listpickdata);
+
+                Date today = Calendar.getInstance().getTime();
+                String date_today = new SimpleDateFormat("yyyy.MM.dd", Locale.getDefault()).format(today);
+
                 if(foldername.equals("")) {
                     Toast.makeText(getActivity(), "폴더명을 입력해주세요.", Toast.LENGTH_SHORT).show();
                 } else if(!foldername.equals("")){
-//                    mOnInputSelected.sendInput(foldername);
                     MyPickDialogFragment2 dialog = new MyPickDialogFragment2();
                     dialog.setTargetFragment(MyPickDialogFragment1.this, 1);
                     dialog.show(getFragmentManager(), "MyPickDialog2");
                     getDialog().dismiss();
-                    Toast.makeText(getActivity(), foldername+"만들었음", Toast.LENGTH_SHORT).show();
+
+                    MyPickFragment1 myPickFragment1 = new MyPickFragment1();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("foldername", foldername);
+                    FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    MyPickFragment1 fragment1 = new MyPickFragment1();
+                    fragment1.setArguments(bundle);
+                    transaction.replace(R.id.frame_mypick, fragment1);
+                    transaction.commit();
                 }
             }
         });

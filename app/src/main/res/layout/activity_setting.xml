@@ -39,14 +39,14 @@
                     android:id="@+id/iv_profileimg"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/img_girl1" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_profileedit"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
                     android:layout_gravity="bottom|right"
-                    android:background="#3c3c3c" />
+                    android:src="@drawable/img_edit" />
             </FrameLayout>
 
         </FrameLayout>
@@ -92,11 +92,11 @@
 
                     <ImageView
                         android:id="@+id/iv_seticon1"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+                        android:layout_width="11dp"
+                        android:layout_height="match_parent"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="12dp"
-                        android:src="@drawable/icon_circle" />
+                        android:src="@drawable/img_point" />
 
                     <TextView
                         android:id="@+id/tv_pointhead"
@@ -129,7 +129,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:clickable="true"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/img_shortcut_point" />
                 </RelativeLayout>
 
                 <LinearLayout
@@ -162,7 +162,8 @@
                             android:layout_width="16dp"
                             android:layout_height="16dp"
                             android:layout_marginLeft="15dp"
-                            android:layout_marginTop="35dp" />
+                            android:layout_marginTop="35dp"
+                            android:src="@drawable/img_edit"/>
 
                         <TextView
                             android:id="@+id/tv_myreview_num"
@@ -199,7 +200,8 @@
                             android:layout_width="16dp"
                             android:layout_height="16dp"
                             android:layout_marginLeft="15dp"
-                            android:layout_marginTop="35dp" />
+                            android:layout_marginTop="35dp"
+                            android:src="@drawable/img_request"/>
 
                         <TextView
                             android:id="@+id/tv_requestproduct"
@@ -234,7 +236,8 @@
                             android:layout_width="16dp"
                             android:layout_height="16dp"
                             android:layout_marginLeft="15dp"
-                            android:layout_marginTop="35dp" />
+                            android:layout_marginTop="35dp"
+                            android:src="@drawable/img_scrap_review"/>
 
                         <TextView
                             android:id="@+id/tv_scrapreview"
@@ -265,7 +268,7 @@
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:layout_marginRight="12dp"
-                        android:src="@drawable/icon_circle" />
+                        android:src="@drawable/img_question" />
 
                     <TextView
                         android:id="@+id/tv_questionhead"
@@ -280,7 +283,7 @@
                         android:layout_height="11.5dp"
                         android:layout_alignParentRight="true"
                         android:clickable="true"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/img_shortcut_setting" />
                 </RelativeLayout>
 
                 <View
@@ -300,7 +303,7 @@
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:layout_marginRight="12dp"
-                        android:src="@drawable/icon_circle" />
+                        android:src="@drawable/img_customer_service" />
 
                     <TextView
                         style="@style/TextLineSpacing"
@@ -315,7 +318,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="0dp"
                         android:clickable="true"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/img_shortcut_setting" />
                 </RelativeLayout>
 
                 <View
@@ -335,7 +338,7 @@
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:layout_marginRight="12dp"
-                        android:src="@drawable/icon_circle" />
+                        android:src="@drawable/img_versioninfo" />
 
                     <TextView
                         style="@style/TextLineSpacing"
@@ -349,7 +352,7 @@
                         android:layout_height="11.5dp"
                         android:layout_alignParentRight="true"
                         android:clickable="true"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/img_shortcut_setting" />
                 </RelativeLayout>
 
                 <View
@@ -369,7 +372,7 @@
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:layout_marginRight="12dp"
-                        android:src="@drawable/icon_circle" />
+                        android:src="@drawable/img_notification" />
 
                     <TextView
                         style="@style/TextLineSpacing"
@@ -405,10 +408,10 @@
 
                     <ImageView
                         android:id="@+id/iv_seticon6"
-                        android:layout_width="12dp"
-                        android:layout_height="21dp"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
                         android:layout_marginRight="12dp"
-                        android:src="@drawable/icon_circle" />
+                        android:src="@drawable/img_logout" />
 
                     <TextView
                         style="@style/TextLineSpacing"
@@ -422,7 +425,7 @@
                         android:layout_height="11.5dp"
                         android:layout_alignParentRight="true"
                         android:clickable="true"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/img_shortcut_setting" />
                 </RelativeLayout>
 
                 <View
@@ -540,7 +543,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="11.6dp"
-                android:src="@drawable/settingmenu"
+                android:src="@drawable/img_setting_on"
                 android:layout_centerHorizontal="true"/>
 
             <TextView

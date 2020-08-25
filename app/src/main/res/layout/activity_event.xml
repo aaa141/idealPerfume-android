@@ -122,7 +122,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="11.6dp"
-                android:src="@drawable/eventmenu"
+                android:src="@drawable/img_event_on"
                 android:layout_centerHorizontal="true"/>
 
             <TextView

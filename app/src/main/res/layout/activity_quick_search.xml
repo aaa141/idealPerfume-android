@@ -14,28 +14,26 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="22dp">
+            android:layout_height="wrap_content">
 
+            <ImageView
+                android:id="@+id/back"
+                style="@style/BackButton" />
             <TextView
                 style="@style/menutext"
-                android:id="@+id/tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="퀵 검색"/>
+                android:text="퀵 검색"
+                android:layout_centerVertical="true"/>
 
             <TextView
-                style="@style/LightTextStyle"
-                android:id="@+id/tv_reset"
+                android:id="@+id/tv_quickReset"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@id/tv"
-                android:layout_alignParentLeft="false"
-                android:layout_alignParentRight="true"
-                android:paddingRight="16dp"
-                android:text="초기화" />
+                android:text="초기화"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textColor="@color/colorPrimary"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:layout_centerVertical="true"/>
 
         </RelativeLayout>
 
@@ -69,29 +67,26 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingStart="2dp"
+                    tools:ignore="RtlSymmetry">
 
                     <CheckBox
                         android:id="@+id/cb_perfume"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/QuickSearch_CheckBox"
                         android:text="향수"
-                        android:textSize="13sp"/>
+                        tools:ignore="RtlSymmetry" />
 
 
                     <CheckBox
                         android:id="@+id/cb_candle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="캔들"
-                        android:textSize="13sp"/>
+                        style="@style/QuickSearch_CheckBox"
+                        android:text="캔들"/>
 
                     <CheckBox
                         android:id="@+id/cb_bodyLotion"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="바디로션"
-                        android:textSize="13sp"/>
+                        style="@style/QuickSearch_CheckBox"
+                        android:text="바디로션"/>
 
                 </LinearLayout>
 
@@ -103,17 +98,13 @@
 
                     <CheckBox
                         android:id="@+id/cb_defuser"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="디퓨저"
-                        android:textSize="13sp" />
+                        style="@style/QuickSearch_CheckBox"
+                        android:text="디퓨저" />
 
                     <CheckBox
                         android:id="@+id/cb_aromaOil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="아로마 오일"
-                        android:textSize="13sp"/>
+                        style="@style/QuickSearch_CheckBox"
+                        android:text="아로마 오일"/>
 
 
                 </LinearLayout>
@@ -153,12 +144,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0원"
+                    android:text="    0원"
+                    android:textColor="#B5B5B5"
                     android:layout_alignParentLeft="true"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="300,000원"
+                    android:text="300,000원    "
+                    android:textColor="#B5B5B5"
                     android:layout_alignParentRight="true"/>
             </RelativeLayout>
 
@@ -182,41 +175,33 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingStart="2dp">
 
                     <CheckBox
-                        android:id="@+id/cb_citrus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="시트러스"
-                        android:textSize="13sp"/>
+                        android:id="@+id/cb_line_citrus"
+                        style="@style/QuickSearch_CheckBox"
+                        android:text="시트러스"/>
 
 
                     <CheckBox
-                        android:id="@+id/cb_floral"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="플로럴"
-                        android:textSize="13sp"/>
+                        android:id="@+id/cb_line_fruity"
+                        style="@style/QuickSearch_CheckBox"
+                        android:text="프루티"/>
 
                     <CheckBox
-                        android:id="@+id/cb_fruity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="프루티"
-                        android:textSize="13sp"/>
+                        android:id="@+id/cb_line_woody"
+                        style="@style/QuickSearch_CheckBox"
+                        android:text="우디"/>
 
                     <CheckBox
-                        android:id="@+id/woody"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="우디"
-                        android:textSize="13sp"/>
+                        android:id="@+id/cb_line_musk"
+                        style="@style/QuickSearch_CheckBox"
+                        android:text="머스크"/>
 
                     <CheckBox
-                        android:id="@+id/oriental"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/cb_line_oriental"
+                        style="@style/QuickSearch_CheckBox"
                         android:text="오리엔탈"
                         android:textSize="13sp"/>
 
@@ -227,38 +212,34 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingStart="2dp">
+                    <CheckBox
+                        android:id="@+id/cb_line_floral"
+                        style="@style/QuickSearch_CheckBox"
+                        android:text="플로럴"/>
 
                     <CheckBox
-                        android:id="@+id/cb_marin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="마린"
-                        android:textSize="13sp" />
+                        android:id="@+id/cb_line_green"
+                        style="@style/QuickSearch_CheckBox"
+                        android:text="그린"/>
+
 
                     <CheckBox
-                        android:id="@+id/cb_soap"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="비누"
-                        android:textSize="13sp"/>
+                        android:id="@+id/cb_line_aqua"
+                        style="@style/QuickSearch_CheckBox"
+                        android:text="아쿠아"/>
 
                     <CheckBox
-                        android:id="@+id/cb_musk"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="머스크"
-                        android:textSize="13sp"/>
-
-                    <CheckBox
-                        android:id="@+id/cb_green"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="그린"
-                        android:textSize="13sp"/>
+                        android:id="@+id/cb_line_soap"
+                        style="@style/QuickSearch_CheckBox"
+                        android:text="비누"/>
 
                 </LinearLayout>
             </LinearLayout>
+
+            <View style="@style/divider" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -277,37 +258,37 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingStart="2dp">
 
                     <CheckBox
-                        android:id="@+id/cb_clean"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/cb_image_clean"
+                        style="@style/QuickSearch_CheckBox"
                         android:text="깨끗한"
                         android:textSize="13sp"/>
                     <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/cb_imgae_cool"
+                        style="@style/QuickSearch_CheckBox"
                         android:text="청량한"
                         android:textSize="13sp"/>
                     <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/cb_imgae_sweet"
+                        style="@style/QuickSearch_CheckBox"
                         android:text="달콤한"
                         android:textSize="13sp"/>
                     <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/cb_imgae_soft"
+                        style="@style/QuickSearch_CheckBox"
                         android:text="부드러운"
                         android:textSize="13sp"/>
                     <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/cb_imgae_exotic"
+                        style="@style/QuickSearch_CheckBox"
                         android:text="이국적인"
                         android:textSize="13sp"/>
                     <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/cb_imgae_heavy"
+                        style="@style/QuickSearch_CheckBox"
                         android:text="무거운"
                         android:textSize="13sp"/>
 
@@ -318,35 +299,34 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
                     <CheckBox
-                        android:id="@+id/cb_"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/cb_image_fresh"
+                        style="@style/QuickSearch_CheckBox"
                         android:text="상큼"
                         android:textSize="13sp"/>
                     <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/cb_image_natural"
+                        style="@style/QuickSearch_CheckBox"
                         android:text="자연적인"
                         android:textSize="13sp"/>
                     <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/cb_image_lovely"
+                        style="@style/QuickSearch_CheckBox"
                         android:text="사랑스러운"
                         android:textSize="13sp"/>
                     <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/cb_image_forrest"
+                        style="@style/QuickSearch_CheckBox"
                         android:text="숲 속"
                         android:textSize="13sp"/>
                     <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/cb_image_fascinate"
+                        style="@style/QuickSearch_CheckBox"
                         android:text="매혹적인"
                         android:textSize="13sp"/>
                     <CheckBox
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="카리스마 잇"
+                        android:id="@+id/cb_image_charisma"
+                        style="@style/QuickSearch_CheckBox"
+                        android:text="카리스마 있는"
                         android:textSize="13sp"/>
                 </LinearLayout>
             </LinearLayout>
@@ -378,9 +358,10 @@
 
 
             <Button
-                android:id="@+id/btn_next"
+                android:id="@+id/btn_search"
                 style="@style/ButtonX"
-                android:text="검색하기"/>
+                android:text="검색하기"
+                android:layout_marginBottom="45dp"/>
 
 
         </LinearLayout>

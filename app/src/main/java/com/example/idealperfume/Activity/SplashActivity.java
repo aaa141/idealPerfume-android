@@ -23,9 +23,6 @@ import com.example.idealperfume.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-    //누적 리뷰수 화면 추가 필요
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +30,6 @@ public class SplashActivity extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.splashText);
         String content = textView.getText().toString();
-
 
         // 특정 문자열(이상향) BOLD체로 처리
         String word = "이상향";
@@ -47,6 +43,7 @@ public class SplashActivity extends AppCompatActivity {
         textView.setText(stringBuilder);
 
         startLoading();
+
     }
 
     private void startLoading(){
@@ -59,7 +56,7 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
                 finish();
             }
-        },2000);
+        },1500);
     }
 
     // spannable에서 커스텀 폰트 사용하기 위한 클래스

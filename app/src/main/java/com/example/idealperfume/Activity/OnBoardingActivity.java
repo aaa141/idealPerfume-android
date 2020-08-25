@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -17,13 +18,10 @@ import com.example.idealperfume.R;
 import org.w3c.dom.Text;
 
 public class OnBoardingActivity extends AppCompatActivity {
-    //문제 1: 첫번째 페이지에 dot 보이지 않음
-    //문제 2: dot위치 (skip과 alignBottom인데 왜..)
 
     private ViewPager2 mSlideViewPager;
-    private LinearLayout mDotLayout;
-    private TextView[] mDots;
     private TextView tv_skip;
+    private ImageView img_step;
     private OnBoardingSliderAdapter sliderAdapter;
 
     @Override
@@ -32,7 +30,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_on_boarding);
 
         mSlideViewPager = (ViewPager2) findViewById(R.id.slideViewPager);
-        mDotLayout = (LinearLayout) findViewById(R.id.dotLayout);
+        img_step = (ImageView) findViewById(R.id.img_step);
         tv_skip = (TextView) findViewById(R.id.tv_skip);
 
         tv_skip.setOnClickListener(new View.OnClickListener() {
@@ -48,27 +46,8 @@ public class OnBoardingActivity extends AppCompatActivity {
         mSlideViewPager.setAdapter(sliderAdapter);
         mSlideViewPager.registerOnPageChangeCallback(callback);
 
-        addDotsIndicator(0);
     }
 
-    public void addDotsIndicator(int position) {
-        mDotLayout.removeAllViews();
-        mDots = new TextView[3];
-        for (int i = 0; i < mDots.length; i++) {
-            mDots[i] = new TextView(this);
-            mDots[i].setText(Html.fromHtml("&#8226;"));
-            mDots[i].setTextSize(30);
-            mDots[i].setTextColor(getResources().getColor(R.color.gray));
-            mDots[i].append(" ");
-
-            mDotLayout.addView(mDots[i]);
-        }
-
-        if (mDots.length > 0) {
-            mDots[position].setTextColor(getResources().getColor(R.color.black));
-        }
-        mDotLayout.invalidate(); //없어도 잘 동작
-    }
 
     ViewPager2.OnPageChangeCallback callback = new ViewPager2.OnPageChangeCallback() {
         @Override
@@ -78,7 +57,11 @@ public class OnBoardingActivity extends AppCompatActivity {
 
         @Override
         public void onPageSelected(int position) {
-            addDotsIndicator(position);
+            switch (position) {
+                case 0: img_step.setImageResource(R.drawable.img_step_03); break;
+                case 1: img_step.setImageResource(R.drawable.img_step_02); break;
+                case 2: img_step.setImageResource(R.drawable.img_step_01); break;
+            }
         }
 
         @Override

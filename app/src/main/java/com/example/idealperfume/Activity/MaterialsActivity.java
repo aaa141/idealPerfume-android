@@ -8,6 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import com.anychart.AnyChart;
+import com.anychart.AnyChartView;
+import com.anychart.chart.common.dataentry.DataEntry;
+import com.anychart.chart.common.dataentry.NameValueDataEntry;
+import com.anychart.charts.Venn;
 import com.example.idealperfume.Adapter.MaterialsAdapter;
 import com.example.idealperfume.Data.MaterialsData;
 import com.example.idealperfume.R;
@@ -24,7 +29,7 @@ public class MaterialsActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
     MaterialsAdapter recyclerViewAdapter;
-    PieChart pieChart;
+    private AnyChartView vennDiagramChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +43,25 @@ public class MaterialsActivity extends AppCompatActivity {
                 new DividerItemDecoration(this, linearLayoutManager.getOrientation()));
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        pieChart = findViewById(R.id.pieChart);
-
-        makeChart();
+        vennDiagramChart = (AnyChartView)findViewById(R.id.vennDiagramChart);
+//        vennDiagramChart.setProgressBar(findViewById(R.id.progress_bar));
+        Venn venn = AnyChart.venn();
+        venn.data(getData());
+        venn.stroke("#7caf57");
+        venn.labels().format("{%Name}" + "" +
+                "{%value}" + "%");
+//        venn.intersections().hovered().fill("#000000", 0.25d);
+        venn.intersections().labels().fontWeight("medium");
+//        venn.intersections().hovered().background("#ffffff");
+//        venn.intersections().hovered().fontColor("#7caf57");
+        venn.fill("#ffffff");
+        venn.fill("#ffffff");
+        venn.labels().fontColor("#7caf57");
+        venn.labels().fontSize("10sp"); // 원래는 12sp
+        venn.labels().fontFamily();
+//        venn.intersections().labels().format("{%Name}");
+//        venn.tooltip().titleFormat("{%Name}");
+        vennDiagramChart.setChart(venn);
 
         // ArrayList에 person 객체(이름과 번호) 넣기
         List<MaterialsData> materialdata = new ArrayList<>();
@@ -54,35 +75,14 @@ public class MaterialsActivity extends AppCompatActivity {
         recyclerView.setAdapter(recyclerViewAdapter);
     }
 
-    private void makeChart(){
-
-        pieChart.setUsePercentValues(true);
-        pieChart.getDescription().setEnabled(false);
-        pieChart.setExtraOffsets(5,10,5,5);
-
-        pieChart.setDrawHoleEnabled(false);
-        pieChart.getLegend().setEnabled(false);
-        pieChart.setHoleColor(Color.WHITE);
-        pieChart.setTransparentCircleRadius(61f);
-
-        ArrayList<PieEntry> yValues = new ArrayList<PieEntry>();
-        yValues.add(new PieEntry(50f,"시프레"));
-        yValues.add(new PieEntry(20f,"푸제르"));
-        yValues.add(new PieEntry(10f,"시트러스"));
-        yValues.add(new PieEntry(20f,"파우더"));
-
-        pieChart.animateY(1000, Easing.EaseInOutCubic); //애니메이션
-
-        PieDataSet dataSet = new PieDataSet(yValues,"");
-        dataSet.setSliceSpace(3f);
-        dataSet.setSelectionShift(5f);
-        dataSet.setColors(getResources().getColor(R.color.green7C));
-
-        PieData data = new PieData((dataSet));
-        data.setValueTextSize(16f);
-        data.setValueTextColor(Color.WHITE);
-
-        pieChart.setData(data);
-
+    private ArrayList getData(){
+        ArrayList<DataEntry> entries = new ArrayList<>();
+        entries.add(new NameValueDataEntry("A", "시프레", 50));
+        entries.add(new NameValueDataEntry("C", "푸제르", 35));
+        entries.add(new NameValueDataEntry("B", "시트러스" , 35));
+        entries.add(new NameValueDataEntry("D", "파우더", 30));
+        return entries;
     }
+
+
 }

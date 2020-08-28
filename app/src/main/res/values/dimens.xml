@@ -10,6 +10,7 @@
     <dimen name="_26dp">26dp</dimen>
     <dimen name="line_spacing">-10dp</dimen>
     <dimen name="mypick_dialog_width">336dp</dimen>
+    <dimen name="material">46dp</dimen>
     <drawable name="homemenu">@drawable/img_home_off</drawable>
     <drawable name="mypickmenu">@drawable/img_heart_dark</drawable>
     <drawable name="eventmenu">@drawable/img_event_off</drawable>

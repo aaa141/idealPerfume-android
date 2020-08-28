@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.StartTestActivity">
+
+  <ImageView
+      android:id="@+id/image"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:src="@drawable/test_perfume"
+      android:scaleType="centerCrop"
+      android:adjustViewBounds="true"/>
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/black"
+      android:alpha="0.3"/>
+
+  <TextView
+      android:id="@+id/text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="향수를 선택했어요.\n테스트를 시작할까요?"
+      android:textSize="26sp"
+      android:textColor="@color/white"
+      android:fontFamily="@font/notosanskr_regular"
+      android:layout_centerVertical="true"
+      android:layout_marginStart="28dp"/>
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="탭하여 테스트 시작하기>"
+      android:textSize="14sp"
+      android:textColor="@color/white"
+      android:fontFamily="@font/notosanskr_medium"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentEnd="true"
+      android:layout_marginBottom="87dp"
+      android:layout_marginEnd="40dp"/>
+
+</RelativeLayout>

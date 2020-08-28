@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -38,7 +39,9 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
     FloatingActionButton floatingActionButton;
     RecyclerView rv_review, rv_recommend, rv_ranking;
     PI_ProductAdapter recommendAdapter, rankingAdapter;
-    TextView tv_pdPrice,tv_pdBrand, tv_pdName, tv_reviewMore, tv_reviewMore2;
+    TextView tv_pickCount, tv_pdPrice,tv_pdBrand, tv_pdName, tv_materialMore, tv_reviewMore, tv_reviewMore2;
+    ImageView back, share, pdPick;
+    int pickCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,23 +55,35 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
         rv_ranking = findViewById(R.id.rv_ranking);
         rv_review = findViewById(R.id.rv_review);
         floatingActionButton = findViewById(R.id.floatingActionButton);
+        back = findViewById(R.id.back);
+        share = findViewById(R.id.share);
+        pdPick = findViewById(R.id.pdPick);
+        tv_pickCount = findViewById(R.id.tv_pickCount);
+
+        tv_materialMore = findViewById(R.id.tv_materialMore);
         tv_reviewMore2 = findViewById(R.id.tv_reviewMore2);
         tv_reviewMore = findViewById(R.id.tv_reviewMore);
         tv_pdBrand = findViewById(R.id.tv_pdBrand);
         tv_pdName = findViewById(R.id.tv_pdName);
         tv_pdPrice = findViewById(R.id.tv_pdPrice);
 
+        tv_materialMore.setOnClickListener(this);
         tv_reviewMore.setOnClickListener(this);
         tv_reviewMore2.setOnClickListener(this);
         floatingActionButton.setOnClickListener(this);
+        back.setOnClickListener(this);
+        share.setOnClickListener(this);
+        pdPick.setOnClickListener(this);
+
+
         init();
         drawPieChart();
     }
 
-    //8.13) 구성원료랑 해시태그는 나중에
     public void init(){
-        //상품 ID 넘기면
-        //상품 브랜드, 상품명, 별점, 가격, 브랜드 설명, 원료 이미지, 원료명, ...
+        // 상품 pick 설정
+        tv_pickCount.setText("434");
+        pickCount = Integer.parseInt(tv_pickCount.getText().toString());
 
         //해시태그 textview 설정
         String[] hastag ={"보습","촉촉/수분","향/냄새","건조","흡수력","끈적","발림성","민감/예민", "유분"};
@@ -146,7 +161,7 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
         pieChart.getDescription().setEnabled(false);
         pieChart.setDrawEntryLabels(false);
         pieChart.getLegend().setEnabled(false);
-        pieChart.setClickable(false);
+        pieChart.setClickable(true);
         pieChart.setHoleRadius(86f);
         pieChart.setTransparentCircleRadius(86f);
 
@@ -176,11 +191,39 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.tv_reviewMore: case R.id.tv_reviewMore2:
-                startActivity(new Intent(ProductInfoActivity.this,ReviewActivity.class));
+            case R.id.back: //뒤로 가기
+                finish();
                 break;
+
+            case R.id.share: // 공유하기
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, "전달할 메시지");
+                startActivity(Intent.createChooser(intent, "공유하기"));
+
+                break;
+
+            case R.id.pdPick: // 상품 pick
+                //서버랑 연동되면 어떻게 할지 몰라서 일단 냅둘께요...
+                pdPick.setImageResource(R.drawable.img_mypick_on);
+                pdPick.setImageTintMode(null);
+                pickCount += 1;
+                tv_pickCount.setText(pickCount+"");
+                break;
+
+            case R.id.tv_materialMore: // 구성원료 더보기
+                startActivity(new Intent(ProductInfoActivity.this, MaterialsActivity.class));
+                overridePendingTransition(R.anim.right_in, R.anim.not_move);
+                break;
+
+            case R.id.tv_reviewMore: case R.id.tv_reviewMore2: // 리뷰 더보기
+                startActivity(new Intent(ProductInfoActivity.this,ReviewActivity.class));
+                overridePendingTransition(R.anim.right_in, R.anim.not_move);
+                break;
+
             case R.id.floatingActionButton:
                 startActivity(new Intent(ProductInfoActivity.this,ReviewRegActivity.class));
+                overridePendingTransition(R.anim.right_in, R.anim.not_move);
                 break;
         }
     }

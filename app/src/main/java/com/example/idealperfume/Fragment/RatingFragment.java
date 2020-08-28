@@ -31,58 +31,13 @@ public class RatingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_rating, container, false);
 
-        BarChart BarChart = (BarChart) view.findViewById(R.id.barchart);
+        //BarChart BarChart = (BarChart) view.findViewById(R.id.barchart);
         TextView tv_rating = (TextView) view.findViewById(R.id.tv_rating);
         RatingBar ratingBar = (RatingBar) view.findViewById(R.id.rb_ProductRating);
 
         tv_rating.setText(mList.get(0).getStarPoint());
         ratingBar.setRating(Float.valueOf(mList.get(0).getStarPoint()));
 
-
-        BarDataSet barDataSet = new BarDataSet(data2(),"1");
-        BarDataSet barDataSet2 = new BarDataSet(data1(),"2");
-
-        barDataSet2.setColor(getResources().getColor(R.color.green7C));
-        barDataSet.setColor(getResources().getColor(R.color.gray));
-
-        BarData barData = new BarData(barDataSet);
-        barData.addDataSet(barDataSet2);
-
-        barData.setBarWidth((float)0.15);
-        barData.setValueTextSize(0);
-        BarChart.setData(barData);
-        BarChart.invalidate();
-
-        BarChart.setDrawBorders(false);
-        BarChart.setDrawGridBackground(false);
-        BarChart.setTouchEnabled(false);
-        BarChart.setClickable(false);
-
-        BarChart.getDescription().setEnabled(false);
-        BarChart.getLegend().setEnabled(false);
-        BarChart.getAxisLeft().setDrawGridLines(false);
-        BarChart.getAxisLeft().setDrawLabels(false);
-        BarChart.getAxisLeft().setDrawAxisLine(false);
-
-        BarChart.getXAxis().setDrawGridLines(false);
-        BarChart.getXAxis().setDrawAxisLine(false);
-        BarChart.getXAxis().setAxisMaximum(data1().size());
-
-        BarChart.getAxisRight().setDrawGridLines(false);
-        BarChart.getAxisRight().setDrawLabels(false);
-        BarChart.getAxisRight().setDrawAxisLine(false);
-
-        for(int i=5; i>=1; i--){
-            xVals.add(i+"점");
-        }
-        BarChart.getXAxis().setGranularity(1.0f);
-        BarChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xVals));
-        BarChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
-
-        CustomBarChartRender barChartRender = new CustomBarChartRender(BarChart,BarChart.getAnimator(),
-                BarChart.getViewPortHandler());
-        barChartRender.setRadius(10);
-        BarChart.setRenderer(barChartRender);
 
         return view;
     }

@@ -11,7 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <!--상단바(뒤로가기, 공유)-->
-        <ImageView style="@style/BackButton" />
+        <ImageView
+            android:id="@+id/back"
+            style="@style/BackButton" />
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="19dp"
+            android:layout_height="21dp"
+            android:src="@drawable/img_share"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="22dp"/>
     </RelativeLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -30,15 +40,32 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
-                    android:background="@color/yellow"
-                    android:scaleType="center" />
+                    android:src="@drawable/test_defuser"
+                    android:scaleType="centerCrop" />
 
-                <ImageView
-                    android:id="@+id/img_heart"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
                     android:layout_gravity="right|top"
-                    android:src="@drawable/img_heart_off" />
+                    android:layout_marginTop="21dp"
+                    android:layout_marginEnd="21dp">
+                    <ImageView
+                        android:id="@+id/pdPick"
+                        android:layout_width="21dp"
+                        android:layout_height="19dp"
+                        android:src="@drawable/img_mypick_off"
+                        android:tint="@color/white"/>
+                    <TextView
+                        android:id="@+id/tv_pickCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="455"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
 
 
                 <!--상품 정보 레이아웃-->
@@ -54,7 +81,8 @@
                     <!--다른 제품 전까지의 레이아웃-->
                     <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        tools:ignore="ExtraText">
 
                         <TextView
                             android:id="@+id/tv_pdBrand"
@@ -81,7 +109,7 @@
                             android:rating="4.5"
                             android:theme="@style/RatingBar"
                             android:layout_alignBottom="@+id/pdPrice"/>
-                            android:numStars="5" />
+                        android:numStars="5" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -166,21 +194,34 @@
                             android:layout_marginBottom="22dp"
                             android:text="구성된 원료는" />
 
-                        <TextView
-                            android:id="@+id/tv_materialMore"
-                            style="@style/LightTextStyle"
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:text="더보기>" />
-
-                        <ImageView
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_alignParentRight="true">
+                            <TextView
+                                android:id="@+id/tv_materialMore"
+                                style="@style/LightTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="더보기 " />
+                            <ImageView
+                                android:layout_width="5.5dp"
+                                android:layout_height="11dp"
+                                android:src="@drawable/img_shortcut_green"/>
+                        </LinearLayout>
+                        <androidx.cardview.widget.CardView
                             android:id="@+id/img_rawMaterial"
-                            style="@style/RawMaterialImageStyle"
-                            android:layout_below="@id/textRaw"
-                            android:layout_marginLeft="3dp"
-                            android:src="@color/gray" />
-
+                            android:layout_width="@dimen/material"
+                            android:layout_height="@dimen/material"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginStart="3dp"
+                            android:layout_below="@id/textRaw">
+                            <ImageView
+                                style="@style/RawMaterialImageStyle"
+                                android:src="@color/gray" />
+                        </androidx.cardview.widget.CardView>
                         <TextView
                             android:id="@+id/tv_rawMaterial"
                             android:layout_width="wrap_content"
@@ -214,22 +255,32 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="세줄후기" />
-
-                        <TextView
-                            android:id="@+id/tv_reviewMore"
-                            style="@style/LightTextStyle"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="180dp"
-                            android:text="더보기>"
-                            android:layout_alignParentRight="true"/>
-
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_alignParentRight="true">
+                            <TextView
+                                android:id="@+id/tv_reviewMore"
+                                style="@style/LightTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="더보기 "/>
+                            <ImageView
+                                android:layout_width="5.5dp"
+                                android:layout_height="11dp"
+                                android:src="@drawable/img_shortcut_green"/>
+                        </LinearLayout>
                         <fragment
                             android:id="@+id/fg_rating"
-                            android:layout_marginTop="28dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_marginBottom="39dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/textReview"
-                            android:name="com.example.idealperfume.Fragment.RatingFragment"/>
+                            android:name="com.example.idealperfume.Fragment.RatingFragment"
+                            tools:layout="@layout/fragment_rating" />
 
                     </RelativeLayout>
 
@@ -243,17 +294,24 @@
                         android:overScrollMode="never" />
 
                     <View style="@style/divider" />
-
-                    <TextView
-                        android:id="@+id/tv_reviewMore2"
-                        style="@style/LightTextStyle"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:paddingTop="14.5dp"
-                        android:paddingBottom="17.5dp"
-                        android:text="2301개의 더보기>" />
-
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:id="@+id/tv_reviewMore2"
+                            style="@style/LightTextStyle.gray"
+                            android:paddingTop="14.5dp"
+                            android:paddingBottom="17.5dp"
+                            android:text="2301개의 더보기 " />
+                        <ImageView
+                            android:layout_width="5.5dp"
+                            android:layout_height="11dp"
+                            android:src="@drawable/img_shortcut_green"
+                            android:tint="@color/reviewTextDarkGray"/>
+                    </LinearLayout>
                     <View style="@style/divider" />
 
                     <RelativeLayout
@@ -371,13 +429,22 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
                             android:text="시트러스를 사용한 다른제품" />
-
-                        <TextView
-                            android:id="@+id/tv_recommendMore"
-                            style="@style/LightTextStyle"
-                            android:layout_alignParentRight="true"
-                            android:text="더보기>" />
-
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_alignParentRight="true">
+                            <TextView
+                                android:id="@+id/tv_recommendMore"
+                                style="@style/LightTextStyle"
+                                android:layout_alignParentRight="true"
+                                android:text="더보기 " />
+                            <ImageView
+                                android:layout_width="5.5dp"
+                                android:layout_height="11dp"
+                                android:src="@drawable/img_shortcut_green"/>
+                        </LinearLayout>
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rv_recommend"
                             android:layout_width="wrap_content"
@@ -402,13 +469,21 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
                             android:text="10대 픽 랭킹 BEST10" />
-
-                        <TextView
-                            android:id="@+id/tv_rankMore"
-                            style="@style/LightTextStyle"
-                            android:layout_alignParentRight="true"
-                            android:text="더보기>" />
-
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_alignParentRight="true">
+                            <TextView
+                                android:id="@+id/tv_rankMore"
+                                style="@style/LightTextStyle"
+                                android:text="더보기 " />
+                            <ImageView
+                                android:layout_width="5.5dp"
+                                android:layout_height="11dp"
+                                android:src="@drawable/img_shortcut_green"/>
+                        </LinearLayout>
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rv_ranking"
                             android:layout_width="wrap_content"

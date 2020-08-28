@@ -20,6 +20,7 @@ import android.text.style.TypefaceSpan;
 import android.widget.TextView;
 
 import com.example.idealperfume.R;
+import com.example.idealperfume.Util.CustomTypefaceSpan;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -59,44 +60,4 @@ public class SplashActivity extends AppCompatActivity {
         },1500);
     }
 
-    // spannable에서 커스텀 폰트 사용하기 위한 클래스
-    public class CustomTypefaceSpan extends TypefaceSpan {
-        private final Typeface newType;
-
-        public CustomTypefaceSpan(String family, Typeface type) {
-            super(family);
-            newType = type;
-        }
-
-        @Override
-        public void updateDrawState(TextPaint ds) {
-            applyCustomTypeFace(ds, newType);
-        }
-
-        @Override
-        public void updateMeasureState(TextPaint paint) {
-            applyCustomTypeFace(paint, newType);
-        }
-
-        private void applyCustomTypeFace(Paint paint, Typeface tf) {
-            int oldStyle;
-            Typeface old = paint.getTypeface();
-            if (old == null) {
-                oldStyle = 0;
-            } else {
-                oldStyle = old.getStyle();
-            }
-
-            int fake = oldStyle & ~tf.getStyle();
-            if ((fake & Typeface.BOLD) != 0) {
-                paint.setFakeBoldText(true);
-            }
-
-            if ((fake & Typeface.ITALIC) != 0) {
-                paint.setTextSkewX(-0.25f);
-            }
-
-            paint.setTypeface(tf);
-        }
-    }
 }

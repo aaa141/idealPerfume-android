@@ -9,47 +9,54 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.SearchActivity"/>
-        <!-- <activity android:name=".Activity.FilterActivity"></activity> -->
-        <activity android:name=".Activity.SplashActivity"></activity>
-        <activity android:name=".Activity.OnBoardingActivity" />
-        <activity android:name=".Activity.ReviewFilterActivity" />
-        <activity android:name=".Activity.ReviewActivity">
-
-        </activity>
-        <activity android:name=".Activity.PI_QuickActivity"/>
-        <activity android:name=".Activity.QuickSearchActivity"/>
-        <activity android:name=".Activity.ReviewRegActivity"></activity>
-        <activity android:name=".Activity.EventActivity" />
-        <activity android:name=".Activity.MyPickActivity" />
-        <activity android:name=".Activity.PI_SearchActivity"/>
-        <activity android:name=".Activity.QuestionActivity" />
-        <activity android:name=".Activity.Register2Activity" >
-        </activity>
-        <activity android:name=".Activity.LoginActivity" />
-        <activity android:name=".Activity.Register1Activity" >
-        </activity>
-        <activity android:name=".Activity.Register3Activity" />
-        <activity android:name=".Activity.MainActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
-        <activity android:name=".Activity.MaterialsActivity" >
+        <activity android:name=".Activity.PI_SrchBrandActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.MaterialsActivity" >
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+        <activity android:name=".Activity.SearchActivity" /> <!-- <activity android:name=".Activity.FilterActivity"></activity> -->
+        <activity android:name=".Activity.SplashActivity" />
+        <activity android:name=".Activity.OnBoardingActivity" />
+        <activity android:name=".Activity.ReviewFilterActivity" />
+        <activity android:name=".Activity.ReviewActivity"></activity>
+        <activity android:name=".Activity.PI_QuickActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.QuickSearchActivity" />
+        <activity android:name=".Activity.ReviewRegActivity" />
+        <activity android:name=".Activity.EventActivity" />
+        <activity android:name=".Activity.MyPickActivity" />
+        <activity android:name=".Activity.PI_SearchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.QuestionActivity" />
+        <activity android:name=".Activity.Register2Activity"></activity>
+        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.Register1Activity"></activity>
+        <activity android:name=".Activity.Register3Activity" />
+        <activity android:name=".Activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.MaterialsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".Activity.SettingActivity" />
         <activity android:name=".Activity.ProductInfoActivity">

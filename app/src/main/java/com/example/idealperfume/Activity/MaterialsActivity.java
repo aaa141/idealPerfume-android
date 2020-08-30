@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.anychart.AnyChart;
 import com.anychart.AnyChartView;
@@ -18,9 +20,14 @@ import com.example.idealperfume.Data.MaterialsData;
 import com.example.idealperfume.R;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.renderer.PieChartRenderer;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +36,8 @@ public class MaterialsActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
     MaterialsAdapter recyclerViewAdapter;
-    private AnyChartView vennDiagramChart;
+    PieChart pieChart;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,26 +51,6 @@ public class MaterialsActivity extends AppCompatActivity {
                 new DividerItemDecoration(this, linearLayoutManager.getOrientation()));
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        vennDiagramChart = (AnyChartView)findViewById(R.id.vennDiagramChart);
-//        vennDiagramChart.setProgressBar(findViewById(R.id.progress_bar));
-        Venn venn = AnyChart.venn();
-        venn.data(getData());
-        venn.stroke("#7caf57");
-        venn.labels().format("{%Name}" + "" +
-                "{%value}" + "%");
-//        venn.intersections().hovered().fill("#000000", 0.25d);
-        venn.intersections().labels().fontWeight("medium");
-//        venn.intersections().hovered().background("#ffffff");
-//        venn.intersections().hovered().fontColor("#7caf57");
-        venn.fill("#ffffff");
-        venn.fill("#ffffff");
-        venn.labels().fontColor("#7caf57");
-        venn.labels().fontSize("10sp"); // 원래는 12sp
-        venn.labels().fontFamily();
-//        venn.intersections().labels().format("{%Name}");
-//        venn.tooltip().titleFormat("{%Name}");
-        vennDiagramChart.setChart(venn);
-
         // ArrayList에 person 객체(이름과 번호) 넣기
         List<MaterialsData> materialdata = new ArrayList<>();
         materialdata.add(new MaterialsData(R.drawable.icon_circle, "시프레", "백단에서 채취한 두발용 향", 50));
@@ -73,16 +61,45 @@ public class MaterialsActivity extends AppCompatActivity {
         // Adapter생성
         recyclerViewAdapter = new MaterialsAdapter(this, materialdata);
         recyclerView.setAdapter(recyclerViewAdapter);
+
+        int[] colorArray = new int[] {getResources().getColor(R.color.green6D), Color.WHITE};
+        List<Integer> textColorArray = new ArrayList<>();
+        textColorArray.add(Color.WHITE);
+        textColorArray.add(getResources().getColor(R.color.green6D));
+
+        //pie chart
+        pieChart = (PieChart)findViewById(R.id.piechart);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.getDescription().setText("");
+        pieChart.setExtraOffsets(5,10,5,5);
+        pieChart.setTouchEnabled(false);
+        pieChart.setDrawHoleEnabled(false);
+
+        pieChart.animateY(1000, Easing.EaseInOutCubic); //애니메이션
+
+        ArrayList entries = getData();
+
+        PieDataSet dataSet = new PieDataSet(getData()," ");
+        dataSet.setColors(colorArray);
+        dataSet.setValueTextColors(textColorArray);
+
+        PieData data = new PieData((dataSet));
+        data.setValueTextSize(20f);
+        pieChart.setData(data);
+        pieChart.setEntryLabelColor(getResources().getColor(R.color.green6D));
+        pieChart.setEntryLabelTextSize(15f);
+        pieChart.getLegend().setEnabled(false);
     }
 
     private ArrayList getData(){
-        ArrayList<DataEntry> entries = new ArrayList<>();
-        entries.add(new NameValueDataEntry("A", "시프레", 50));
-        entries.add(new NameValueDataEntry("C", "푸제르", 35));
-        entries.add(new NameValueDataEntry("B", "시트러스" , 35));
-        entries.add(new NameValueDataEntry("D", "파우더", 30));
+        ArrayList<PieEntry> entries = new ArrayList<>();
+        entries.add(new PieEntry(50, "시프레"));
+        entries.add(new PieEntry(20, "푸제르"));
+        entries.add(new PieEntry(20, "시트러스"));
+        entries.add(new PieEntry(10, "파우더"));
         return entries;
     }
 
 
 }
+

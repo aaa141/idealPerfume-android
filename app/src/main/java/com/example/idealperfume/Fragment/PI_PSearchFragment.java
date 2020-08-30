@@ -31,12 +31,21 @@ public class PI_PSearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_pi_psearch, container, false);
 
-        //???왜 되는거지??
-        if(container == view.findViewById(R.id.pi_quick_container)) {
+        if(container == view.findViewById(R.id.pi_srchbrand_container)) {
             LinearLayout ll = (LinearLayout) view.findViewById(R.id.ll_only_pi);
             ll.setVisibility(View.GONE);
         }
         else {
+            TextView tv_pisearch_title = (TextView)view.findViewById(R.id.tv_pisearch_title);
+            if(container == view.findViewById(R.id.pi_srchbrand_container)) {
+                View line1 = (View) view.findViewById(R.id.line1);
+                View line2 = (View) view.findViewById(R.id.line2);
+                line1.setVisibility(View.VISIBLE);
+                line2.setVisibility(View.VISIBLE);
+                tv_pisearch_title.setText("xx" + "개의 제품");
+            }
+            else tv_pisearch_title.setText("xx"+"검색 결과");
+
             TextView tv_sortBy = (TextView) view.findViewById(R.id.tv_sortBy);
             tv_sortBy.setOnClickListener(new View.OnClickListener() {
                 @Override

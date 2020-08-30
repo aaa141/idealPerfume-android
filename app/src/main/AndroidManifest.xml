@@ -10,11 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.PI_SrchBrandActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activity.SearchActivity" /> <!-- <activity android:name=".Activity.FilterActivity"></activity> -->
         <activity android:name=".Activity.SplashActivity" />
@@ -22,22 +17,12 @@
         <activity android:name=".Activity.ReviewFilterActivity" />
         <activity android:name=".Activity.ReviewActivity"></activity>
         <activity android:name=".Activity.PI_QuickActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activity.QuickSearchActivity" />
         <activity android:name=".Activity.ReviewRegActivity" />
         <activity android:name=".Activity.EventActivity" />
         <activity android:name=".Activity.MyPickActivity" />
         <activity android:name=".Activity.PI_SearchActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activity.QuestionActivity" />
         <activity android:name=".Activity.Register2Activity"></activity>
@@ -52,19 +37,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.MaterialsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activity.SettingActivity" />
         <activity android:name=".Activity.ProductInfoActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

@@ -32,7 +32,7 @@
     <View style="@style/divider" />
 
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -45,7 +45,7 @@
             <com.github.mikephil.charting.charts.PieChart
                 android:id="@+id/piechart"
                 android:layout_width="match_parent"
-                android:layout_height="335dp"></com.github.mikephil.charting.charts.PieChart>
+                android:layout_height="335dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_materialslist"
@@ -55,5 +55,5 @@
                 android:layout_marginRight="19.5dp" />
 
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 </LinearLayout>

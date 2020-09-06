@@ -1,7 +1,9 @@
 package com.example.idealperfume.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.telecom.Call;
@@ -17,7 +19,7 @@ import org.w3c.dom.Text;
 
 public class ReviewFilterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView tv_ageAll, tv_10, tv_early20, tv_late20, tv_early30, tv_late30, tv_over40,
+    static TextView tv_ageAll, tv_10, tv_early20, tv_late20, tv_early30, tv_late30, tv_over40,
             tv_genderAll, tv_female, tv_male, tv_reviewAll, tv_reviewPositive, tv_reviewNegative,
             tv_filterReset;
 
@@ -43,6 +45,8 @@ public class ReviewFilterActivity extends AppCompatActivity implements View.OnCl
         tv_reviewPositive = findViewById(R.id.tv_reviewPositive);
         tv_reviewNegative = findViewById(R.id.tv_reviewNegative);
 
+        back.setOnClickListener(this);
+        tv_filterReset.setOnClickListener(this);
         tv_ageAll.setOnClickListener(age_listener);
         tv_10.setOnClickListener(age_listener);
         tv_early20.setOnClickListener(age_listener);
@@ -50,27 +54,16 @@ public class ReviewFilterActivity extends AppCompatActivity implements View.OnCl
         tv_early30.setOnClickListener(age_listener);
         tv_late30.setOnClickListener(age_listener);
         tv_over40.setOnClickListener(age_listener);
-
         tv_genderAll.setOnClickListener(gender_listener);
         tv_female.setOnClickListener(gender_listener);
         tv_male.setOnClickListener(gender_listener);
-
         tv_reviewAll.setOnClickListener(review_listener);
         tv_reviewPositive.setOnClickListener(review_listener);
         tv_reviewNegative.setOnClickListener(review_listener);
 
-
-        init();
-    }
-
-    public void init() {
-        //현재 적용된 필터 가져오기
-
-        //
-        setSelected(tv_reviewAll);
-        setSelected(tv_genderAll);
         setSelected(tv_ageAll);
     }
+
     View.OnClickListener age_listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -86,12 +79,11 @@ public class ReviewFilterActivity extends AppCompatActivity implements View.OnCl
             else{
                 if(getState(v)==0){
                     setDeselected((TextView)v);
-                    Log.d("test",getState(tv_10)+", "+getState(tv_early20)+", "
-                    +getState(tv_late20)+", "+getState(tv_early30)+", "+getState(tv_late30)+", "
-                    +getState(tv_over40)+", ");
+
                     if(getState(tv_10)*getState(tv_early20)*
                             getState(tv_late20)*getState(tv_early30)*
                             getState(tv_late30)*getState(tv_over40) == 1){
+                        // 전부 선택 안돼있으면, 전체 선택
                         setSelected(tv_ageAll);
                     }
                 }else{
@@ -127,9 +119,22 @@ public class ReviewFilterActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View v) {
         if(v.getId() == R.id.back){ //뒤로 가기
             finish();
+            //startActivity(new Intent(ReviewFilterActivity.this, ReviewActivity.class));
         }
         else if(v.getId() == R.id.tv_filterReset){ // 초기화
-            init();
+            setDeselected(tv_10);
+            setDeselected(tv_early20);
+            setDeselected(tv_late20);
+            setDeselected(tv_early30);
+            setDeselected(tv_late30);
+            setDeselected(tv_over40);
+            setDeselected(tv_female);
+            setDeselected(tv_male);
+            setDeselected(tv_reviewPositive);
+            setDeselected(tv_reviewNegative);
+            setSelected(tv_ageAll);
+            setSelected(tv_genderAll);
+            setSelected(tv_ageAll);
         }
         else if(v.getId() == R.id.btn_setFilter){ // 필터 적용 버튼
 
@@ -155,5 +160,11 @@ public class ReviewFilterActivity extends AppCompatActivity implements View.OnCl
         }
         else
             return 1; // 선택 안 된 상태
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        
     }
 }

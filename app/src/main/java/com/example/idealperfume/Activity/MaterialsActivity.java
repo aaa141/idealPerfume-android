@@ -26,11 +26,14 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.renderer.PieChartRenderer;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class MaterialsActivity extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -50,7 +53,7 @@ public class MaterialsActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(
                 new DividerItemDecoration(this, linearLayoutManager.getOrientation()));
         recyclerView.setLayoutManager(linearLayoutManager);
-
+        recyclerView.setNestedScrollingEnabled(false);
         // ArrayList에 person 객체(이름과 번호) 넣기
         List<MaterialsData> materialdata = new ArrayList<>();
         materialdata.add(new MaterialsData(R.drawable.icon_circle, "시프레", "백단에서 채취한 두발용 향", 50));
@@ -62,36 +65,41 @@ public class MaterialsActivity extends AppCompatActivity {
         recyclerViewAdapter = new MaterialsAdapter(this, materialdata);
         recyclerView.setAdapter(recyclerViewAdapter);
 
-        int[] colorArray = new int[] {getResources().getColor(R.color.green6D), Color.WHITE};
-        List<Integer> textColorArray = new ArrayList<>();
-        textColorArray.add(Color.WHITE);
-        textColorArray.add(getResources().getColor(R.color.green6D));
+        int[] colorArray = new int[] {getResources().getColor(R.color.green6D),
+                getResources().getColor(R.color.testColor2),
+                getResources().getColor(R.color.testColor1),
+                getResources().getColor(R.color.testColor)};
+//        List<Integer> textColorArray = new ArrayList<>();
+//        textColorArray.add(Color.WHITE);
+//        textColorArray.add(getResources().getColor(R.color.green6D));
 
         //pie chart
         pieChart = (PieChart)findViewById(R.id.piechart);
         pieChart.getDescription().setEnabled(false);
         pieChart.getDescription().setText("");
+        pieChart.setDrawEntryLabels(true);
+        pieChart.setEntryLabelColor(Color.WHITE);
         pieChart.setExtraOffsets(5,10,5,5);
         pieChart.setTouchEnabled(false);
         pieChart.setDrawHoleEnabled(false);
-
+        pieChart.setEntryLabelTextSize(13f);
+        pieChart.getLegend().setEnabled(false);
+        pieChart.setUsePercentValues(true);
         pieChart.animateY(1000, Easing.EaseInOutCubic); //애니메이션
 
-        ArrayList entries = getData();
 
-        PieDataSet dataSet = new PieDataSet(getData()," ");
+        PieDataSet dataSet = new PieDataSet(getData(),"");
         dataSet.setColors(colorArray);
-        dataSet.setValueTextColors(textColorArray);
+        dataSet.setValueTextColor(Color.WHITE);
 
-        PieData data = new PieData((dataSet));
-        data.setValueTextSize(20f);
+        PieData data = new PieData(dataSet);
+        data.setValueTextSize(15f);
+        data.setValueFormatter(new PercentFormatter(pieChart));
         pieChart.setData(data);
-        pieChart.setEntryLabelColor(getResources().getColor(R.color.green6D));
-        pieChart.setEntryLabelTextSize(15f);
-        pieChart.getLegend().setEnabled(false);
+
     }
 
-    private ArrayList getData(){
+    private ArrayList<PieEntry> getData(){
         ArrayList<PieEntry> entries = new ArrayList<>();
         entries.add(new PieEntry(50, "시프레"));
         entries.add(new PieEntry(20, "푸제르"));

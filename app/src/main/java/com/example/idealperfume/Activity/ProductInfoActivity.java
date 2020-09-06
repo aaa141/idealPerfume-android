@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -19,6 +20,10 @@ import com.example.idealperfume.Adapter.ReviewAdapter;
 import com.example.idealperfume.Data.ProductInfoData;
 import com.example.idealperfume.Data.ReviewData;
 import com.example.idealperfume.R;
+import com.example.idealperfume.Util.retrofit.RetrofitHelper;
+import com.example.idealperfume.Util.retrofit.RetrofitService;
+import com.example.idealperfume.model.GenderCompositionModel;
+import com.example.idealperfume.model.ProductModel;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
@@ -31,6 +36,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class ProductInfoActivity extends AppCompatActivity implements View.OnClickListener {
 
     FlexboxLayout pdHashtagLayout;
@@ -42,12 +51,14 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
     TextView tv_pickCount, tv_pdPrice,tv_pdBrand, tv_pdName, tv_materialMore, tv_reviewMore, tv_reviewMore2;
     ImageView back, share, pdPick;
     int pickCount;
+    RetrofitService retrofitService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_info);
 
+        retrofitService = RetrofitHelper.getRetrofit().create(RetrofitService.class);
         pdHashtagLayout = (FlexboxLayout) findViewById(R.id.pdHashtagLayout);
         pieChart = (PieChart) findViewById(R.id.pieChart);
         //barChart = (BarChart) findViewById(R.id.barChart);
@@ -77,10 +88,52 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
 
 
         init();
-        drawPieChart();
     }
 
     public void init(){
+        //*서버*//
+        //상품 정보
+        retrofitService.getProductInfo(1)
+            .enqueue(new Callback<ProductModel>() {
+            @Override
+            public void onResponse(Call<ProductModel> call, Response<ProductModel> response) {
+                if(response.isSuccessful()) {
+                    ProductModel productModel = response.body();
+                    tv_pdName.setText(productModel.getName());
+                    tv_pdBrand.setText(productModel.getbName());
+                    Log.d("testest",productModel.getName());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ProductModel> call, Throwable t) {
+                Log.d("testest",t.getMessage());
+            }
+        });
+
+        //성별 분포
+        retrofitService.getGenderComposition(1)
+                .enqueue(new Callback<ArrayList<GenderCompositionModel>>() {
+            @Override
+            public void onResponse(Call<ArrayList<GenderCompositionModel>> call, Response<ArrayList<GenderCompositionModel>> response) {
+                if(response.isSuccessful()){
+                    ArrayList<GenderCompositionModel> list = response.body();
+                    drawPieChart(list.get(0).getFemale(),list.get(0).getMale());
+                }
+            }
+            @Override
+            public void onFailure(Call<ArrayList<GenderCompositionModel>> call, Throwable t) {
+                Log.d("testest",t.getMessage());
+            }
+        });
+
+
+
+
+
+
+
+
         // 상품 pick 설정
         tv_pickCount.setText("434");
         pickCount = Integer.parseInt(tv_pickCount.getText().toString());
@@ -147,29 +200,34 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
         rv_ranking.setAdapter(rankingAdapter);
     }
 
-    private void drawPieChart(){
+    private void drawPieChart(float female, float male){
 
         int[] colorArray =
                 new int[]{getResources().getColor(R.color.green)
                         , getResources().getColor(R.color.yellow)
                         , getResources().getColor(R.color.lineColor)};
 
-        pieChart.setCenterText("여성이 더 많이\n구매한 제품");
+        String str;
+        if(female>male) str = "여성";
+        else str="남성";
+
+        pieChart.setCenterText(str+"이 더 많이\n구매한 제품");
         pieChart.setCenterTextSize(14f);
         pieChart.setCenterTextColor(getResources().getColor(R.color.reviewTextColor));
 
         pieChart.getDescription().setEnabled(false);
         pieChart.setDrawEntryLabels(false);
         pieChart.getLegend().setEnabled(false);
-        pieChart.setClickable(true);
+        pieChart.setClickable(false);
+        pieChart.setTouchEnabled(false);
         pieChart.setHoleRadius(86f);
         pieChart.setTransparentCircleRadius(86f);
 
         List<PieEntry> value = new ArrayList<>();
         //value 가져오기
-        value.add(new PieEntry(75f,"여성")); //여성
-        value.add(new PieEntry(20f,"남성")); //남성
-        value.add(new PieEntry(5f,"기타")); //기타
+        value.add(new PieEntry(female,"여성"));
+        value.add(new PieEntry(male,"남성"));
+        value.add(new PieEntry(1f,"기타"));
 
         PieDataSet pieDataSet = new PieDataSet(value,"");
         pieDataSet.setColors(colorArray);

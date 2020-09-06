@@ -21,4 +21,32 @@
         android:layout_centerInParent="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="66dp"/>
+
+    <TextView
+        android:id="@+id/tv_reviewCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5,010,233"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="104dp"
+        android:fontFamily="@font/roboto_medium"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="누적 리뷰수"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="142dp"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/text_round"/>
+    <!--자바코드에서 background 투명도 조절
+        : 텍스트에 투명도 값 설정되지 않게 하기 위해-->
+
 </RelativeLayout>

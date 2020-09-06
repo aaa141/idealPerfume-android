@@ -3,20 +3,30 @@ package com.example.idealperfume.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.idealperfume.R;
+import com.example.idealperfume.Util.retrofit.RetrofitHelper;
+import com.example.idealperfume.Util.retrofit.RetrofitService;
+import com.example.idealperfume.model.LoginModel;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
+
+    RetrofitService retrofitService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,10 +120,39 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //로그인
         btn_login.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "로그인", Toast.LENGTH_SHORT).show();
+                retrofitService = RetrofitHelper.getRetrofit().create(RetrofitService.class);
+
+                Call<LoginModel> call = retrofitService.getLoginCheck(Integer.parseInt(et_id.getText().toString()),
+                        et_password.getText().toString());
+
+                call.enqueue(new Callback<LoginModel>() {
+                    @Override
+                    public void onResponse(Call<LoginModel> call, Response<LoginModel> response) {
+                        if(response.isSuccessful()){
+                            LoginModel loginModel = response.body();
+
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            intent.putExtra("userID",loginModel.getUserID());
+                            startActivity(intent);
+                        }
+                        else if(response.code()==404){
+                            Toast.makeText(LoginActivity.this, "아이디와 비밀번호를 확인해주세요"
+                                    , Toast.LENGTH_SHORT).show();
+                            et_password.setText("");
+                            Log.d("ssss","404");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<LoginModel> call, Throwable t) {
+                        Log.d("ssss","fail");
+                    }
+                });
+
             }
         }) ;
 
@@ -132,5 +171,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
     }
 }

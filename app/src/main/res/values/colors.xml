@@ -16,4 +16,8 @@
     <color name="yellow">#f9d070</color>
     <color name="lightBlack">#3c3c3c</color>
     <color name="bottommenu">#919191</color>
+
+    <color name="testColor">#DDC57D</color>
+    <color name="testColor1">#A1AA45</color>
+    <color name="testColor2">#E6B00F</color>
 </resources>

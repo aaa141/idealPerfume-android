@@ -47,7 +47,7 @@ public class ReviewRegActivity extends AppCompatActivity implements View.OnClick
                 // **작성한 내용 사라짐 알림
                 startActivity(new Intent(ReviewRegActivity.this, ProductInfoActivity.class));
                 //finish();
-                //overridePendingTransition(R.anim.not_move,R.anim.right_out);
+                overridePendingTransition(R.anim.left_in,R.anim.right_out);
                 break;
 
             case R.id.tv_changeProduct: // 제품 변경하기
@@ -55,7 +55,9 @@ public class ReviewRegActivity extends AppCompatActivity implements View.OnClick
 
             case R.id.btn_register: // 작성하기
                 Toast.makeText(this, "등록되었습니다.", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(ReviewRegActivity.this, ProductInfoActivity.class));
+                Intent intent = new Intent(ReviewRegActivity.this, ProductInfoActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
                 break;
         }
     }

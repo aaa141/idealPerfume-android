@@ -16,23 +16,13 @@
             style="@style/BackButton"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="285dp"
-            android:fontFamily="@font/font"
-            android:includeFontPadding="false"
-            android:letterSpacing="-0.02"
-            android:lineSpacingExtra="0dp"
-            android:text="로그인"
-            android:textColor="#000000"
-            android:textSize="26sp" />
+            style="@style/Header"
+            android:text="로그인" />
 
         <EditText
             android:id="@+id/et_id"
             style="@style/editCursor"
             android:layout_marginHorizontal="23dp"
-            android:layout_marginTop="34dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/edit_round"
             android:hint="아이디를 입력해주세요."
@@ -68,7 +58,7 @@
                 android:lineSpacingExtra="0dp"
                 android:text="자동로그인"
                 android:textColor="#c4c4c4"
-                android:textSize="13sp" />
+                android:textSize="13dp" />
 
             <View
                 android:layout_width="wrap_content"
@@ -86,15 +76,14 @@
                 android:lineSpacingExtra="0dp"
                 android:text="비밀번호를 잊으셨나요?"
                 android:textColor="#8e8e8e"
-                android:textSize="13sp" />
+                android:textSize="13dp" />
         </LinearLayout>
 
         <Button
             style="@style/Button"
             android:id="@+id/btn_login"
             android:layout_marginTop="71dp"
-            android:text="로그인"
-            />
+            android:text="로그인" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -107,7 +96,7 @@
             android:lineSpacingExtra="0dp"
             android:text="다른 방식으로 로그인하기"
             android:textColor="#c4c4c4"
-            android:textSize="13sp" />
+            android:textSize="13dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -161,7 +150,7 @@
                 android:lineSpacingExtra="0dp"
                 android:text="처음 오셨나요?"
                 android:textColor="#c4c4c4"
-                android:textSize="13sp" />
+                android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/tv_join"
@@ -175,8 +164,11 @@
                 android:lineSpacingExtra="0dp"
                 android:text="가입하기"
                 android:textColor="@color/green6D"
-                android:textSize="13sp" />
+                android:textSize="13dp" />
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
     </LinearLayout>
 </ScrollView>

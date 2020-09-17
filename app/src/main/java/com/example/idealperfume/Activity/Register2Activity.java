@@ -101,7 +101,16 @@ public class Register2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(flag1 && flag2 && flag3 && flag4) {
+                    Intent getIntent = getIntent();
+
                     Intent intent = new Intent(getApplicationContext(), Register3Activity.class);
+                    intent.putExtra("email", getIntent.getExtras().getString("email"));
+                    intent.putExtra("password", getIntent.getExtras().getString("password"));
+                    intent.putExtra("authenticationNo", getIntent.getExtras().getString("authenticationNo"));
+                    intent.putExtra("year", Integer.parseInt(tv_year.getText().toString()));
+                    intent.putExtra("job", tv_job.getText().toString());
+                    intent.putExtra("gender", tv_gender.getText().toString());
+                    intent.putExtra("nickname", et_nickname.getText().toString());
                     startActivity(intent);
                 }
             }

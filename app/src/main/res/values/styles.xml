@@ -35,7 +35,7 @@
     <style name="Button">
         <item name="android:layout_marginLeft">24dp</item>
         <item name="android:layout_marginRight">24dp</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">14dp</item>
         <item name="android:textColor">#fff</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
@@ -81,7 +81,7 @@
     <style name="editText">
         <item name="android:layout_marginLeft">23dp</item>
         <item name="android:layout_marginRight">23dp</item>
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">13dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">45dp</item>
         <item name="android:background">@drawable/edit_round</item>
@@ -93,7 +93,7 @@
 
     //edit-text : 회색배경의 editText
     <style name="editText_gray">
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">13dp</item>
         <item name="android:background">@drawable/edit_gray</item>
         <item name="android:layout_marginRight">17dp</item>
         <item name="android:includeFontPadding">false</item>
@@ -108,16 +108,16 @@
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:fontFamily">@font/font</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:lineSpacingExtra">3sp</item>
+        <item name="android:lineSpacingExtra">3dp</item>
         <item name="android:textColor">#3c3c3c</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">16dp</item>
     </style>
 
     //title : 회원가입, QnA에 있는 작은 타이틀
     <style name="subtitle">
         <item name="android:layout_marginBottom">12dp</item>
         <item name="android:layout_marginLeft">28dp</item>
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">13dp</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -140,8 +140,8 @@
         <item name="android:layout_marginRight">6dp</item>
         <item name="android:fontFamily">@font/notosanskr_medium</item>
         <item name="android:textColor">@color/green</item>
-        <item name="android:textSize">13sp</item>
-        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:lineSpacingExtra">4dp</item>
     </style>
 
     //textsize 생년월일 선택 화면 글자 크기
@@ -185,7 +185,7 @@
     //전체적으로 적용되는 폰트 스타일
     <style name="TextViewStyle">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">14dp</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:fontFamily">@font/font</item>
         <item name="android:lineSpacingExtra">0dp</item>
@@ -194,9 +194,9 @@
     <!--bold체....인데..-->
     <style name="BoldText">
         <item name="android:textColor">#000000</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">14dp</item>
         <item name="fontFamily">@font/notosanskr_bold</item>
-        <item name="android:lineSpacingExtra">5sp</item>
+        <item name="android:lineSpacingExtra">5dp</item>
     </style>
 
     //linespacing 있을때
@@ -204,18 +204,18 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">14dp</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:fontFamily">@font/font</item>
         <item name="android:letterSpacing">-0.02</item>
-        <item name="android:lineSpacingExtra">3sp</item>
+        <item name="android:lineSpacingExtra">3dp</item>
     </style>
 
     //색 있는 연한 텍스트 (더보기 )
     <style name="LightTextStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">13dp</item>
         <item name="android:textColor">#6da048</item>
     </style>
 
@@ -228,7 +228,7 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">13dp</item>
     </style>
 
 
@@ -237,11 +237,11 @@
         <item name="android:layout_width">46dp</item>
         <item name="android:layout_height">46dp</item>
         <item name="android:background">@drawable/image_round10</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">16dp</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:fontFamily">@font/font_bold</item>
         <item name="android:letterSpacing">-0.02</item>
-        <item name="android:lineSpacingExtra">3sp</item>
+        <item name="android:lineSpacingExtra">3dp</item>
     </style>
 
     //메안화면 헤더
@@ -249,11 +249,11 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">26sp</item>
+        <item name="android:textSize">26dp</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:fontFamily">@font/font</item>
         <item name="android:letterSpacing">-0.02</item>
-        <item name="android:lineSpacingExtra">5sp</item>
+        <item name="android:lineSpacingExtra">5dp</item>
         <item name="android:layout_marginLeft">23dp</item>
     </style>
 
@@ -269,7 +269,7 @@
         <item name="android:layout_marginBottom">12dp</item>
         <item name="android:button">@drawable/checkbox</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">13dp</item>
         <item name="android:textColor">@color/lightBlack</item>
         <item name="fontFamily">@font/notosanskr_medium</item>
     </style>
@@ -285,7 +285,7 @@
         <item name="android:paddingTop">16dp</item>
         <item name="android:paddingBottom">13dp</item>
         <item name="android:textColor">#b5b5b5</item>
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">13dp</item>
         <item name="android:textCursorDrawable">@color/green6D</item>
         <item name="android:fontFamily">@font/font</item>
         <item name="android:includeFontPadding">false</item>

@@ -24,7 +24,7 @@
         android:backgroundTint="#ebebeb"
         android:background="@drawable/btn_signup_year"
         android:gravity="center"
-        android:textSize="12sp"
+        android:textSize="12dp"
         android:textColor="#3c3c3c"
         android:fontFamily="@font/font"/>
 

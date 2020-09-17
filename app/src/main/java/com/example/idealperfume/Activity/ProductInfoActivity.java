@@ -1,19 +1,16 @@
 package com.example.idealperfume.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.idealperfume.Adapter.PI_ProductAdapter;
 import com.example.idealperfume.Adapter.ReviewAdapter;
@@ -126,13 +123,6 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
                 Log.d("testest",t.getMessage());
             }
         });
-
-
-
-
-
-
-
 
         // 상품 pick 설정
         tv_pickCount.setText("434");

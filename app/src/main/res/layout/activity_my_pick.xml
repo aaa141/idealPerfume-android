@@ -83,8 +83,8 @@
                 android:layout_height="wrap_content"
                 android:text="홈"
                 android:textColor="@color/bottommenu"
-                android:textSize="10sp"
-                android:lineSpacingExtra="2sp"
+                android:textSize="10dp"
+                android:lineSpacingExtra="2dp"
                 android:layout_below="@id/iv_homemenu"
                 android:layout_marginTop="8.5dp"
                 android:layout_centerHorizontal="true"/>
@@ -112,8 +112,8 @@
                 android:layout_height="wrap_content"
                 android:text="내픽이상향"
                 android:textColor="@color/green"
-                android:textSize="10sp"
-                android:lineSpacingExtra="2sp"
+                android:textSize="10dp"
+                android:lineSpacingExtra="2dp"
                 android:layout_below="@id/iv_mypickmenu"
                 android:layout_marginTop="8.5dp"
                 android:layout_centerHorizontal="true"/>
@@ -141,8 +141,8 @@
                 android:layout_height="wrap_content"
                 android:text="이벤트"
                 android:textColor="@color/bottommenu"
-                android:textSize="10sp"
-                android:lineSpacingExtra="2sp"
+                android:textSize="10dp"
+                android:lineSpacingExtra="2dp"
                 android:layout_below="@id/iv_eventmenu"
                 android:layout_marginTop="8.5dp"
                 android:layout_centerHorizontal="true"/>
@@ -170,8 +170,8 @@
                 android:layout_height="wrap_content"
                 android:text="환경설정"
                 android:textColor="@color/bottommenu"
-                android:textSize="10sp"
-                android:lineSpacingExtra="2sp"
+                android:textSize="10dp"
+                android:lineSpacingExtra="2dp"
                 android:layout_below="@id/iv_settingmenu"
                 android:layout_marginTop="8.5dp"
                 android:layout_centerHorizontal="true"/>

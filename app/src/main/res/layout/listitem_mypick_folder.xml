@@ -30,7 +30,7 @@
             style="@style/TextLineSpacing"
             android:layout_below="@id/tv_fname"
             android:textColor="#8e8e8e"
-            android:textSize="13sp" />
+            android:textSize="13dp" />
 
     </RelativeLayout>
 

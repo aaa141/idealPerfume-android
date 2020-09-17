@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.idealperfume.R;
 import com.google.android.material.textfield.TextInputEditText;
@@ -18,6 +19,7 @@ import java.util.regex.Pattern;
 public class Register1Activity extends AppCompatActivity {
 
     TextInputEditText et_email, et_pw;
+    EditText et_authenticationNo;
     boolean emailFlag=false, pwFlag = false;
 
     @Override
@@ -27,7 +29,7 @@ public class Register1Activity extends AppCompatActivity {
 
         et_email = (TextInputEditText) findViewById(R.id.et_email);
         et_pw = (TextInputEditText) findViewById(R.id.et_pw);
-
+        et_authenticationNo = findViewById(R.id.et_authenticationNo);
 
         et_email.addTextChangedListener(new TextWatcher() {
             @Override
@@ -74,6 +76,9 @@ public class Register1Activity extends AppCompatActivity {
             public void onClick(View v) {
                 //데이터 임시 저장(...?)
                 Intent intent = new Intent(getApplicationContext(),Register2Activity.class);
+                intent.putExtra("email", et_email.getText().toString());
+                intent.putExtra("password", et_pw.getText().toString());
+                intent.putExtra("authenticationNo", et_authenticationNo.getText().toString());
                 startActivity(intent);
             }
         });

@@ -6,11 +6,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,18 +22,40 @@ import android.widget.Toast;
 
 import com.example.idealperfume.Adapter.BSBasicAdapter;
 import com.example.idealperfume.R;
+import com.example.idealperfume.Util.retrofit.RetrofitHelper;
+import com.example.idealperfume.Util.retrofit.RetrofitService;
+import com.example.idealperfume.model.LoginModel;
+import com.example.idealperfume.model.QnAModel;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class QuestionActivity extends AppCompatActivity {
 
     ArrayList<String> question = new ArrayList<>(Arrays.asList("선택안함", "이벤트 문의", "서비스 불편 오류제보", "사용방법 문의", "아이디어 제안", "제휴문의"));
     BottomSheetDialog BottomSheet;
     boolean flag1 = false, flag2 = false;
+    TextView tv_show_list;
+    EditText ed_question, ed_email;
     Button btn_next;
     Drawable btn_border;
 
@@ -39,9 +64,9 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
-        final TextView tv_show_list = (TextView) findViewById(R.id.tv_show_list);
-        final EditText ed_question = (EditText) findViewById(R.id.ed_question);
-        final EditText ed_email = (EditText) findViewById(R.id.ed_email);
+        tv_show_list = (TextView) findViewById(R.id.tv_show_list);
+        ed_question = (EditText) findViewById(R.id.ed_question);
+        ed_email = (EditText) findViewById(R.id.ed_email);
         btn_next = (Button) findViewById(R.id.btn_nxt);
         btn_border = getResources().getDrawable(R.drawable.btn_border);
 
@@ -98,6 +123,31 @@ public class QuestionActivity extends AppCompatActivity {
                 if (ed_question.getText().length() == 0 || ed_email.getText().length() == 0) {
                     buttonBefore(btn_next);
                 }
+            }
+        });
+
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(QuestionActivity.this, "성공적으로 전송되었습니다.", Toast.LENGTH_SHORT).show();
+
+                RetrofitService retrofitService = RetrofitHelper.getRetrofit().create(RetrofitService.class);
+
+                Call<QnAModel> call = retrofitService.getQnACheck(Integer.parseInt("1"), tv_show_list.getText().toString(),
+                        ed_question.getText().toString(), ed_email.getText().toString());
+
+                call.enqueue(new Callback<QnAModel>() {
+                    @Override
+                    public void onResponse(Call<QnAModel> call, Response<QnAModel> response) {
+                        QnAModel qnAModel = response.body();
+                    }
+
+                    @Override
+                    public void onFailure(Call<QnAModel> call, Throwable t) {
+                        Log.d("ssss","fail");
+                    }
+                });
             }
         });
 
@@ -164,4 +214,5 @@ public class QuestionActivity extends AppCompatActivity {
         BottomSheet.show();
 
     }
+
 }

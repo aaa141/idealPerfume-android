@@ -7,14 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
-import com.anychart.AnyChart;
-import com.anychart.AnyChartView;
-import com.anychart.chart.common.dataentry.DataEntry;
-import com.anychart.chart.common.dataentry.NameValueDataEntry;
-import com.anychart.charts.Venn;
 import com.example.idealperfume.Adapter.MaterialsAdapter;
 import com.example.idealperfume.Data.MaterialsData;
 import com.example.idealperfume.R;
@@ -30,6 +27,15 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.renderer.PieChartRenderer;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,11 +47,14 @@ public class MaterialsActivity extends AppCompatActivity {
     MaterialsAdapter recyclerViewAdapter;
     PieChart pieChart;
 
+    TextView test = findViewById(R.id.test);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materials);
+
+        new JSONTask().execute("http://192.168.200.161:8080/pdetail/material?pID");
 
         recyclerView = findViewById(R.id.rv_materialslist);
         linearLayoutManager = new LinearLayoutManager(this);
@@ -108,6 +117,102 @@ public class MaterialsActivity extends AppCompatActivity {
         return entries;
     }
 
+    public class JSONTask extends AsyncTask<String, String, String> {
 
+        @Override
+        protected String doInBackground(String... urls) {
+            try {
+                //JSONObject를 만들고 key value 형식으로 값을 저장해준다.
+                JSONObject jsonObject = new JSONObject();
+
+                HttpURLConnection con = null;
+                BufferedReader reader = null;
+
+                try {
+                    //URL url = new URL("http://192.168.25.16:3000/users");
+                    URL url = new URL(urls[0]);//url을 가져온다.
+                    con = (HttpURLConnection) url.openConnection();
+                    con.connect();//연결 수행
+
+                    //입력 스트림 생성
+                    InputStream stream = con.getInputStream();
+
+                    //속도를 향상시키고 부하를 줄이기 위한 버퍼를 선언한다.
+                    reader = new BufferedReader(new InputStreamReader(stream));
+
+                    //실제 데이터를 받는곳
+                    StringBuffer buffer = new StringBuffer();
+
+                    //line별 스트링을 받기 위한 temp 변수
+                    String line = "";
+
+                    //아래라인은 실제 reader에서 데이터를 가져오는 부분이다. 즉 node.js서버로부터 데이터를 가져온다.
+                    while ((line = reader.readLine()) != null) {
+                        buffer.append(line);
+                    }
+
+                    //다 가져오면 String 형변환을 수행한다. 이유는 protected String doInBackground(String... urls) 니까
+                    return buffer.toString();
+
+                    //아래는 예외처리 부분이다.
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    //종료가 되면 disconnect메소드를 호출한다.
+                    if (con != null) {
+                        con.disconnect();
+                    }
+                    try {
+                        //버퍼를 닫아준다.
+                        if (reader != null) {
+                            reader.close();
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }//finally 부분
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        //doInBackground메소드가 끝나면 여기로 와서 텍스트뷰의 값을 바꿔준다.
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            test.setText(result);
+
+//            try {
+//
+//                JSONObject menuObject = new JSONObject(result);
+//
+//                TextView tv_spicy = findViewById(R.id.tv_spicy);
+//                ImageView iv_spicy = findViewById(R.id.iv_spicy);
+//
+//                String kname = menuObject.getString("kname");
+//                String ename = menuObject.getString("ename");
+//                String k2e = menuObject.getString("k2e");
+//                String ingredi = menuObject.getString("ingredi");
+//                String explain_m = menuObject.getString("explain_m");
+//                String religion = menuObject.getString("religion");
+//                String vegan = menuObject.getString("vegan");
+//                String spicy = menuObject.getString("spicy");
+//                String imageURL = menuObject.getString("image");
+//
+//                TextView tv_menuname = findViewById(R.id.tv_menuname);
+//
+//                tv_menuname.setText(kname);
+//
+//
+//
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+        }
+    }
 }
 

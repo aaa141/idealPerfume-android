@@ -45,17 +45,15 @@ public class MyPickFragment1 extends Fragment implements MyPickDialogFragment1.O
         recyclerview_product.setAdapter(myPickProductAdapter);
         floatbtn_plus = v.findViewById(R.id.floatbtn_plus);
 
-//        if(getArguments() != null) {
-//            String foldername = getArguments().getString("foldername"); // 전달한 key 값
-//            listpickdata.add(new MyPickData(foldername,20 + "", date_today, R.drawable.folder, MyPickData.Code.ViewType.FolderListItem));
-////            listpickdata.notify();
-//        }
+        if(getArguments() != null) {
+            String foldername = getArguments().getString("foldername"); // 전달한 key 값
+            String createdDate = getArguments().getString("createdDate");
+            listpickdata.add(new MyPickData(foldername,20 + "", createdDate, R.drawable.folder, MyPickData.Code.ViewType.FolderListItem));
+//            listpickdata.notify();
+        }
 
 //        myPickProductAdapter.notifyItemInserted(0);
 //        myPickProductAdapter.notifyItemRangeChanged(0, listpickdata.size());
-//        listpickdata.add(new MyPickData("일리윤", "illiyoon", "세라 마이드 아토 로션 350ml", R.drawable.icon_circle, MyPickData.Code.ViewType.ProductListItem));
-//        listpickdata.add(new MyPickData("더마비", "Derma:B","데일리 모이스처 바디 로션 400ml", R.drawable.icon_circle,  MyPickData.Code.ViewType.ProductListItem));
-
 
         MyPickSwipeHelper myPickSwipeHelper = new MyPickSwipeHelper(getContext(), recyclerview_product, 280) {
             @Override
@@ -69,6 +67,8 @@ public class MyPickFragment1 extends Fragment implements MyPickDialogFragment1.O
                             @Override
                             public void onClick(int pos) {
                                 listpickdata.remove(pos);
+                                System.out.println("리스트size : " + listpickdata.size());
+                                System.out.println("pos : " + pos);
                             }
                         }));
             }
@@ -86,24 +86,18 @@ public class MyPickFragment1 extends Fragment implements MyPickDialogFragment1.O
         return v;
     }
 
-    Date today = Calendar.getInstance().getTime();
-    String date_today = new SimpleDateFormat("yyyy.MM.dd", Locale.getDefault()).format(today);
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        System.out.println(listpickdata.size());
-
-//        listpickdata.add(new MyPickData("폴더", "20", date_today, R.drawable.folder, MyPickData.Code.ViewType.FolderListItem));
 //        listpickdata.add(new MyPickData("일리윤", "illiyoon", "세라 마이드 아토 로션 350ml", R.drawable.icon_circle, MyPickData.Code.ViewType.ProductListItem));
 //        listpickdata.add(new MyPickData("더마비", "Derma:B","데일리 모이스처 바디 로션 400ml", R.drawable.icon_circle,  MyPickData.Code.ViewType.ProductListItem));
 
 
 //        if(getArguments() != null) {
 //            String foldername = getArguments().getString("foldername"); // 전달한 key 값
-//            listpickdata.add(0, new MyPickData(foldername, 20+"", null, date_today, R.drawable.folder, MyPickData.Code.ViewType.FolderListItem));
-//
+//            listpickdata.add(new MyPickData(foldername,20 + "", date_today, R.drawable.folder, MyPickData.Code.ViewType.FolderListItem));
+////            listpickdata.notify();
 //        }
 
     }

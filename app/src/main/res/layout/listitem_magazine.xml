@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         style="@style/TextLineSpacing"
         android:layout_marginTop="18dp"
-        android:textSize="13sp"
+        android:textSize="13dp"
         android:textColor="#8e8e8e"
         android:text="일리윤"/>
 
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         style="@style/TextLineSpacing"
         android:layout_marginTop="6dp"
-        android:textSize="14sp"
+        android:textSize="14dp"
         android:textColor="#3c3c3c"
         android:text="일리윤"/>
 

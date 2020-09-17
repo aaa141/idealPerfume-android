@@ -56,8 +56,9 @@ public class MyPickFragment2 extends Fragment {
                         new MyButtonClickListener() {
                             @Override
                             public void onClick(int pos) {
-                                Toast.makeText(getContext(), "Click", Toast.LENGTH_SHORT).show();
                                 listpickdata.remove(pos);
+                                System.out.println("리스트size : " + listpickdata.size());
+                                System.out.println("pos : " + pos);
                             }
                         }));
             }

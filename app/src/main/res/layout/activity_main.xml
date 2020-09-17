@@ -48,7 +48,7 @@
                         android:id="@+id/tv_gotest"
                         style="@style/MainHeader"
                         android:text="이상향 테스트 바로가기"
-                        android:textSize="14sp" />
+                        android:textSize="14dp" />
 
                     <ImageView
                         android:layout_width="5.5dp"
@@ -83,7 +83,7 @@
                         android:layout_height="match_parent"
                         android:hint="제품 또는 브랜드를 검색해보세요!"
                         android:letterSpacing="-0.02"
-                        android:lineSpacingExtra="3sp"
+                        android:lineSpacingExtra="3dp"
                         android:textColor="#b5b5b5" />
 
                     <ImageView
@@ -409,10 +409,10 @@
                 android:layout_below="@id/iv_homemenu"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="8.5dp"
-                android:lineSpacingExtra="2sp"
+                android:lineSpacingExtra="2dp"
                 android:text="홈"
                 android:textColor="@color/green"
-                android:textSize="10sp" />
+                android:textSize="10dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -438,10 +438,10 @@
                 android:layout_below="@id/iv_mypickmenu"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="8.5dp"
-                android:lineSpacingExtra="2sp"
+                android:lineSpacingExtra="2dp"
                 android:text="내픽이상향"
                 android:textColor="@color/bottommenu"
-                android:textSize="10sp" />
+                android:textSize="10dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -467,10 +467,10 @@
                 android:layout_below="@id/iv_eventmenu"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="8.5dp"
-                android:lineSpacingExtra="2sp"
+                android:lineSpacingExtra="2dp"
                 android:text="이벤트"
                 android:textColor="@color/bottommenu"
-                android:textSize="10sp" />
+                android:textSize="10dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -496,10 +496,10 @@
                 android:layout_below="@id/iv_settingmenu"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="8.5dp"
-                android:lineSpacingExtra="2sp"
+                android:lineSpacingExtra="2dp"
                 android:text="환경설정"
                 android:textColor="@color/bottommenu"
-                android:textSize="10sp" />
+                android:textSize="10dp" />
         </RelativeLayout>
     </LinearLayout>
 

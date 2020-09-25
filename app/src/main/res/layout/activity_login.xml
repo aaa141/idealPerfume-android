@@ -37,7 +37,7 @@
             android:background="@drawable/edit_round"
             android:hint="비밀번호를 입력해주세요."
             android:inputType="textPassword"
-            android:lineSpacingExtra="3sp"
+            android:lineSpacingExtra="3dp"
             />
 
         <LinearLayout
@@ -52,12 +52,10 @@
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/green7C"
                 android:checked="false"
-                android:fontFamily="@font/font"
                 android:includeFontPadding="false"
                 android:letterSpacing="-0.02"
                 android:lineSpacingExtra="0dp"
                 android:text="자동로그인"
-                android:textColor="#c4c4c4"
                 android:textSize="13dp" />
 
             <View
@@ -83,7 +81,8 @@
             style="@style/Button"
             android:id="@+id/btn_login"
             android:layout_marginTop="71dp"
-            android:text="로그인" />
+            android:text="로그인"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -95,7 +94,6 @@
             android:letterSpacing="-0.02"
             android:lineSpacingExtra="0dp"
             android:text="다른 방식으로 로그인하기"
-            android:textColor="#c4c4c4"
             android:textSize="13dp" />
 
         <LinearLayout
@@ -139,6 +137,7 @@
             android:layout_height="16dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="19.5dp"
+            android:layout_marginBottom="50dp"
             android:orientation="horizontal">
 
             <TextView
@@ -149,7 +148,6 @@
                 android:letterSpacing="-0.02"
                 android:lineSpacingExtra="0dp"
                 android:text="처음 오셨나요?"
-                android:textColor="#c4c4c4"
                 android:textSize="13dp" />
 
             <TextView

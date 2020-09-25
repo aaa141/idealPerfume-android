@@ -123,6 +123,12 @@ public class Register2Activity extends AppCompatActivity {
                 //중복인 경우 바꿔줘야됨
                 if (et_nickname.getText().length() > 0) {
                     flag2 = true;
+
+                    TextView tv_chkret = (TextView) findViewById(R.id.tv_chkret);
+                    tv_chkret.setVisibility(View.VISIBLE);
+                    tv_chkret.setText("사용가능한 닉네임입니다! :)");
+
+
                     if (flag1 && flag2 && flag3 && flag4) {
                         buttonAfter(btn_next);
                     }
@@ -155,12 +161,22 @@ public class Register2Activity extends AppCompatActivity {
                 }
             }
         });
+
+        et_nickname.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                    et_nickname.setBackgroundResource(R.drawable.edit_greenborder);
+                else
+                    et_nickname.setBackgroundResource(R.drawable.edit_round);
+            }
+        });
     }
 
     //버튼 클릭 전
     private void buttonBefore(Button button) {
         button.setEnabled(false);
-        button.setTextColor(getResources().getColor(R.color.black));
+        button.setTextColor(getResources().getColor(R.color.bfrClickTextColor));
         button.setBackgroundResource(R.drawable.btn_bfrclick);
     }
 

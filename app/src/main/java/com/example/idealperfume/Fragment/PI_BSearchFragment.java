@@ -37,10 +37,10 @@ public class PI_BSearchFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addItem(R.drawable.ic_launcher_background, false,
-                "브랜드명", "아이고아이고아이고아이고고고");
-        addItem(R.drawable.ic_launcher_background, true,
-                "브랜드명", "아이고아이고아이고아이고고고");
+        addItem(R.drawable.main_perfume, false,
+                "브랜드명", "브랜드 슬로건 자리");
+        addItem(R.drawable.main_perfume, true,
+                "브랜드명", "브랜드 슬로건 자리");
     }
 
     public void addItem(int brandImage, boolean heart, String brandName, String slogan) {

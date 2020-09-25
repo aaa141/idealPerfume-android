@@ -141,7 +141,7 @@
                         android:layout_height="79dp"
                         android:layout_marginTop="29dp"
                         android:background="@drawable/image_rounding"
-                        android:backgroundTint="@color/darkgray"
+                        android:backgroundTint="@color/lightgray"
                         android:gravity="center_vertical">
 
                         <ImageView
@@ -310,7 +310,7 @@
                             android:layout_width="5.5dp"
                             android:layout_height="11dp"
                             android:src="@drawable/img_shortcut_green"
-                            android:tint="@color/reviewTextDarkGray"/>
+                            android:tint="@color/gray8E"/>
                     </LinearLayout>
                     <View style="@style/divider" />
 

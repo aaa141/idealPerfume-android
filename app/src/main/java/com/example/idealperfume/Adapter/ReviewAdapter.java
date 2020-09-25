@@ -108,7 +108,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
                         temp--;
                         mList.get(position).setNumberOfHeart(temp+"");
                         numberOfHeart.setText(mList.get(position).getNumberOfHeart() + "명에게 도움이 되었어요!");
-                        numberOfHeart.setTextColor(context.getResources().getColor(R.color.reviewTextColor));
+                        numberOfHeart.setTextColor(context.getResources().getColor(R.color.grayC4));
                     }
                 }
             });

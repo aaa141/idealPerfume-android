@@ -203,7 +203,7 @@ public class ProductInfoActivity extends AppCompatActivity implements View.OnCli
 
         pieChart.setCenterText(str+"이 더 많이\n구매한 제품");
         pieChart.setCenterTextSize(14f);
-        pieChart.setCenterTextColor(getResources().getColor(R.color.reviewTextColor));
+        pieChart.setCenterTextColor(getResources().getColor(R.color.grayC4));
 
         pieChart.getDescription().setEnabled(false);
         pieChart.setDrawEntryLabels(false);

@@ -49,6 +49,6 @@
             android:fontFamily="@font/font"
             android:textColor="#8e8e8e"
             android:text="아이스크림케이크"
-            android:textSize="13sp" />
+            android:textSize="13dp" />
     </LinearLayout>
 </LinearLayout>

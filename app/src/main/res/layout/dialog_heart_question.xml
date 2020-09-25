@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="87dp"
         android:layout_height="87dp"
-        android:src="@drawable/icon_circle"
+        android:src="@drawable/img_popup_img"
         android:layout_marginTop="42dp"/>
 
     <TextView
@@ -18,9 +18,9 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/font"
         android:includeFontPadding="false"
-        android:textSize="16sp"
-        android:textColor="#3c3c3c"
-        android:lineSpacingExtra="3sp"
+        android:textSize="16dp"
+        android:textColor="@color/black3C"
+        android:lineSpacingExtra="3dp"
         android:gravity="center_horizontal"
         android:text="내픽이상향에 \n 어떻게 추가하시겠어요?"
         android:layout_marginTop="28dp" />
@@ -38,7 +38,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:fontFamily="@font/font"
-            android:textSize="14sp"
+            android:textSize="14dp"
             android:textColor="#ffffff"
             android:text="폴더로 추가"
             android:background="@drawable/dialogbtn_border_left"
@@ -51,7 +51,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:fontFamily="@font/font"
-            android:textSize="14sp"
+            android:textSize="14dp"
             android:textColor="#ffffff"
             android:text="제품으로 추가"
             android:background="@drawable/dialogbtn_border_right"

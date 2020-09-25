@@ -8,23 +8,26 @@
     android:id="@+id/pi_quick_container"
     tools:context=".Activity.PI_QuickActivity">
 
+    //상단
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
-            style="@style/BackButton" />
+            style="@style/BackButton"
+            android:layout_marginVertical="22dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:text="퀵 검색"
-            android:textStyle="bold"
-            android:textSize="16dp"
             android:layout_marginRight="20.5dp"
-            android:gravity="center"></TextView>
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="퀵 검색"
+            android:textSize="16dp"
+            android:textStyle="bold"></TextView>
     </LinearLayout>
+
 
     <View
         style="@style/divider"></View>
@@ -35,7 +38,9 @@
         android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="-20dp"
+        >
     </androidx.recyclerview.widget.RecyclerView>
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
@@ -45,6 +50,5 @@
         android:name="com.example.idealperfume.Fragment.PI_PSearchFragment"
         android:layout_height="match_parent">
     </fragment>
-
 
 </LinearLayout>

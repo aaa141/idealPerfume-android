@@ -90,7 +90,7 @@
                         android:layout_below="@+id/pd_name"
                         android:layout_marginTop="26dp"
                         android:text="제품변경"
-                        android:textColor="@color/reviewTextColor"
+                        android:textColor="@color/grayC4"
                         android:textSize="12sp" />
                 </RelativeLayout>
             </RelativeLayout>

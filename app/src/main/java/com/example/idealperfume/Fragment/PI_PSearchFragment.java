@@ -69,17 +69,17 @@ public class PI_PSearchFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addItem(R.drawable.ic_launcher_background, false,
+        addItem(R.drawable.main_perfume, false,
                 "세라마이드 아토 로션 350ml", "4.41", "(9,267)", "일리윤 (illiyoon)", "19,900원");
-        addItem(R.drawable.ic_launcher_background,true,
+        addItem(R.drawable.main_perfume,true,
                 "데일리 모이스처 바디 로션 400ml", "4.32", "(2,934)", "더마비 (Derma:B)", "16,000원");
-        addItem(R.drawable.ic_launcher_background, false,
+        addItem(R.drawable.main_perfume, false,
                 "베이비 로션", "4.33", "(1,274)", "보타니컬테라티 (Botanical Therapy)", "25,000원");
-        addItem(R.drawable.ic_launcher_background, false,
+        addItem(R.drawable.main_perfume, false,
                 "아토베리어 로션", "4.23", "(1,557)", "에스트라 (Aestura)", "35,000원");
-        addItem(R.drawable.ic_launcher_background, false,
+        addItem(R.drawable.main_perfume, false,
                 "세라마이드 아토 로션 350ml", "4.41", "(9,267)", "일리윤 (illiyoon)", "19,900원");
-        addItem(R.drawable.ic_launcher_background,true,
+        addItem(R.drawable.main_perfume,true,
                 "데일리 모이스처 바디 로션 400ml", "4.32", "(2,934)", "더마비 (Derma:B)", "16,000원");
     }
 
@@ -118,7 +118,7 @@ public class PI_PSearchFragment extends Fragment {
         adapter.setOnItemClickListener(new BSBasicAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
-                result.setText(list.get(position)+ " ∨");
+                result.setText(list.get(position)+" ");
                 result.setTextColor(getResources().getColor(R.color.green6D));
                 BottomSheet.dismiss();
             }

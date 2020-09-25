@@ -102,6 +102,16 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
+        ed_question.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                    ed_question.setBackgroundResource(R.drawable.edit_greenborder);
+                else
+                    ed_question.setBackgroundResource(R.drawable.edit_round);
+            }
+        });
+
         ed_email.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -151,6 +161,16 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
+        ed_email.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                    ed_email.setBackgroundResource(R.drawable.edit_greenborder);
+                else
+                    ed_email.setBackgroundResource(R.drawable.edit_round);
+            }
+        });
+
     }
 
 
@@ -159,14 +179,14 @@ public class QuestionActivity extends AppCompatActivity {
     //버튼 클릭 전
     private void buttonBefore(Button button) {
         button.setEnabled(false);
-        button.setTextColor(getResources().getColor(R.color.gray));
-        button.setBackgroundResource(R.drawable.btn_border);
+        button.setTextColor(getResources().getColor(R.color.bfrClickTextColor));
+        button.setBackgroundResource(R.drawable.btn_bfrclick);
     }
 
     //버튼 클릭 후
     private void buttonAfter(Button button) {
         button.setEnabled(true);
-        button.setTextColor(getResources().getColor(R.color.black));
+        button.setTextColor(getResources().getColor(R.color.white));
         button.setBackgroundResource(R.drawable.btn_onclick);
     }
 
@@ -214,5 +234,4 @@ public class QuestionActivity extends AppCompatActivity {
         BottomSheet.show();
 
     }
-
 }

@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.MyPickActivity"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
     android:orientation="vertical">
 
     <LinearLayout
@@ -20,8 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="14.5dp"
             app:endIconMode="clear_text"
-            android:layout_marginTop="3dp"
-            app:endIconDrawable="@color/white">
+            app:endIconDrawable="@drawable/img_small_search_del">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -29,7 +30,7 @@
                 android:layout_height="match_parent"
                 android:text="바디로션"
                 android:textCursorDrawable="@drawable/edit_gray"
-                style="@style/editText_gray" />
+                style="@style/editText_gray"/>
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
@@ -37,12 +38,13 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_pi_search"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:layout_marginTop="16.5dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:tabMode="fixed"
-        app:tabTextColor="#c4c4c4"
-        app:tabSelectedTextColor="#3c3c3c"
-        app:tabIndicatorColor="#3c3c3c"
+        app:tabTextColor="@color/grayC4"
+        app:tabTextAppearance="@style/MineCustomTabText"
+        app:tabSelectedTextColor="@color/green6D"
+        app:tabIndicatorColor="@color/green6D"
         app:tabIndicatorHeight="1dp">
 
         <com.google.android.material.tabs.TabItem
@@ -56,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="브랜드"/>
+
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
@@ -66,8 +69,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_gravity="center_horizontal"
-        android:background="#ebebeb" />
-
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

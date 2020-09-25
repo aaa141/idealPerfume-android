@@ -5,11 +5,13 @@
     <color name="colorAccent">#6DA048</color>
     <color name="lineColor">#EBEBEB</color>
     <color name="black">#000000</color>
+    <color name="black3C">#3C3C3C</color>
     <color name="white">#FFFFFF</color>
     <color name="gray">#D2D2D2</color>
-    <color name="darkgray">#EBEBEB</color>
-    <color name="reviewTextColor">#C4C4C4</color>
-    <color name="reviewTextDarkGray">#8E8E8E</color>
+    <color name="lightgray">#EBEBEB</color>
+    <color name="bfrClickTextColor">#BFBFBF</color>
+    <color name="grayC4">#C4C4C4</color>
+    <color name="gray8E">#8E8E8E</color>
     <color name="green">#6da048</color>
     <color name="green6D">#6da048</color>
     <color name="green7C">#7caf57</color>

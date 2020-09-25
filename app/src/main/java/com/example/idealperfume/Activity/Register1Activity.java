@@ -50,7 +50,6 @@ public class Register1Activity extends AppCompatActivity {
             public void afterTextChanged(Editable s) { }
         });
 
-
         et_pw.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
@@ -68,6 +67,38 @@ public class Register1Activity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) { }
         });
+
+        //작성시 경계선 초록색으로
+        et_email.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                    et_email.setBackgroundResource(R.drawable.edit_greenborder);
+                else
+                    et_email.setBackgroundResource(R.drawable.edit_round);
+            }
+        });
+
+        et_pw.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                    et_pw.setBackgroundResource(R.drawable.edit_greenborder);
+                else
+                    et_pw.setBackgroundResource(R.drawable.edit_round);
+            }
+        });
+
+        et_authenticationNo.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                    et_authenticationNo.setBackgroundResource(R.drawable.edit_greenborder);
+                else
+                    et_authenticationNo.setBackgroundResource(R.drawable.edit_round);
+            }
+        });
+
 
         //인텐트
         Button btn_next = (Button) findViewById(R.id.button3);

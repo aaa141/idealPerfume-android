@@ -5,17 +5,12 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Html;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.idealperfume.Adapter.OnBoardingSliderAdapter;
 import com.example.idealperfume.R;
-
-import org.w3c.dom.Text;
 
 public class OnBoardingActivity extends AppCompatActivity {
 
@@ -58,9 +53,9 @@ public class OnBoardingActivity extends AppCompatActivity {
         @Override
         public void onPageSelected(int position) {
             switch (position) {
-                case 0: img_step.setImageResource(R.drawable.img_step_03); break;
+                case 0: img_step.setImageResource(R.drawable.img_step_01); break;
                 case 1: img_step.setImageResource(R.drawable.img_step_02); break;
-                case 2: img_step.setImageResource(R.drawable.img_step_01); break;
+                case 2: img_step.setImageResource(R.drawable.img_step_03); break;
             }
         }
 

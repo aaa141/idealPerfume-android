@@ -2,76 +2,90 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pi_srchbrand_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
     android:orientation="vertical"
-    android:id="@+id/pi_srchbrand_container"
     tools:context=".Activity.PI_SrchBrandActivity">
+
+    //상단
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView style="@style/BackButton" />
+        <ImageView
+            style="@style/BackButton"
+            android:layout_marginVertical="22dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:layout_marginRight="20.5dp"
+            android:layout_gravity="center_vertical"
             android:gravity="center"
             android:text="브랜드"
             android:textSize="16dp"
             android:textStyle="bold"></TextView>
     </LinearLayout>
 
-    <View
-        style="@style/divider"></View>
+    <View style="@style/divider"></View>
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="24dp"
-        android:layout_gravity="bottom|center_horizontal">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/iv_profileimg"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@drawable/img_girl1" />
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/iv_profileedit"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_gravity="bottom|right"
-            android:src="@drawable/img_edit" />
-    </FrameLayout>
-
-    <TextView
-        android:id="@+id/tv_brandName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="브랜드명"
-        android:layout_marginBottom="4dp"
-        android:layout_gravity="center"></TextView>
-
-    <TextView
-        android:id="@+id/tv_slogan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/gray"
-        android:layout_marginBottom="29dp"
-        android:text="브랜드 슬로건이 들어가는 자리"
-        android:layout_gravity="center"></TextView>
-
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/fragment_pi_product"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:name="com.example.idealperfume.Fragment.PI_PSearchFragment"
-        android:layout_height="match_parent">
-    </fragment>
+        android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginVertical="24dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profileimg"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/main_perfume" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profileedit"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="bottom|right"
+                    android:src="@drawable/img_edit" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_brandName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="4dp"
+                android:text="브랜드명"></TextView>
+
+            <TextView
+                android:id="@+id/tv_slogan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="29dp"
+                android:text="브랜드 슬로건이 들어가는 자리"
+                android:textColor="@color/gray"></TextView>
+
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/fragment_pi_product"
+                android:name="com.example.idealperfume.Fragment.PI_PSearchFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></fragment>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

@@ -31,7 +31,7 @@
         android:layout_alignBottom="@+id/tv_skip"
         android:layout_width="33dp"
         android:layout_height="7dp"
-        android:src="@drawable/img_step_03"
+        android:src="@drawable/img_step_01"
         android:layout_marginStart="33dp"
         android:layout_marginBottom="2dp"/>
 </RelativeLayout>

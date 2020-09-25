@@ -68,8 +68,8 @@ public class Register3Activity extends AppCompatActivity {
                     btn_final_signup.setBackgroundResource(R.drawable.btn_onclick);
                     btn_final_signup.setTextColor(getResources().getColor(R.color.white));
                 } else {
-                    btn_final_signup.setBackgroundResource(R.drawable.btn_border);
-                    btn_final_signup.setTextColor(getResources().getColor(R.color.black));
+                    btn_final_signup.setBackgroundResource(R.drawable.btn_bfrclick);
+                    btn_final_signup.setTextColor(getResources().getColor(R.color.gray));
                 }
 
                 System.out.println(Integer.parseInt(email) + '\n' + password + '\n' +"local" + '\n' +nickname + '\n' +
@@ -99,6 +99,6 @@ public class Register3Activity extends AppCompatActivity {
                     }
                 });
             }
-        });
+        }) ;
     }
 }

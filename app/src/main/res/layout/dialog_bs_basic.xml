@@ -10,7 +10,7 @@
         android:id="@+id/tv_bs_basic_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableRight="@mipmap/ic_launcher"
+        android:drawableRight="@drawable/img_small_check"
         android:padding="16dp"
         android:text="abc"></TextView>
 

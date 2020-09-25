@@ -11,7 +11,7 @@
         android:layout_width="87dp"
         android:layout_height="87dp"
         android:layout_marginTop="42dp"
-        android:src="@drawable/icon_circle" />
+        android:src="@drawable/img_popup_img" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,10 +20,10 @@
         android:fontFamily="@font/font"
         android:gravity="center_horizontal"
         android:includeFontPadding="false"
-        android:lineSpacingExtra="3sp"
+        android:lineSpacingExtra="3dp"
         android:text="추가 되었어요! \n 내픽이상향에서 만나요 :)"
         android:textColor="#3c3c3c"
-        android:textSize="16sp" />
+        android:textSize="16dp" />
 
     <Button
         android:id="@+id/btn_close"
@@ -36,6 +36,6 @@
         android:gravity="center"
         android:text="닫기"
         android:textColor="#ffffff"
-        android:textSize="14sp" />
+        android:textSize="14dp" />
 
 </LinearLayout>

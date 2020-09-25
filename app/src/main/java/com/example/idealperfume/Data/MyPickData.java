@@ -7,7 +7,6 @@ public class MyPickData {
     private int icon;
     private int ViewType;
 
-
     public MyPickData(String name, String sub, String desc, int icon, int ViewType) {
         this.name = name;
         this.sub = sub;

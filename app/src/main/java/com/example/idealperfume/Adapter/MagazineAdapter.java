@@ -1,6 +1,8 @@
 package com.example.idealperfume.Adapter;
 
 import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.idealperfume.Data.EventData;
@@ -38,6 +41,13 @@ public class MagazineAdapter extends RecyclerView.Adapter<MagazineAdapter.MyView
         v = LayoutInflater.from(parent.getContext()).inflate(R.layout.listitem_magazine, parent, false);
         MyViewHolder viewHolder = new MyViewHolder(v);
 
+
+        //이미지 둥글게
+        ImageView imageView = (ImageView) v.findViewById(R.id.iv_magazineimg);
+        GradientDrawable drawable =
+                (GradientDrawable) ResourcesCompat.getDrawable(v.getResources(), R.drawable.image_rounding, null);
+        imageView.setBackground(drawable);
+        imageView.setClipToOutline(true);
         return viewHolder;
     }
 
@@ -50,7 +60,7 @@ public class MagazineAdapter extends RecyclerView.Adapter<MagazineAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return magazineData.size();
+        return 2;
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {

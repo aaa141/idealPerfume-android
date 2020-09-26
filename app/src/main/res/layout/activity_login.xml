@@ -43,20 +43,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_marginHorizontal="28dp"
-            android:layout_height="20dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/green7C"
-                android:checked="false"
-                android:includeFontPadding="false"
-                android:letterSpacing="-0.02"
-                android:lineSpacingExtra="0dp"
-                android:text="자동로그인"
-                android:textSize="13dp" />
+                style="@style/QuickSearch_CheckBox"
+                android:layout_marginBottom="0dp"
+                android:text="자동로그인" />
 
             <View
                 android:layout_width="wrap_content"
@@ -67,11 +63,6 @@
                 android:id="@+id/tv_findpassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="true"
-                android:fontFamily="@font/font"
-                android:includeFontPadding="false"
-                android:letterSpacing="-0.02"
-                android:lineSpacingExtra="0dp"
                 android:text="비밀번호를 잊으셨나요?"
                 android:textColor="#8e8e8e"
                 android:textSize="13dp" />

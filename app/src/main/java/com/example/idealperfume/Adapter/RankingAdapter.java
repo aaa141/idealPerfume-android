@@ -48,7 +48,8 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.MyViewHo
 
     @Override
     public int getItemCount() {
-        return rankingData.size();
+        return 5;
+//        return rankingData.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {

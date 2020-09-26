@@ -52,8 +52,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="카테고리"
-                android:textSize="14sp"
-                android:lineSpacingExtra="5sp"
+                android:textSize="14dp"
+                android:lineSpacingExtra="5dp"
                 android:layout_marginTop="17.5dp"
                 android:layout_marginBottom="22dp" />
 
@@ -116,8 +116,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="가격대"
-                android:textSize="14sp"
-                android:lineSpacingExtra="5sp"
+                android:textSize="14dp"
+                android:lineSpacingExtra="5dp"
                 android:layout_marginTop="22.5dp"
                 android:layout_marginBottom="9dp"/>
 
@@ -131,7 +131,7 @@
                 app:rsb_indicator_show_mode="alwaysShow"
                 app:rsb_indicator_background_color="@android:color/transparent"
                 app:rsb_indicator_text_color="@color/black"
-                app:rsb_indicator_text_size="13sp"
+                app:rsb_indicator_text_size="13dp"
                 app:rsb_indicator_padding_top="3dp"
                 app:rsb_progress_color="@color/colorPrimary"
                 app:rsb_min_interval="50000" />
@@ -161,8 +161,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="계열"
-                android:textSize="14sp"
-                android:lineSpacingExtra="5sp"
+                android:textSize="14dp"
+                android:lineSpacingExtra="5dp"
                 android:layout_marginTop="17.5dp"
                 android:layout_marginBottom="22dp" />
             <LinearLayout
@@ -203,7 +203,7 @@
                         android:id="@+id/cb_line_oriental"
                         style="@style/QuickSearch_CheckBox"
                         android:text="오리엔탈"
-                        android:textSize="13sp"/>
+                        android:textSize="13dp"/>
 
 
                 </LinearLayout>
@@ -246,7 +246,7 @@
                 android:layout_marginTop="22.5dp"
                 android:layout_marginBottom="22dp"
                 android:text="이미지"
-                android:lineSpacingExtra="5sp"/>
+                android:lineSpacingExtra="5dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -265,32 +265,32 @@
                         android:id="@+id/cb_image_clean"
                         style="@style/QuickSearch_CheckBox"
                         android:text="깨끗한"
-                        android:textSize="13sp"/>
+                        android:textSize="13dp"/>
                     <CheckBox
                         android:id="@+id/cb_imgae_cool"
                         style="@style/QuickSearch_CheckBox"
                         android:text="청량한"
-                        android:textSize="13sp"/>
+                        android:textSize="13dp"/>
                     <CheckBox
                         android:id="@+id/cb_imgae_sweet"
                         style="@style/QuickSearch_CheckBox"
                         android:text="달콤한"
-                        android:textSize="13sp"/>
+                        android:textSize="13dp"/>
                     <CheckBox
                         android:id="@+id/cb_imgae_soft"
                         style="@style/QuickSearch_CheckBox"
                         android:text="부드러운"
-                        android:textSize="13sp"/>
+                        android:textSize="13dp"/>
                     <CheckBox
                         android:id="@+id/cb_imgae_exotic"
                         style="@style/QuickSearch_CheckBox"
                         android:text="이국적인"
-                        android:textSize="13sp"/>
+                        android:textSize="13dp"/>
                     <CheckBox
                         android:id="@+id/cb_imgae_heavy"
                         style="@style/QuickSearch_CheckBox"
                         android:text="무거운"
-                        android:textSize="13sp"/>
+                        android:textSize="13dp"/>
 
                 </LinearLayout>
                 <LinearLayout
@@ -302,32 +302,32 @@
                         android:id="@+id/cb_image_fresh"
                         style="@style/QuickSearch_CheckBox"
                         android:text="상큼"
-                        android:textSize="13sp"/>
+                        android:textSize="13dp"/>
                     <CheckBox
                         android:id="@+id/cb_image_natural"
                         style="@style/QuickSearch_CheckBox"
                         android:text="자연적인"
-                        android:textSize="13sp"/>
+                        android:textSize="13dp"/>
                     <CheckBox
                         android:id="@+id/cb_image_lovely"
                         style="@style/QuickSearch_CheckBox"
                         android:text="사랑스러운"
-                        android:textSize="13sp"/>
+                        android:textSize="13dp"/>
                     <CheckBox
                         android:id="@+id/cb_image_forrest"
                         style="@style/QuickSearch_CheckBox"
                         android:text="숲 속"
-                        android:textSize="13sp"/>
+                        android:textSize="13dp"/>
                     <CheckBox
                         android:id="@+id/cb_image_fascinate"
                         style="@style/QuickSearch_CheckBox"
                         android:text="매혹적인"
-                        android:textSize="13sp"/>
+                        android:textSize="13dp"/>
                     <CheckBox
                         android:id="@+id/cb_image_charisma"
                         style="@style/QuickSearch_CheckBox"
                         android:text="카리스마 있는"
-                        android:textSize="13sp"/>
+                        android:textSize="13dp"/>
                 </LinearLayout>
             </LinearLayout>
             <View style="@style/divider" />

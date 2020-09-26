@@ -33,6 +33,7 @@ public class Ranking_30sFragment extends Fragment {
         rankingAdapter = new RankingAdapter(getContext(), rankingData);
         recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerview.setAdapter(rankingAdapter);
+        recyclerview.setNestedScrollingEnabled(false);
 
         recyclerview.addItemDecoration(new DividerItemDecoration(v.getContext(), 1));
 

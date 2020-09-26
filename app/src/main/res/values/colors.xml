@@ -6,7 +6,9 @@
     <color name="lineColor">#EBEBEB</color>
     <color name="black">#000000</color>
     <color name="black3C">#3C3C3C</color>
-    <color name="white">#FFFFFF</color>
+    <color name="white">#FAFAFA</color>
+    //안드로이드 기본 배경 색은 완전 #fff이 아니라 #FAFAFA이라 일단
+    //white 저 색으로 해둘게요,, 진짜 하양으로 하면 눈이 아파서 #FAFAFA이걸로 많이 쓴다네요,,!
     <color name="gray">#D2D2D2</color>
     <color name="lightgray">#EBEBEB</color>
     <color name="bfrClickTextColor">#BFBFBF</color>

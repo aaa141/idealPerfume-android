@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:orientation="vertical"
     tools:context=".Activity.MainActivity">
 
@@ -14,8 +16,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
             android:orientation="vertical">
+
+            //당신의 이상향을 찾아보시겠어요?
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -25,259 +28,92 @@
                     android:id="@+id/iv_mainbackground"
                     android:layout_width="match_parent"
                     android:layout_height="454dp"
-                    android:background="@drawable/mainbackground"
                     android:scaleType="centerCrop" />
 
                 <TextView
                     android:id="@+id/tv_login"
                     style="@style/MainHeader"
-                    android:layout_marginTop="162dp"
+                    android:layout_gravity="center_vertical"
                     android:clickable="true"
                     android:text="@string/mainhead" />
 
-                <RelativeLayout
-                    android:id="@+id/layout_gotest"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginTop="363dp"
-                    android:layout_marginRight="44dp"
-                    android:clickable="true">
+                <TextView
+                    android:id="@+id/tv_gotest"
+                    style="@style/MainHeader"
+                    android:layout_gravity="right|bottom"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="52dp"
+                    android:drawableRight="@drawable/img_small_main_shortcut"
+                    android:text="이상향 테스트 바로가기   "
+                    android:textSize="14dp" />
 
-                    <TextView
-                        android:id="@+id/tv_gotest"
-                        style="@style/MainHeader"
-                        android:text="이상향 테스트 바로가기"
-                        android:textSize="14dp" />
-
-                    <ImageView
-                        android:layout_width="5.5dp"
-                        android:layout_height="11dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="15.5dp"
-                        android:layout_toRightOf="@id/tv_gotest"
-                        android:src="@drawable/img_main_shortcut" />
-                </RelativeLayout>
             </FrameLayout>
+
+            //검색+카테고리
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-22dp"
+                android:layout_marginTop="-25dp"
                 android:background="@drawable/dialog_bottom"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
                 android:orientation="vertical">
+
+                //edit text
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="23dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
                     android:layout_marginTop="33dp"
+                    android:layout_marginEnd="23dp"
                     android:layout_marginBottom="36dp">
 
                     <EditText
                         android:id="@+id/et_mainsearch"
                         style="@style/editText_gray"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
                         android:hint="제품 또는 브랜드를 검색해보세요!"
-                        android:letterSpacing="-0.02"
-                        android:lineSpacingExtra="3dp"
                         android:textColor="#b5b5b5" />
 
                     <ImageView
                         android:id="@+id/iv_mainsearch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_marginVertical="15dp"
-                        android:layout_marginRight="17.5dp"
-                        android:src="@drawable/img_search"
-                        android:clickable="true"/>
+                        android:layout_width="14.5dp"
+                        android:layout_height="13.5dp"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="14dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:src="@drawable/img_search" />
                 </FrameLayout>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="23dp"
-                    android:layout_marginRight="23dp"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content">
 
-                    <LinearLayout
-                        android:id="@+id/ll_review"
-                        android:layout_width="wrap_content"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcv_category"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/iv_review"
-                            android:layout_width="87dp"
-                            android:layout_height="87dp"
-                            android:layout_marginBottom="14dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/main_review" />
-
-                        <TextView
-                            style="@style/TextLineSpacing"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="리뷰남기기"
-                            android:textColor="#3c3c3c" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/ll_perfume"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/iv_perfume"
-                            android:layout_width="87dp"
-                            android:layout_height="87dp"
-                            android:layout_marginBottom="14dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/main_perfume" />
-
-                        <TextView
-                            style="@style/TextLineSpacing"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="향수"
-                            android:textColor="#3c3c3c" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/ll_diffuser"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/iv_diffuser"
-                            android:layout_width="87dp"
-                            android:layout_height="87dp"
-                            android:layout_marginBottom="14dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/main_diffuser" />
-
-                        <TextView
-                            style="@style/TextLineSpacing"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="디퓨저"
-                            android:textColor="#3c3c3c" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="23dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginRight="23dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:id="@+id/ll_candle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/iv_candle"
-                            android:layout_width="87dp"
-                            android:layout_height="87dp"
-                            android:layout_marginBottom="14dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/main_candle" />
-
-                        <TextView
-                            style="@style/TextLineSpacing"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="캔들"
-                            android:textColor="#3c3c3c" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/ll_aromaoil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/iv_aromaoil"
-                            android:layout_width="87dp"
-                            android:layout_height="87dp"
-                            android:layout_marginBottom="14dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/main_aromaoil" />
-
-                        <TextView
-                            style="@style/TextLineSpacing"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="아로마 오일"
-                            android:textColor="#3c3c3c" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/ll_bodylotion"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                            android:id="@+id/iv_bodylotion"
-                            android:layout_width="87dp"
-                            android:layout_height="87dp"
-                            android:layout_marginBottom="14dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/main_bodylotion" />
-
-                        <TextView
-                            style="@style/TextLineSpacing"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="바디로션"
-                            android:textColor="#3c3c3c" />
-                    </LinearLayout>
-                </LinearLayout>
+                        android:layout_marginLeft="23dp"></androidx.recyclerview.widget.RecyclerView>
+                </RelativeLayout>
 
                 <View
                     style="@style/divider"
                     android:layout_marginLeft="19.5dp"
-                    android:layout_marginTop="51.5dp"
+                    android:layout_marginTop="30dp"
                     android:layout_marginRight="19.5dp"
                     android:layout_marginBottom="31.5dp"
                     android:background="#ebebeb" />
 
             </LinearLayout>
 
+            //월간 ㅁㅁ 랭킹 텍스트뷰
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="21dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginRight="23dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
@@ -286,22 +122,27 @@
                     style="@style/TextBold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="월간 랭킹"
-                    android:textColor="#3c3c3c" />
+                    android:text="월간  "
+                    android:textColor="@color/black3C"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/tv_rankcategoty"
                     style="@style/TextBold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
+                    android:drawableRight="@drawable/img_small_drop_triangle_01"
                     android:text="향수"
-                    android:textColor="@color/green" />
-                <!--            <Spinner-->
-                <!--                android:id="@+id/spinner"-->
-                <!--                android:layout_width="20dp"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                app:spinnerMode="buttomsheet"/>-->
+                    android:textColor="@color/green6D"
+                    android:textSize="16dp" />
+
+                <TextView
+                    style="@style/TextBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  랭킹"
+                    android:textColor="@color/black3C"
+                    android:textSize="16dp" />
 
                 <View
                     android:layout_width="match_parent"
@@ -311,22 +152,26 @@
                 <ImageView
                     android:layout_width="6dp"
                     android:layout_height="11.5dp"
-                    android:layout_gravity="right"
+                    android:layout_gravity="center_vertical"
                     android:src="@drawable/img_shortcut_point" />
             </LinearLayout>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_ranking"
-                style="@style/TextBold"
-                android:layout_width="match_parent"
+                app:tabTextAppearance="@style/TextBold"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="18dp"
+                android:layout_marginBottom="7dp"
                 app:tabIndicatorColor="@color/green"
                 app:tabIndicatorHeight="2dp"
+                app:tabIndicatorFullWidth="false"
                 app:tabMode="fixed"
-                app:tabSelectedTextColor="@color/green" />
+                app:tabSelectedTextColor="@color/green"
+
+                app:tabPaddingEnd="20dp"
+                app:tabPaddingStart="20dp"
+                app:tabGravity="center"
+                />
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewpager_rank"
@@ -335,11 +180,12 @@
                 android:layout_marginLeft="19.5dp"
                 android:layout_marginRight="19.5dp" />
 
+            //이상향 매거진 텍스트뷰
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="21dp"
-                android:layout_marginTop="31.5dp"
+                android:layout_marginTop="28dp"
                 android:layout_marginRight="23dp"
                 android:layout_marginBottom="20dp"
                 android:gravity="center_vertical"
@@ -350,6 +196,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="이상향"
+                    android:textSize="16dp"
                     android:textColor="#3c3c3c" />
 
                 <TextView
@@ -358,17 +205,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="6dp"
                     android:text="매거진"
+                    android:textSize="16dp"
                     android:textColor="@color/green" />
 
                 <View
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
                 <ImageView
                     android:layout_width="6dp"
                     android:layout_height="11.5dp"
-                    android:layout_gravity="right"
+                    android:layout_gravity="center_vertical"
                     android:src="@drawable/img_shortcut_point" />
             </LinearLayout>
 
@@ -377,130 +225,119 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="60dp"></View>
         </LinearLayout>
     </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_alignParentBottom="true"
         android:background="@color/white"
+        android:layout_gravity="bottom"
+        android:paddingTop="11.6dp"
+        android:paddingBottom="4dp"
         android:orientation="horizontal">
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/layout_homemenu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
             android:layout_weight="1"
             android:clickable="true">
 
             <ImageView
-                android:id="@+id/iv_homemenu"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="11.6dp"
                 android:src="@drawable/img_home_on" />
 
             <TextView
                 style="@style/TextLineSpacing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/iv_homemenu"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="8.5dp"
-                android:lineSpacingExtra="2dp"
+                android:layout_marginTop="2dp"
                 android:text="홈"
                 android:textColor="@color/green"
                 android:textSize="10dp" />
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/layout_mypickmenu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
             android:layout_weight="1"
-            android:clickable="true"
-            android:gravity="center_horizontal">
+            android:clickable="true">
 
             <ImageView
-                android:id="@+id/iv_mypickmenu"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="11.6dp"
                 android:src="@drawable/mypickmenu" />
 
             <TextView
                 style="@style/TextLineSpacing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/iv_mypickmenu"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="8.5dp"
-                android:lineSpacingExtra="2dp"
+                android:layout_marginTop="2dp"
                 android:text="내픽이상향"
                 android:textColor="@color/bottommenu"
                 android:textSize="10dp" />
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+
+        <LinearLayout
             android:id="@+id/layout_eventmenu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
             android:layout_weight="1"
-            android:clickable="true"
-            android:gravity="center_horizontal">
+            android:clickable="true">
 
             <ImageView
-                android:id="@+id/iv_eventmenu"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="11.6dp"
                 android:src="@drawable/eventmenu" />
+
 
             <TextView
                 style="@style/TextLineSpacing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/iv_eventmenu"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="8.5dp"
-                android:lineSpacingExtra="2dp"
+                android:layout_marginTop="2dp"
                 android:text="이벤트"
                 android:textColor="@color/bottommenu"
                 android:textSize="10dp" />
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/layout_settingmenu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
             android:layout_weight="1"
-            android:clickable="true"
-            android:gravity="center_horizontal">
+            android:clickable="true">
 
             <ImageView
-                android:id="@+id/iv_settingmenu"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="11.6dp"
                 android:src="@drawable/settingmenu" />
 
             <TextView
                 style="@style/TextLineSpacing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/iv_settingmenu"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="8.5dp"
-                android:lineSpacingExtra="2dp"
+                android:layout_marginTop="2dp"
                 android:text="환경설정"
                 android:textColor="@color/bottommenu"
                 android:textSize="10dp" />
-        </RelativeLayout>
+        </LinearLayout>
+
     </LinearLayout>
 
-</RelativeLayout>
+</FrameLayout>

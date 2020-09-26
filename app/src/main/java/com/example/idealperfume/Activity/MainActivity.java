@@ -2,6 +2,7 @@ package com.example.idealperfume.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -18,14 +19,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.idealperfume.Adapter.BSBasicAdapter;
 import com.example.idealperfume.Adapter.EventItemAdapter;
 import com.example.idealperfume.Adapter.MagazineAdapter;
+import com.example.idealperfume.Adapter.MainCategoryAdapter;
 import com.example.idealperfume.Adapter.MainRankingAdapter;
 import com.example.idealperfume.Adapter.MyPickAdapter;
 import com.example.idealperfume.Adapter.RankingAdapter;
 import com.example.idealperfume.Data.EventData;
 import com.example.idealperfume.Data.MagazineData;
+import com.example.idealperfume.Data.MainCategoryData;
 import com.example.idealperfume.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.tabs.TabLayout;
@@ -45,14 +49,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity{
 
-    private RelativeLayout mypick, event, setting;
-    private LinearLayout ll_review, ll_perfume, ll_diffuser, ll_candle, ll_aromaoil, ll_bodylotion;
+    private LinearLayout mypick, event, setting;
     int pressedTime = 0;
-    ImageView iv_mainbackground;
 
     TextView tv_rankcatecory;
     BottomSheetDialog BottomSheet;
@@ -62,7 +63,6 @@ public class MainActivity extends AppCompatActivity{
     private MagazineAdapter magazineAdapter;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
-    private ImageView review, perfume, diffuser, candle, aromaoil, bodylotion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,20 +97,12 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-        ll_review = findViewById(R.id.ll_review);
-        ll_perfume = findViewById(R.id.ll_perfume);
-        ll_diffuser = findViewById(R.id.ll_diffuser);
-        ll_candle = findViewById(R.id.ll_candle);
-        ll_aromaoil = findViewById(R.id.ll_aromaoil);
-        ll_bodylotion = findViewById(R.id.ll_bodylotion);
+        //메인화면 배경 불러오기
+        ImageView iv_mainbackground = findViewById(R.id.iv_mainbackground);
+        Glide.with(this).load(R.drawable.mainbackground).into(iv_mainbackground);
 
-        ll_bodylotion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PI_SearchActivity.class);
-                startActivity(intent);
-            }
-        });
+        //카테고리 생성
+        createCategory();
 
         new JSONTask().execute("http://192.168.200.161:8080/mainpage/ranking");
 
@@ -132,26 +124,28 @@ public class MainActivity extends AppCompatActivity{
         TabLayout tabLayout = findViewById(R.id.tab_ranking);
         tabLayout.setupWithViewPager(vp);
 
+        //이상향 매거진
         recyclerView = findViewById(R.id.rv_idealmagagine);
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setNestedScrollingEnabled(false);
 
         magazineData = new ArrayList<>();
 
         magazineAdapter = new MagazineAdapter(magazineData);
         recyclerView.setAdapter(magazineAdapter);
 
-        magazineData.add(new MagazineData(R.drawable.ic_launcher_background, "일리윤", "illiyoon", "피부 스스로의 힘을 키워주는 리얼 시카라인 출시"));
-        magazineData.add(new MagazineData(R.drawable.ic_launcher_background, "일리윤", "illiyoon", "나만의 휴식을 위한 필수 아이템"));
+        magazineData.add(new MagazineData(R.drawable.main_bodylotion, "일리윤", "illiyoon", "피부 스스로의 힘을 키워주는 리얼 시카라인 출시"));
+        magazineData.add(new MagazineData(R.drawable.main_candle, "일리윤", "illiyoon", "나만의 휴식을 위한 필수 아이템"));
 
         //테스트 바로가기 인텐트
-        RelativeLayout relativeLayout = findViewById(R.id.layout_gotest);
-        relativeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+//        RelativeLayout relativeLayout = findViewById(R.id.layout_gotest);
+//        relativeLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
 
     }
 
@@ -290,6 +284,27 @@ public class MainActivity extends AppCompatActivity{
             super.onPostExecute(result);
             System.out.println("메인포스트결과 : " + result); //서버로 부터 받은 값을 출력해주는 부
         }
+    }
+
+    private void createCategory(){
+        ArrayList<MainCategoryData>mcategorylist = new ArrayList<MainCategoryData>(){{
+                add(new MainCategoryData(R.drawable.main_review,"리뷰 남기기"));
+                add(new MainCategoryData(R.drawable.main_perfume,"향수"));
+                add(new MainCategoryData(R.drawable.main_diffuser,"디퓨저"));
+                add(new MainCategoryData(R.drawable.main_candle,"캔들"));
+                add(new MainCategoryData(R.drawable.main_aromaoil,"아로마 오일"));
+                add(new MainCategoryData(R.drawable.main_bodylotion,"바디로션"));
+            }
+        };
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rcv_category);
+        recyclerView.setNestedScrollingEnabled(false);
+        MainCategoryAdapter adapter = new MainCategoryAdapter(getApplicationContext(),mcategorylist);
+        GridLayoutManager layoutManager;
+
+        layoutManager = new GridLayoutManager(getApplicationContext(), 3);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
     }
 }
 

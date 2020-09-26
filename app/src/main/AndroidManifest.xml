@@ -8,26 +8,49 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.PI_SrchBrandActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".Activity.SearchActivity" /> <!-- <activity android:name=".Activity.FilterActivity"></activity> -->
+        <activity android:name=".Activity.SearchActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- <activity android:name=".Activity.FilterActivity"></activity> -->
         <activity android:name=".Activity.SplashActivity" />
         <activity android:name=".Activity.OnBoardingActivity" />
         <activity android:name=".Activity.ReviewFilterActivity" />
         <activity android:name=".Activity.ReviewActivity"></activity>
         <activity android:name=".Activity.PI_QuickActivity" >
+
         </activity>
         <activity android:name=".Activity.QuickSearchActivity" />
         <activity android:name=".Activity.ReviewRegActivity" />
         <activity android:name=".Activity.EventActivity" />
         <activity android:name=".Activity.MyPickActivity" />
         <activity android:name=".Activity.PI_SearchActivity">
+
         </activity>
         <activity android:name=".Activity.QuestionActivity" />
-        <activity android:name=".Activity.Register2Activity"></activity>
-        <activity android:name=".Activity.LoginActivity" />
-        <activity android:name=".Activity.Register1Activity"></activity>
+        <activity android:name=".Activity.Register2Activity"/>
+        <activity android:name=".Activity.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.Register1Activity">
+        </activity>
         <activity android:name=".Activity.Register3Activity" />
         <activity android:name=".Activity.MainActivity">
             <intent-filter>

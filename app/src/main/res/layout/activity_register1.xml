@@ -55,8 +55,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="11dp"
                 android:fontFamily="@font/font"
-                android:includeFontPadding="false"
-                android:lineSpacingExtra="0dp"
                 android:text="이메일"
                 android:textSize="13dp" />
 

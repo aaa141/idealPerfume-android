@@ -73,9 +73,7 @@
                     android:background="@drawable/edit_round"
                     android:fontFamily="@font/font"
                     android:hint="이메일을 입력해주세요."
-                    android:includeFontPadding="false"
                     android:inputType="textPersonName"
-                    android:lineSpacingExtra="0dp"
                     android:textSize="13dp" />
             </com.google.android.material.textfield.TextInputLayout>
 

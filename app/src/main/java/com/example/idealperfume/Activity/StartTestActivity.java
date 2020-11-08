@@ -30,25 +30,24 @@ public class StartTestActivity extends AppCompatActivity {
         image = findViewById(R.id.image);
         text = findViewById(R.id.text);
 
-        int i=2 ; // 화면 테스트 위해
-        switch (i){
+        switch (getIntent().getIntExtra("tag",1)){
             case 1:
                 text.setText("향수를"+str);
                 image.setImageResource(R.drawable.test_perfume);
                 strEnd = 2;
                 break;
             case 2:
-                text.setText("캔들을"+str);
+                text.setText("디퓨저를"+str);
                 image.setImageResource(R.drawable.test_candle);
                 strEnd = 2;
                 break;
             case 3:
-                text.setText("아로마 오일을"+str);
+                text.setText("캔들을"+str);
                 image.setImageResource(R.drawable.test_aromaoil);
                 strEnd = 6;
                 break;
             case 4:
-                text.setText("디퓨저를"+str);
+                text.setText("아로마 오일을"+str);
                 image.setImageResource(R.drawable.test_defuser);
                 strEnd = 3;
                 break;

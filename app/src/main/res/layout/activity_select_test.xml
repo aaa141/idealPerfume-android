@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SelectTest">
+
+
+    <ImageView
+        android:id="@+id/back"
+        style="@style/BackButton"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/back"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="59dp">
+        <TextView
+            android:id="@+id/intext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="진행하실 테스트 종류를\n선택해주세요."
+            android:textSize="26sp"
+            android:fontFamily="@font/notosanskr_medium"/>
+
+        <TextView
+            android:id="@+id/intext2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="님 당신의 이상향을 찾아보시겠어요?"
+            android:textSize="14dp"
+            android:textColor="@color/lightBlack"
+            android:layout_below="@+id/intext1"/>
+
+
+        <Button
+            android:id="@+id/btn_perfume"
+            style="@style/ButtonX"
+            android:text="향수"
+            android:layout_above="@id/btn_defuser"/>
+        <Button
+            android:id="@+id/btn_defuser"
+            style="@style/ButtonX"
+            android:text="디퓨저"
+            android:layout_above="@+id/btn_candle"
+            android:layout_marginTop="11dp"/>
+        <Button
+            android:id="@+id/btn_candle"
+            style="@style/ButtonX"
+            android:text="캔들"
+            android:layout_above="@+id/btn_aromaoil"
+            android:layout_marginTop="11dp"/>
+        <Button
+            android:id="@+id/btn_aromaoil"
+            style="@style/ButtonX"
+            android:text="아로마 오일"
+            android:layout_above="@+id/btn_bodylotion"
+            android:layout_marginTop="11dp"/>
+        <Button
+            android:id="@+id/btn_bodylotion"
+            style="@style/ButtonX"
+            android:text="바디로션"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="11dp"/>
+
+
+    </RelativeLayout>
+</RelativeLayout>

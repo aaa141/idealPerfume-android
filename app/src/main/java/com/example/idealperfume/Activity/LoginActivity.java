@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.idealperfume.Preferences.AppData;
 import com.example.idealperfume.R;
 import com.example.idealperfume.Util.retrofit.RetrofitHelper;
 import com.example.idealperfume.Util.retrofit.RetrofitService;
@@ -25,13 +27,15 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-
+    AppData appData;
     RetrofitService retrofitService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        appData = AppData.getInstance(getApplicationContext());
 
         final EditText et_id = findViewById(R.id.et_id);
         final EditText et_password = findViewById(R.id.et_password);
@@ -135,21 +139,23 @@ public class LoginActivity extends AppCompatActivity {
                         if(response.isSuccessful()){
                             LoginModel loginModel = response.body();
 
+                            appData.setPREF_LOGIN_ID(loginModel.getUserID());
+                            appData.setPREF_LOGIN("y");
+
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            intent.putExtra("userID",loginModel.getUserID());
                             startActivity(intent);
                         }
                         else if(response.code()==404){
                             Toast.makeText(LoginActivity.this, "아이디와 비밀번호를 확인해주세요"
                                     , Toast.LENGTH_SHORT).show();
                             et_password.setText("");
-                            Log.d("ssss","404");
+                            Log.d("ssss",response.message());
                         }
                     }
 
                     @Override
                     public void onFailure(Call<LoginModel> call, Throwable t) {
-                        Log.d("ssss","fail");
+                        Log.d("ssss",t.getMessage());
                     }
                 });
 

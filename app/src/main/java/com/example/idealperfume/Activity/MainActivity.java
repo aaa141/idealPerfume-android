@@ -12,6 +12,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -30,6 +31,7 @@ import com.example.idealperfume.Adapter.RankingAdapter;
 import com.example.idealperfume.Data.EventData;
 import com.example.idealperfume.Data.MagazineData;
 import com.example.idealperfume.Data.MainCategoryData;
+import com.example.idealperfume.Preferences.AppData;
 import com.example.idealperfume.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.tabs.TabLayout;
@@ -55,7 +57,8 @@ public class MainActivity extends AppCompatActivity{
     private LinearLayout mypick, event, setting;
     int pressedTime = 0;
 
-    TextView tv_rankcatecory;
+    AppData appData;
+    TextView tv_rankcatecory, tv_login;
     BottomSheetDialog BottomSheet;
     ArrayList<String> gender = new ArrayList<>(Arrays.asList("향수", "디퓨저", "캔들", "아로마 오일", "바디 로션"));
 
@@ -72,6 +75,16 @@ public class MainActivity extends AppCompatActivity{
         mypick = findViewById(R.id.layout_mypickmenu);
         event = findViewById(R.id.layout_eventmenu);
         setting = findViewById(R.id.layout_settingmenu);
+        tv_login = findViewById(R.id.tv_login);
+
+        appData = AppData.getInstance(getApplicationContext());
+        Log.d("ssssss", appData.getPREF_LOGIN_ID());
+        
+
+        if (appData.getPREF_LOGIN().equals("y")) {
+            tv_login.setText(appData.getPREF_LOGIN_ID() + "님\n당신의 이상형을\n찾아보시겠어요?");
+        }
+
 
         mypick.setOnClickListener(new View.OnClickListener() {
             @Override

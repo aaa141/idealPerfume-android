@@ -185,8 +185,11 @@
 
     <!--별-->
     //스타 레이팅 바
-    <style name="star_rating" parent="android:style/Widget.Material.RatingBar.Small">
+   <!--<style name="star_rating" parent="android:style/Widget.Material.RatingBar.Small">-->
+    <style name="star_rating" parent="android:style/Widget.Material.RatingBar">
         <item name="android:progressDrawable">@drawable/star_rating</item>
+        <item name="android:minHeight">12dp</item>
+        <item name="android:maxHeight">12dp</item>
     </style>
 
     <!--폰트 스타일-->

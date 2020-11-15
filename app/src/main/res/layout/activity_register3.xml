@@ -7,14 +7,16 @@
     android:orientation="vertical"
     tools:context=".Activity.Register3Activity">
 
-    <ImageView style="@style/BackButton"/>
+    <ImageView
+        android:id="@+id/back"
+        style="@style/BackButton"/>
 
     //헤더
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="31dp"
-        >
+        android:layout_marginBottom="31dp">
+
         <TextView
             style="@style/Header"
             android:layout_marginBottom="0dp"

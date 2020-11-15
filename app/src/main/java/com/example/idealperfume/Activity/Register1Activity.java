@@ -10,6 +10,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.example.idealperfume.R;
 import com.google.android.material.textfield.TextInputEditText;
@@ -111,8 +112,25 @@ public class Register1Activity extends AppCompatActivity {
                 intent.putExtra("password", et_pw.getText().toString());
                 intent.putExtra("authenticationNo", et_authenticationNo.getText().toString());
                 startActivity(intent);
+
+                overridePendingTransition(R.anim.right_in, R.anim.not_move);
             }
         });
 
+        ImageView back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        super.finish();
+        overridePendingTransition(R.anim.not_move, R.anim.right_out);
     }
 }

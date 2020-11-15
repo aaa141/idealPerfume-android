@@ -19,6 +19,7 @@
         android:backgroundTint="@color/white">
 
         <ImageView
+            android:id="@+id/back"
             style="@style/BackButton"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="0dp"
@@ -46,12 +47,6 @@
                 android:id="@+id/piechart"
                 android:layout_width="match_parent"
                 android:layout_height="335dp"/>
-
-            <TextView
-                android:id="@+id/test"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/gray"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_materialslist"

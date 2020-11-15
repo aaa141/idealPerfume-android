@@ -17,7 +17,7 @@
         //백버튼
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/back"
             style="@style/BackButton" />
 
         //타이틀 점 세개

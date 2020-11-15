@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.idealperfume.Activity.ProductInfoActivity;
 import com.example.idealperfume.Activity.ReviewActivity;
 import com.example.idealperfume.Data.ReviewData;
+import com.example.idealperfume.Fragment.ReviewFragment;
 import com.example.idealperfume.R;
 
 import java.util.ArrayList;

@@ -22,6 +22,7 @@
             android:layout_marginBottom="21.5dp">
 
             <ImageView
+                android:id="@+id/back"
                 style="@style/BackButton"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"

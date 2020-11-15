@@ -11,24 +11,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <RelativeLayout
+            android:id="@+id/main_setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28.8dp"
             android:layout_marginLeft="20.5dp"
-            android:layout_marginRight="19dp">
+            android:layout_marginTop="28dp"
+            android:layout_marginRight="19dp"
+            android:layout_marginBottom="21.5dp">
 
             <ImageView
+                android:id="@+id/back"
                 style="@style/BackButton"
-                android:layout_width="6dp"
-                android:layout_height="10dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="0dp" />
 
             <TextView
                 style="@style/menutext"
-                android:text="@string/mypick"/>
+                android:text="@string/mypick" />
         </RelativeLayout>
 
         <com.google.android.material.tabs.TabLayout

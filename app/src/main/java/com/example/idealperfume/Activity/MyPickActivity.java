@@ -12,6 +12,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.AlteredCharSequence;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -50,16 +51,17 @@ public class MyPickActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_pick);
 
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+
         home = findViewById(R.id.layout_homemenu);
         event = findViewById(R.id.layout_eventmenu);
         setting = findViewById(R.id.layout_settingmenu);
-
-        test = findViewById(R.id.test);
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MyPickActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
             }
         });
@@ -68,6 +70,7 @@ public class MyPickActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MyPickActivity.this, EventActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
             }
         });
@@ -76,7 +79,17 @@ public class MyPickActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MyPickActivity.this, SettingActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
+            }
+        });
+
+        ImageView back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                overridePendingTransition(0,0);
             }
         });
 
@@ -91,4 +104,10 @@ public class MyPickActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(vp);
     }
 
+    @Override
+    public void finish() {
+
+        super.finish();
+        overridePendingTransition(0,0);
+    }
 }

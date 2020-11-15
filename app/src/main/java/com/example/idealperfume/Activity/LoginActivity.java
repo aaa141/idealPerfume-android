@@ -167,6 +167,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Register1Activity.class);
                 startActivity(intent);
+
+                overridePendingTransition(R.anim.right_in, R.anim.not_move);
             }
         });
 
@@ -177,8 +179,5 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
     }
 }

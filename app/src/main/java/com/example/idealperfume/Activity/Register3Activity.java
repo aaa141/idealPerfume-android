@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.idealperfume.R;
@@ -84,7 +85,7 @@ public class Register3Activity extends AppCompatActivity {
                 RetrofitService retrofitService = RetrofitHelper.getRetrofit().create(RetrofitService.class);
 
                 Call<RegisterModel> call = retrofitService.getRegisterCheck(Integer.parseInt(email), password, "local", nickname,
-                        "tname", null, gender, job, age, 10, 1, Integer.parseInt(authenticationNo),1);
+                        "tname", null, gender, job, age, 0, 1, Integer.parseInt(authenticationNo),1);
 
                 call.enqueue(new Callback<RegisterModel>() {
                     @Override
@@ -100,5 +101,20 @@ public class Register3Activity extends AppCompatActivity {
                 });
             }
         }) ;
+
+        ImageView back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        super.finish();
+        overridePendingTransition(R.anim.not_move, R.anim.right_out);
     }
 }

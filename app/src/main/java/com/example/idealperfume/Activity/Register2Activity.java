@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -112,6 +113,8 @@ public class Register2Activity extends AppCompatActivity {
                     intent.putExtra("gender", tv_gender.getText().toString());
                     intent.putExtra("nickname", et_nickname.getText().toString());
                     startActivity(intent);
+
+                    overridePendingTransition(R.anim.right_in, R.anim.not_move);
                 }
             }
         });
@@ -136,6 +139,13 @@ public class Register2Activity extends AppCompatActivity {
             }
         });
 
+        ImageView back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         et_nickname.addTextChangedListener(new TextWatcher() {
             @Override
@@ -291,4 +301,10 @@ public class Register2Activity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+
+        super.finish();
+        overridePendingTransition(R.anim.not_move, R.anim.right_out);
+    }
 }

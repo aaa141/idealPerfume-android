@@ -1,6 +1,8 @@
 package com.example.idealperfume.Data;
 
 public class ReviewData {
+    public ReviewData(String nickname, String createdDate, int rating, String adv, String ddv, int helpful, String hashs, int tcCount) {
+    }
     String userID, date, good, bad, tag, comment, numberOfHeart, numberOfStar;
     boolean heart, bookmark;
     int userImage;

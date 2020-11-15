@@ -1,22 +1,23 @@
 package com.example.idealperfume.Util.retrofit;
 
 import com.example.idealperfume.Common;
+import com.example.idealperfume.model.AddBrandPickModel;
 import com.example.idealperfume.model.FolderModel;
 import com.example.idealperfume.model.GenderCompositionModel;
 import com.example.idealperfume.model.LoginModel;
+import com.example.idealperfume.model.MaterialModel;
 import com.example.idealperfume.model.ProductModel;
 import com.example.idealperfume.model.QnAModel;
 import com.example.idealperfume.model.RegisterModel;
+import com.example.idealperfume.model.ThreeReviewModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface RetrofitService {
@@ -55,6 +56,10 @@ public interface RetrofitService {
                                      @Field("fName") String fName,
                                      @Field("infID") int infID);
 
+    @FormUrlEncoded
+    @POST(Common.AddBrandPick)
+    Call<AddBrandPickModel> getAddBrandPick(@Field("uID") int uID,
+                                        @Field("bID") int bID);
 
     /* 인자로 데이터 객체가 아니라 줄줄이 보낼 시
         Post로 보낼 경우 Field로 보내야함(@Query X) + FormUrlEncoded필요 */
@@ -68,4 +73,9 @@ public interface RetrofitService {
     @GET(Common.GenderURL)
     Call<ArrayList<GenderCompositionModel>> getGenderComposition(@Query("pID") int pID);
 
+    @GET(Common.MaterialURL)
+    Call<ArrayList<MaterialModel>> getMaterial(@Query("pID") int pID);
+
+    @GET(Common.ThreeReviewURL)
+    Call<ArrayList<ThreeReviewModel>> getThreeReview(@Query("pID") int pID);
 }

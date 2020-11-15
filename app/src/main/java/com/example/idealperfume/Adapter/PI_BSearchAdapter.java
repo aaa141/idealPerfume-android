@@ -3,6 +3,7 @@ package com.example.idealperfume.Adapter;
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.idealperfume.Activity.QuestionActivity;
 import com.example.idealperfume.Data.Pi_BSearchData;
 import com.example.idealperfume.R;
+import com.example.idealperfume.Util.retrofit.RetrofitHelper;
+import com.example.idealperfume.Util.retrofit.RetrofitService;
+import com.example.idealperfume.model.AddBrandPickModel;
 
 import org.json.JSONObject;
 
@@ -30,6 +33,10 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PI_BSearchAdapter extends RecyclerView.Adapter<PI_BSearchAdapter.CustomViewHolder> {
     String brandName;
@@ -77,14 +84,35 @@ public class PI_BSearchAdapter extends RecyclerView.Adapter<PI_BSearchAdapter.Cu
                 @Override
                 public void onClick(View v) {
                     int position = getAdapterPosition() ;
+
                     if (!mList.get(position).isHeart() == true) {
-                        new JSONTask().execute("http://192.168.200.161:8080/mypick/addP");
+
+                        //브랜드찜 추가
+                        RetrofitService retrofitService = RetrofitHelper.getRetrofit().create(RetrofitService.class);
+
+                        Call<AddBrandPickModel> call = retrofitService.getAddBrandPick(2,2);
+
+                        call.enqueue(new Callback<AddBrandPickModel>() {
+                            @Override
+                            public void onResponse(Call<AddBrandPickModel> call, Response<AddBrandPickModel> response) {
+                                AddBrandPickModel addBrandPickModel = response.body();
+                                System.out.println(addBrandPickModel);
+                            }
+
+                            @Override
+                            public void onFailure(Call<AddBrandPickModel> call, Throwable t) {
+                                Log.d("ssss","fail");
+                            }
+                        });
+
                         heartImage.setImageResource(R.drawable.img_heart_on);
                         mList.get(position).setHeart(true);
                     }
                     else{
                         heartImage.setImageResource(R.drawable.img_heart_off);
                         mList.get(position).setHeart(false);
+
+                        //브랜드찜 삭제
                     }
                 }
             });

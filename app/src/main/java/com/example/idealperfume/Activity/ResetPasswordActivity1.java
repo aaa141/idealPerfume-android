@@ -11,6 +11,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.example.idealperfume.R;
 
@@ -76,7 +77,25 @@ public class ResetPasswordActivity1 extends AppCompatActivity {
                 Intent intent = new Intent(ResetPasswordActivity1.this, ResetPasswordActivity2.class);
                 intent.putExtra("email",et_email.getText().toString());
                 startActivity(intent);
+
+                overridePendingTransition(R.anim.right_in, R.anim.right_out);
             }
         });
+
+        ImageView back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        super.finish();
+        overridePendingTransition(R.anim.not_move, R.anim.right_out);
     }
 }

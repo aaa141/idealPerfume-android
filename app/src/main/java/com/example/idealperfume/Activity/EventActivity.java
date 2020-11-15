@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.idealperfume.Adapter.EventItemAdapter;
@@ -30,6 +32,8 @@ public class EventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
 
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+
         home = findViewById(R.id.layout_homemenu);
         mypick = findViewById(R.id.layout_mypickmenu);
         setting = findViewById(R.id.layout_settingmenu);
@@ -38,6 +42,7 @@ public class EventActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(EventActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
             }
         });
@@ -46,6 +51,7 @@ public class EventActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(EventActivity.this, MyPickActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
             }
         });
@@ -54,7 +60,16 @@ public class EventActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(EventActivity.this, SettingActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
+            }
+        });
+
+        ImageView back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 
@@ -75,5 +90,12 @@ public class EventActivity extends AppCompatActivity {
         arrayList.add(new EventData(R.drawable.ic_launcher_background, "7.21 ~ 8.22"));
 
         recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), 1));
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        super.finish();
+        overridePendingTransition(0,0);
     }
 }

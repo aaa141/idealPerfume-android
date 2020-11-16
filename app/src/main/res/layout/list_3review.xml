@@ -80,6 +80,13 @@
     </LinearLayout>
 
 
+    //중첩 수정예정
+
+    <LinearLayout
+        android:id="@+id/tx_review"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     //후기 : good
     <LinearLayout
         android:layout_width="match_parent"
@@ -91,7 +98,7 @@
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/edit_gray"></ImageView>
+            android:src="@drawable/img_review_good"></ImageView>
 
         <TextView
             android:id="@+id/tv_good"
@@ -102,7 +109,6 @@
             android:ellipsize="end"></TextView>
 
     </LinearLayout>
-
 
     //후기 : bad
     <LinearLayout
@@ -115,7 +121,7 @@
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/edit_gray"></ImageView>
+            android:src="@drawable/img_review_bad"></ImageView>
 
         <TextView
             android:id="@+id/tv_bad"
@@ -146,6 +152,7 @@
             android:layout_marginLeft="17dp"
             android:textSize="13dp"
             android:ellipsize="end"/>
+    </LinearLayout>
     </LinearLayout>
 
     //더보기

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -27,7 +28,6 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
 
     private ArrayList<ReviewData> mList;
     Context context;
-    TextView tv_more;
 
     public ReviewAdapter(Context context, ArrayList<ReviewData> list) {
         this.context = context;
@@ -55,6 +55,27 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
 
         CustomViewHolder viewHolder = new CustomViewHolder(view);
 
+
+        //줄 글 클릭시 더보기
+        TextView bad = (TextView) view.findViewById(R.id.tv_bad);
+        TextView good = (TextView) view.findViewById(R.id.tv_good);
+        TextView tag = (TextView) view.findViewById(R.id.tv_tag);
+        TextView tv_more = (TextView) view.findViewById(R.id.tv_more);
+        LinearLayout tx_review = (LinearLayout) view.findViewById(R.id.tx_review);
+        tx_review.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(context instanceof ReviewActivity) {
+                    good.setMaxLines(Integer.MAX_VALUE);
+                    bad.setMaxLines(Integer.MAX_VALUE);
+                    tag.setMaxLines(Integer.MAX_VALUE);
+                    tv_more.setVisibility(View.INVISIBLE);
+                }
+                else if(context instanceof ProductInfoActivity){
+                    context.startActivity(new Intent(context, ReviewActivity.class));
+                }
+            }
+        });
         return viewHolder;
     }
 
@@ -131,6 +152,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
             });
 
 
+            //더보기 클릭시 전체 글 나오도록
             tv_more.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -145,7 +167,6 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
                     }
                 }
             });
-
         }
     }
 
@@ -173,6 +194,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
         }
 
 
+        //리뷰 2줄 이상시 더보기 표시되도록
         holder.good.post(new Runnable() {
             @Override
             public void run() {

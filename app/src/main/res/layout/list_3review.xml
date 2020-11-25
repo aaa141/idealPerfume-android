@@ -143,7 +143,7 @@
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/edit_gray"></ImageView>
+            android:src="@drawable/img_review_tag"></ImageView>
 
         <TextView
             android:id="@+id/tv_tag"

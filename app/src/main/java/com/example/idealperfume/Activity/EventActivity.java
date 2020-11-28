@@ -1,12 +1,15 @@
 package com.example.idealperfume.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -15,6 +18,7 @@ import android.widget.RelativeLayout;
 import com.example.idealperfume.Adapter.EventItemAdapter;
 import com.example.idealperfume.Data.EventData;
 import com.example.idealperfume.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
@@ -34,36 +38,9 @@ public class EventActivity extends AppCompatActivity {
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
-        home = findViewById(R.id.layout_homemenu);
-        mypick = findViewById(R.id.layout_mypickmenu);
-        setting = findViewById(R.id.layout_settingmenu);
-
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(EventActivity.this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
-            }
-        });
-
-        mypick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(EventActivity.this, MyPickActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
-            }
-        });
-
-        setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(EventActivity.this, SettingActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
-            }
-        });
+        //네비게이션 바
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        navigationMethod(bottomNavigationView);
 
         ImageView back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -94,8 +71,41 @@ public class EventActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
         super.finish();
         overridePendingTransition(0,0);
+    }
+
+    public void navigationMethod(BottomNavigationView bottomNavigationView){
+        bottomNavigationView.setSelectedItemId(R.id.event);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.home:
+                        finish();
+                        Intent intent1 = new Intent(EventActivity.this, MainActivity.class);
+                        intent1.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        startActivity(intent1);
+                        return true;
+
+                    case R.id.setting:
+                        Intent intent2 = new Intent(EventActivity.this, SettingActivity.class);
+                        intent2.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        startActivity(intent2);
+                        finish();
+                        return true;
+
+                    case R.id.mypick:
+                        Intent intent3 = new Intent(EventActivity.this, MyPickActivity.class);
+                        intent3.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        startActivity(intent3);
+                        finish();
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 }

@@ -57,126 +57,16 @@
             android:background="#ebebeb" />
     </LinearLayout>
 
-    <LinearLayout
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="@color/white">
-
-        <RelativeLayout
-            android:id="@+id/layout_homemenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true">
-
-            <ImageView
-                android:id="@+id/iv_homemenu"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="11.6dp"
-                android:src="@drawable/homemenu"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                style="@style/TextLineSpacing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="홈"
-                android:textColor="@color/bottommenu"
-                android:textSize="10dp"
-                android:lineSpacingExtra="2dp"
-                android:layout_below="@id/iv_homemenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout_mypickmenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:clickable="true">
-
-            <ImageView
-                android:id="@+id/iv_mypickmenu"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="11.6dp"
-                android:src="@drawable/img_heart_on"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                style="@style/TextLineSpacing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="내픽이상향"
-                android:textColor="@color/green"
-                android:textSize="10dp"
-                android:lineSpacingExtra="2dp"
-                android:layout_below="@id/iv_mypickmenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout_eventmenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:clickable="true">
-
-            <ImageView
-                android:id="@+id/iv_eventmenu"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="11.6dp"
-                android:src="@drawable/eventmenu"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                style="@style/TextLineSpacing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="이벤트"
-                android:textColor="@color/bottommenu"
-                android:textSize="10dp"
-                android:lineSpacingExtra="2dp"
-                android:layout_below="@id/iv_eventmenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout_settingmenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:clickable="true">
-
-            <ImageView
-                android:id="@+id/iv_settingmenu"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="11.6dp"
-                android:src="@drawable/settingmenu"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                style="@style/TextLineSpacing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="환경설정"
-                android:textColor="@color/bottommenu"
-                android:textSize="10dp"
-                android:lineSpacingExtra="2dp"
-                android:layout_below="@id/iv_settingmenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
-        </RelativeLayout>
-    </LinearLayout>
+        app:itemIconSize="17dp"
+        app:menu="@menu/bottom_navigation"
+        app:itemBackground="?android:attr/windowBackground"
+        android:background="?android:attr/windowBackground"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
+        app:labelVisibilityMode="labeled" />
 </RelativeLayout>

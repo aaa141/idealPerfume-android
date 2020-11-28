@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/img_home_off"
+        android:title="홈"/>
+
+    <item
+        android:id="@+id/mypick"
+        android:enabled="true"
+        android:icon="@drawable/img_mypick_off"
+        android:title="내픽이상향"/>
+
+    <item
+        android:id="@+id/event"
+        android:enabled="true"
+        android:icon="@drawable/img_event_off"
+        android:title="이벤트"/>
+
+
+    <item
+        android:id="@+id/setting"
+        android:enabled="true"
+        android:icon="@drawable/img_setting_off"
+        android:title="환경설정"/>
+</menu>

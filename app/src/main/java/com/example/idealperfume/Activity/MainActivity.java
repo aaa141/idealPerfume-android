@@ -1,5 +1,6 @@
 package com.example.idealperfume.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -7,12 +8,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -34,6 +37,7 @@ import com.example.idealperfume.Data.MagazineData;
 import com.example.idealperfume.Data.MainCategoryData;
 import com.example.idealperfume.Preferences.AppData;
 import com.example.idealperfume.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.tabs.TabLayout;
 
@@ -75,9 +79,6 @@ public class MainActivity extends AppCompatActivity{
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
-        mypick = findViewById(R.id.layout_mypickmenu);
-        event = findViewById(R.id.layout_eventmenu);
-        setting = findViewById(R.id.layout_settingmenu);
         tv_login = findViewById(R.id.tv_login);
 
         appData = AppData.getInstance(getApplicationContext());
@@ -89,32 +90,9 @@ public class MainActivity extends AppCompatActivity{
         }
 
 
-        mypick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MyPickActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
-            }
-        });
-
-        event.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, EventActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
-            }
-        });
-
-        setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
-            }
-        });
+        //하단 네비게이션
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        navigationMethod(bottomNavigationView);
 
         //메인화면 배경 불러오기
         ImageView iv_mainbackground = findViewById(R.id.iv_mainbackground);
@@ -242,6 +220,37 @@ public class MainActivity extends AppCompatActivity{
         layoutManager = new GridLayoutManager(getApplicationContext(), 3);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+    }
+
+    public void navigationMethod(BottomNavigationView bottomNavigationView){
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.mypick:
+                        Intent intent1 = new Intent(MainActivity.this, MyPickActivity.class);
+                        intent1.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        startActivity(intent1);
+                        return false;
+
+                    case R.id.event:
+                        Intent intent2 = new Intent(MainActivity.this, EventActivity.class);
+                        intent2.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        startActivity(intent2);
+                        return false;
+
+                    case R.id.setting:
+                        Intent intent3 = new Intent(MainActivity.this, SettingActivity.class);
+                        intent3.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        startActivity(intent3);
+                        return false;
+                }
+                return false;
+            }
+        });
     }
 }
 

@@ -5,167 +5,94 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
     tools:context=".Activity.EventActivity">
 
+    //상단바
     <LinearLayout
+        android:id="@+id/main_event"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:id="@+id/main_event"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20.5dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginRight="19dp"
-            android:layout_marginBottom="21.5dp">
-
-            <ImageView
-                android:id="@+id/back"
-                style="@style/BackButton"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="0dp" />
-
-            <TextView
-                style="@style/menutext"
-                android:text="@string/event" />
-        </RelativeLayout>
-
-        <View style="@style/divider" />
+        <ImageView
+            android:id="@+id/back"
+            style="@style/BackButton"
+            android:layout_marginVertical="22dp" />
 
         <TextView
-            style="@style/Header"
-            android:layout_marginTop="35.5dp"
-            android:text="@string/eventhead" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_eventlist"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20.5dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="브랜드"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
-    <LinearLayout
+    </LinearLayout>
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/main_event"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="20.5dp"-->
+<!--        android:layout_marginTop="28dp"-->
+<!--        android:layout_marginRight="19dp"-->
+<!--        android:layout_marginBottom="21.5dp">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/back"-->
+<!--            style="@style/BackButton"-->
+<!--            android:layout_marginLeft="0dp"-->
+<!--            android:layout_marginTop="0dp"-->
+<!--            android:layout_marginBottom="0dp" />-->
+
+<!--        <TextView-->
+<!--            style="@style/menutext"-->
+<!--            android:text="@string/event" />-->
+<!--    </RelativeLayout>-->
+
+    <View style="@style/divider"
+        android:id="@+id/div"
+        android:layout_below="@id/main_event"
+        />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/div"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:descendantFocusability="blocksDescendants"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="56dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/Header"
+                android:layout_marginTop="35.5dp"
+                android:text="@string/eventhead" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_eventlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    //하단 네비게이션
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="@color/white">
-
-        <RelativeLayout
-            android:id="@+id/layout_homemenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="true">
-
-            <ImageView
-                android:id="@+id/iv_homemenu"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="11.6dp"
-                android:src="@drawable/homemenu"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                style="@style/TextLineSpacing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="홈"
-                android:textColor="@color/bottommenu"
-                android:textSize="10dp"
-                android:lineSpacingExtra="2sp"
-                android:layout_below="@id/iv_homemenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout_mypickmenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:clickable="true">
-
-            <ImageView
-                android:id="@+id/iv_mypickmenu"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="11.6dp"
-                android:src="@drawable/mypickmenu"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                style="@style/TextLineSpacing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="내픽이상향"
-                android:textColor="@color/bottommenu"
-                android:textSize="10dp"
-                android:lineSpacingExtra="2sp"
-                android:layout_below="@id/iv_mypickmenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout_eventmenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:clickable="true">
-
-            <ImageView
-                android:id="@+id/iv_eventmenu"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="11.6dp"
-                android:src="@drawable/img_event_on"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                style="@style/TextLineSpacing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="이벤트"
-                android:textColor="@color/green"
-                android:textSize="10dp"
-                android:lineSpacingExtra="2sp"
-                android:layout_below="@id/iv_eventmenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout_settingmenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:clickable="true">
-
-            <ImageView
-                android:id="@+id/iv_settingmenu"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="11.6dp"
-                android:src="@drawable/settingmenu"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                style="@style/TextLineSpacing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="환경설정"
-                android:textColor="@color/bottommenu"
-                android:textSize="10dp"
-                android:lineSpacingExtra="2sp"
-                android:layout_below="@id/iv_settingmenu"
-                android:layout_marginTop="8.5dp"
-                android:layout_centerHorizontal="true"/>
-        </RelativeLayout>
-    </LinearLayout>
+        android:background="?android:attr/windowBackground"
+        app:itemBackground="?android:attr/windowBackground"
+        app:itemIconSize="17dp"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_navigation" />
 </RelativeLayout>

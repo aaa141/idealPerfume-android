@@ -57,10 +57,10 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
 
 
         //줄 글 클릭시 더보기
-        TextView bad = (TextView) view.findViewById(R.id.tv_bad);
-        TextView good = (TextView) view.findViewById(R.id.tv_good);
-        TextView tag = (TextView) view.findViewById(R.id.tv_tag);
-        TextView tv_more = (TextView) view.findViewById(R.id.tv_more);
+        final TextView bad = (TextView) view.findViewById(R.id.tv_bad);
+        final TextView good = (TextView) view.findViewById(R.id.tv_good);
+        final TextView tag = (TextView) view.findViewById(R.id.tv_tag);
+        final TextView tv_more = (TextView) view.findViewById(R.id.tv_more);
         LinearLayout tx_review = (LinearLayout) view.findViewById(R.id.tx_review);
         tx_review.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -193,8 +193,17 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
             holder.bookmarkImage.setImageResource(R.drawable.img_heart_off);
         }
 
+        makeMore(holder); //리뷰 2줄 이상시 더보기 표시
 
-        //리뷰 2줄 이상시 더보기 표시되도록
+    }
+
+    @Override
+    public int getItemCount() {
+        return (null != mList ? mList.size() : 0);
+    }
+
+    //리뷰 2줄 이상시 더보기 표시
+    public void makeMore(@NonNull final ReviewAdapter.CustomViewHolder holder){
         holder.good.post(new Runnable() {
             @Override
             public void run() {
@@ -228,11 +237,4 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.CustomView
             }
         });
     }
-
-    @Override
-    public int getItemCount() {
-        return (null != mList ? mList.size() : 0);
-    }
-
-
 }

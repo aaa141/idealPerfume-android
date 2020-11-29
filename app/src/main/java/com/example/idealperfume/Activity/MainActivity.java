@@ -100,6 +100,17 @@ public class MainActivity extends AppCompatActivity{
         ImageView iv_mainbackground = findViewById(R.id.iv_mainbackground);
         Glide.with(this).load(R.drawable.mainbackground).into(iv_mainbackground);
 
+        //검색 박스 클릭시 search Activity로 이동
+        TextView tv_gotoSearch = findViewById(R.id.tv_gotoSearch);
+        tv_gotoSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentA = new Intent(MainActivity.this, SearchActivity.class);
+                intentA.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intentA);
+            }
+        });
+
         //카테고리 생성
         createCategory();
 

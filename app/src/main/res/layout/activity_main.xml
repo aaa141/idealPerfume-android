@@ -50,7 +50,6 @@
             </FrameLayout>
 
             //검색+카테고리
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -59,44 +58,28 @@
                 android:orientation="vertical">
 
                 //edit text
-
-                <FrameLayout
+                <TextView
+                    android:id="@+id/tv_gotoSearch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="23dp"
                     android:layout_marginTop="33dp"
-                    android:layout_marginEnd="23dp"
-                    android:layout_marginBottom="36dp">
+                    android:layout_marginBottom="36dp"
+                    android:background="@drawable/edit_gray"
+                    style="@style/editText"
+                    android:paddingEnd="17.5dp"
+                    android:hint="제품 또는 브랜드를 검색해보세요!"
+                    android:drawableEnd="@drawable/img_small_searchicon"
+                    />
 
-                    <EditText
-                        android:id="@+id/et_mainsearch"
-                        style="@style/editText_gray"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="0dp"
-                        android:hint="제품 또는 브랜드를 검색해보세요!"
-                        android:textColor="#b5b5b5" />
-
-                    <ImageView
-                        android:id="@+id/iv_mainsearch"
-                        android:layout_width="14.5dp"
-                        android:layout_height="13.5dp"
-                        android:layout_gravity="center_vertical|end"
-                        android:layout_marginEnd="14dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:src="@drawable/img_search" />
-                </FrameLayout>
-
+                //RelativeLayout로 감싸주지 않으면, item이 보이지 않음
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rcv_category"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="23dp"></androidx.recyclerview.widget.RecyclerView>
+                        android:layout_marginStart="23dp"/>
                 </RelativeLayout>
 
                 <View

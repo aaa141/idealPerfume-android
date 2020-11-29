@@ -53,20 +53,16 @@ public class EventActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rv_eventlist);
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
+        //recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL));
 
         arrayList = new ArrayList<>();
 
         eventItemAdapter = new EventItemAdapter(arrayList);
         recyclerView.setAdapter(eventItemAdapter);
 
-        arrayList.add(new EventData(R.drawable.ic_launcher_background, "7.21 ~ 7.22"));
-        arrayList.add(new EventData(R.drawable.ic_launcher_background, "7.21 ~ 8.22"));
-        arrayList.add(new EventData(R.drawable.ic_launcher_background, "7.21 ~ 7.22"));
-        arrayList.add(new EventData(R.drawable.ic_launcher_background, "7.21 ~ 8.22"));
-        arrayList.add(new EventData(R.drawable.ic_launcher_background, "7.21 ~ 7.22"));
-        arrayList.add(new EventData(R.drawable.ic_launcher_background, "7.21 ~ 8.22"));
-
-        recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), 1));
+        arrayList.add(new EventData(R.drawable.tmp_event1, "7.21 ~ 7.22", "향수 주말 특가 50000원", "4일 동안만 진행되는 할인"));
+        arrayList.add(new EventData(R.drawable.tmp_event2, "7.21 ~ 7.22", "향수 주말 특가 50000원", "4일 동안만 진행되는 할인"));
+        arrayList.add(new EventData(R.drawable.tmp_event3, "7.21 ~ 7.22", "향수 주말 특가 50000원", "4일 동안만 진행되는 할인"));
     }
 
     @Override

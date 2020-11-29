@@ -31,31 +31,10 @@
             android:textStyle="bold" />
 
     </LinearLayout>
-<!--    <RelativeLayout-->
-<!--        android:id="@+id/main_event"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginLeft="20.5dp"-->
-<!--        android:layout_marginTop="28dp"-->
-<!--        android:layout_marginRight="19dp"-->
-<!--        android:layout_marginBottom="21.5dp">-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/back"-->
-<!--            style="@style/BackButton"-->
-<!--            android:layout_marginLeft="0dp"-->
-<!--            android:layout_marginTop="0dp"-->
-<!--            android:layout_marginBottom="0dp" />-->
-
-<!--        <TextView-->
-<!--            style="@style/menutext"-->
-<!--            android:text="@string/event" />-->
-<!--    </RelativeLayout>-->
 
     <View style="@style/divider"
         android:id="@+id/div"
-        android:layout_below="@id/main_event"
-        />
+        android:layout_below="@id/main_event" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_below="@id/div"
@@ -81,8 +60,8 @@
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-    //하단 네비게이션
 
+    //하단 네비게이션
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"

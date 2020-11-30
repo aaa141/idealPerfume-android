@@ -53,7 +53,7 @@ public class QuestionActivity extends AppCompatActivity {
 
     ArrayList<String> question = new ArrayList<>(Arrays.asList("선택안함", "이벤트 문의", "서비스 불편 오류제보", "사용방법 문의", "아이디어 제안", "제휴문의"));
     BottomSheetDialog BottomSheet;
-    boolean flag1 = false, flag2 = false;
+    boolean flag_category, flag_question, flag_email;
     TextView tv_show_list;
     EditText ed_question, ed_email;
     Button btn_next;
@@ -77,64 +77,10 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-        //텍스트 와쳐 - 버튼 색 변경 이벤트
-        ed_question.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                buttonBefore(btn_next);
-            }
+        //editText 효과
+        editTextFunc(ed_question);
+        editTextFunc(ed_email);
 
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (ed_question.getText().length() > 0 && ed_email.getText().length() > 0) {
-                    flag2 = true;
-                    if (flag1 && flag2) {
-                        buttonAfter(btn_next);
-                    }
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                if (ed_question.getText().length() == 0 || ed_email.getText().length() == 0) {
-                    buttonBefore(btn_next);
-                }
-            }
-        });
-
-        ed_question.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus)
-                    ed_question.setBackgroundResource(R.drawable.edit_greenborder);
-                else
-                    ed_question.setBackgroundResource(R.drawable.edit_round);
-            }
-        });
-
-        ed_email.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                buttonBefore(btn_next);
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (ed_question.getText().length() > 0 && ed_email.getText().length() > 0) {
-                    flag2 = true;
-                    if (flag1 && flag2) {
-                        buttonAfter(btn_next);
-                    }
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                if (ed_question.getText().length() == 0 || ed_email.getText().length() == 0) {
-                    buttonBefore(btn_next);
-                }
-            }
-        });
 
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,23 +104,14 @@ public class QuestionActivity extends AppCompatActivity {
                         Log.d("ssss","fail");
                     }
                 });
+
+                finish(); //액티비티 종료
             }
         });
-
-        ed_email.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus)
-                    ed_email.setBackgroundResource(R.drawable.edit_greenborder);
-                else
-                    ed_email.setBackgroundResource(R.drawable.edit_round);
-            }
-        });
-
     }
 
 
-    //메서드
+    //----메서드-----
 
     //버튼 클릭 전
     private void buttonBefore(Button button) {
@@ -190,7 +127,7 @@ public class QuestionActivity extends AppCompatActivity {
         button.setBackgroundResource(R.drawable.btn_onclick);
     }
 
-
+    //바텀 다이얼로그
     private void createBasicDialog(final ArrayList<String> list, String title) {
         BSBasicAdapter adapter = new BSBasicAdapter(list);
         View view = getLayoutInflater().inflate(R.layout.dialog_bs_basic, null);
@@ -219,10 +156,9 @@ public class QuestionActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new BSBasicAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
-
                 result.setText(list.get(position));
-                flag1 = true;
-                if (flag1 && flag2) {
+                flag_category = true;
+                if (flag_category && flag_question && flag_email) {
                     buttonAfter(btn_next);
                 }
                 BottomSheet.dismiss();
@@ -233,5 +169,54 @@ public class QuestionActivity extends AppCompatActivity {
         BottomSheet.setContentView(view);
         BottomSheet.show();
 
+    }
+
+    //버튼 색 변경+글 작성시 border를 초록색으로
+    private void editTextFunc(final EditText ed){
+
+        //버튼 색 변경
+        ed.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                buttonBefore(btn_next);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (ed.getText().length() > 0 && ed.getText().length() > 0) {
+
+                    if(ed == ed_email) flag_email= true;
+                    else flag_question = true;
+
+                    if (flag_category && flag_question && flag_email) {
+                        buttonAfter(btn_next);
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (ed.getText().length() == 0 || ed.getText().length() == 0) {
+                    buttonBefore(btn_next);
+                }
+            }
+        });
+
+        //포커스
+        ed.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    ed.setBackgroundResource(R.drawable.edit_greenborder);
+                    if(ed==ed_question) {
+                        float scale = getResources().getDisplayMetrics().density;
+                        int dpAsPixels = (int) (23*scale + 0.5f);
+                        ed.setPadding(dpAsPixels,dpAsPixels,0,0);
+                    }
+                }
+                else
+                    ed.setBackgroundResource(R.drawable.edit_round);
+            }
+        });
     }
 }

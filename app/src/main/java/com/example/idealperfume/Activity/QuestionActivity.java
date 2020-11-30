@@ -53,7 +53,7 @@ public class QuestionActivity extends AppCompatActivity {
 
     ArrayList<String> question = new ArrayList<>(Arrays.asList("선택안함", "이벤트 문의", "서비스 불편 오류제보", "사용방법 문의", "아이디어 제안", "제휴문의"));
     BottomSheetDialog BottomSheet;
-    boolean flag_category, flag_question, flag_email;
+    boolean flag_category = true, flag_question = true, flag_email = true; //서버 작업 끝난 후, true 지울 예정
     TextView tv_show_list;
     EditText ed_question, ed_email;
     Button btn_next;
